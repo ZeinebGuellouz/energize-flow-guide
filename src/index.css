@@ -8,35 +8,54 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Espace Nutri-Forme — Premium fitness tokens */
+    --background: 30 25% 98%;
+    --foreground: 220 30% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 30% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 30% 10%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Deep night blue — premium */
+    --primary: 220 70% 12%;
+    --primary-foreground: 30 30% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Energetic orange */
+    --accent: 18 95% 55%;
+    --accent-foreground: 0 0% 100%;
+    --accent-glow: 25 100% 62%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Electric blue (EMS) */
+    --electric: 205 95% 55%;
+    --electric-foreground: 0 0% 100%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --secondary: 30 20% 95%;
+    --secondary-foreground: 220 30% 12%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --muted: 30 15% 94%;
+    --muted-foreground: 220 12% 42%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    --radius: 0.5rem;
+    --border: 30 15% 88%;
+    --input: 30 15% 90%;
+    --ring: 18 95% 55%;
+
+    --radius: 0.875rem;
+
+    --gradient-hero: linear-gradient(135deg, hsl(220 70% 8% / 0.85) 0%, hsl(220 60% 18% / 0.7) 50%, hsl(18 90% 50% / 0.55) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(18 95% 55%), hsl(25 100% 62%));
+    --gradient-dark: linear-gradient(180deg, hsl(220 70% 10%), hsl(220 60% 6%));
+    --gradient-soft: linear-gradient(180deg, hsl(30 25% 98%), hsl(30 20% 94%));
+
+    --shadow-soft: 0 10px 30px -12px hsl(220 50% 15% / 0.15);
+    --shadow-glow: 0 20px 60px -20px hsl(18 95% 55% / 0.45);
+    --shadow-elevated: 0 25px 70px -25px hsl(220 70% 12% / 0.35);
+
+    --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,7 +75,7 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 220 40% 6%;
     --foreground: 210 40% 98%;
 
     --card: 222.2 84% 4.9%;
@@ -101,5 +120,63 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Poppins', 'Inter', sans-serif;
+    @apply tracking-tight;
+  }
+}
+
+@layer components {
+  .container-px {
+    @apply px-5 sm:px-8 lg:px-12;
+  }
+
+  .text-gradient-accent {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 900ms var(--transition-smooth), transform 900ms var(--transition-smooth);
+    will-change: opacity, transform;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 900ms var(--transition-smooth), transform 900ms var(--transition-smooth);
+  }
+
+  .reveal-left.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 900ms var(--transition-smooth), transform 900ms var(--transition-smooth);
+  }
+
+  .reveal-right.is-visible {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
