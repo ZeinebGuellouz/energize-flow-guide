@@ -11,13 +11,13 @@ import { toast } from "@/hooks/use-toast";
 import { CheckCircle2, Gift, Users } from "lucide-react";
 
 const schema = z.object({
-  civilite: z.enum(["mme", "mr"], { required_error: "Sélectionnez une civilité" }),
+  civilite: z.enum(["mme", "mr"] as const, { message: "Sélectionnez une civilité" }),
   nom: z.string().trim().min(2, "Nom requis").max(60),
   prenom: z.string().trim().min(2, "Prénom requis").max(60),
   email: z.string().trim().email("Email invalide").max(150),
   mobile: z.string().trim().regex(/^[0-9 +.\-()]{8,20}$/, "Téléphone invalide"),
   codePostal: z.string().trim().regex(/^[0-9]{5}$/, "Code postal à 5 chiffres"),
-  smsOk: z.literal(true, { errorMap: () => ({ message: "Acceptation requise" }) }),
+  smsOk: z.literal(true, { message: "Acceptation requise" }),
   amiNom: z.string().trim().min(2, "Nom de l'ami requis").max(60),
   amiPrenom: z.string().trim().min(2, "Prénom de l'ami requis").max(60),
   amiMobile: z.string().trim().regex(/^[0-9 +.\-()]{8,20}$/, "Téléphone invalide"),

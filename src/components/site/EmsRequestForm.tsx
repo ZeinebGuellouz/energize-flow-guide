@@ -21,7 +21,7 @@ const objectifs = ["Perte de poids", "Prise de masse / tonification", "Récupér
 const formules = ["Séance unitaire", "Pack 5 séances", "Pack 10 séances", "Abonnement mensuel", "Je ne sais pas encore"];
 
 const schema = z.object({
-  civilite: z.enum(["mme", "mr"], { required_error: "Sélectionnez une civilité" }),
+  civilite: z.enum(["mme", "mr"] as const, { message: "Sélectionnez une civilité" }),
   nom: z.string().trim().min(2, "Nom requis").max(60),
   prenom: z.string().trim().min(2, "Prénom requis").max(60),
   email: z.string().trim().email("Email invalide").max(150),
