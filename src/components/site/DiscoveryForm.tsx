@@ -9,7 +9,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { toast } from "@/hooks/use-toast";
 import { CheckCircle2, Gift, Users } from "lucide-react";
-import { buildMailto, openMailto } from "@/lib/mailto";
+import { submitFormspreeForm } from "@/lib/formspree";
 import {
   Select,
   SelectContent,
@@ -55,37 +55,48 @@ export const DiscoveryForm = () => {
 
   const onSubmit = async (data: FormValues) => {
     const civText = data.civilite === "mme" ? "Madame" : "Monsieur";
-    const url = buildMailto({
+
+    const formData = {
       subject: `Réservation séance découverte EMS — ${data.prenom} ${data.nom}`,
-      bodyLines: [
-        "Nouvelle demande de séance découverte EMS (offerte, 2 personnes)",
-        "",
-        "— Personne principale —",
-        ["Civilité", civText],
-        ["Nom", data.nom],
-        ["Prénom", data.prenom],
-        ["Email", data.email],
-        ["Mobile", data.mobile],
-        ["Code postal", data.codePostal],
-        "",
-        "— Créneau souhaité —",
-        ["Date", data.dateSouhaitee],
-        ["Heure", data.creneau],
-        "",
-        "— Ami·e accompagnant·e —",
-        ["Nom", data.amiNom],
-        ["Prénom", data.amiPrenom],
-        ["Mobile", data.amiMobile],
-        "",
-        "Acceptation SMS d'information : Oui",
-      ],
-    });
-    openMailto(url);
-    toast({
-      title: "Email prêt à envoyer 🎉",
-      description: "Votre messagerie s'ouvre avec la demande pré-remplie. Cliquez sur Envoyer.",
-    });
-    setDone(true);
+      "Civilité (principal)": civText,
+      "Nom (principal)": data.nom,
+      "Prénom (principal)": data.prenom,
+      "Email (principal)": data.email,
+      "Mobile (principal)": data.mobile,
+      "Code postal": data.codePostal,
+      "Date souhaitée": data.dateSouhaitee,
+      "Créneau souhaité": data.creneau,
+      "Ami - Nom": data.amiNom,
+      "Ami - Prénom": data.amiPrenom,
+      "Ami - Mobile": data.amiMobile,
+      "Acceptation SMS": "Oui",
+      _replyto: data.email,
+    };
+
+    const formEmail = import.meta.env.VITE_FORM_EMAIL || import.meta.env.VITE_FORMSPREE_DISCOVERY_ID;
+    if (!formEmail) {
+      toast({
+        title: "Configuration manquante",
+        description: "Les variables d'environnement Formspree ne sont pas configurées.",
+        variant: "destructive",
+      });
+      return;
+    }
+    const result = await submitFormspreeForm(formEmail, formData);
+
+    if (result.success) {
+      toast({
+        title: "Demande envoyée ✅",
+        description: "Nous recevrons votre demande et vous répondrons dans les 24h.",
+      });
+      setDone(true);
+    } else {
+      toast({
+        title: "Erreur d'envoi",
+        description: result.message,
+        variant: "destructive",
+      });
+    }
   };
 
   if (done) {

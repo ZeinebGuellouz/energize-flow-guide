@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
 import { CheckCircle2, Dumbbell } from "lucide-react";
-import { buildMailto, openMailto } from "@/lib/mailto";
+import { submitFormspreeForm } from "@/lib/formspree";
 
 const objectifs = ["Perte de poids", "Prise de masse / tonification", "Récupération / bien-être", "Préparation physique", "Autre"];
 const formules = ["Séance unitaire", "Pack 5 séances", "Pack 10 séances", "Abonnement mensuel", "Je ne sais pas encore"];
@@ -67,34 +67,46 @@ export const EmsRequestForm = ({
 
   const onSubmit = async (data: FormValues) => {
     const civText = data.civilite === "mme" ? "Madame" : "Monsieur";
-    const url = buildMailto({
+
+    const formData = {
       subject: `Demande EMS — ${data.formule} — ${data.prenom} ${data.nom}`,
-      bodyLines: [
-        "Nouvelle demande de réservation EMS",
-        "",
-        ["Civilité", civText],
-        ["Nom", data.nom],
-        ["Prénom", data.prenom],
-        ["Email", data.email],
-        ["Téléphone", data.telephone],
-        "",
-        ["Objectif", data.objectif],
-        ["Formule souhaitée", data.formule],
-        "",
-        "— Créneau souhaité —",
-        ["Date", data.dateSouhaitee],
-        ["Heure", data.creneau],
-        "",
-        "— Message —",
-        data.message || "(aucun)",
-      ],
-    });
-    openMailto(url);
-    toast({
-      title: "Email prêt à envoyer ✅",
-      description: "Votre messagerie s'ouvre. Cliquez sur Envoyer pour confirmer.",
-    });
-    setDone(true);
+      "Civilité": civText,
+      "Nom": data.nom,
+      "Prénom": data.prenom,
+      "Email": data.email,
+      "Téléphone": data.telephone,
+      "Objectif": data.objectif,
+      "Formule souhaitée": data.formule,
+      "Date souhaitée": data.dateSouhaitee,
+      "Créneau souhaité": data.creneau,
+      "Message": data.message || "(aucun)",
+      _replyto: data.email,
+    };
+
+    const formEmail = import.meta.env.VITE_FORM_EMAIL || import.meta.env.VITE_FORMSPREE_REQUEST_ID;
+    if (!formEmail) {
+      toast({
+        title: "Configuration manquante",
+        description: "Les variables d'environnement Formspree ne sont pas configurées.",
+        variant: "destructive",
+      });
+      return;
+    }
+    const result = await submitFormspreeForm(formEmail, formData);
+
+    if (result.success) {
+      toast({
+        title: "Demande envoyée ✅",
+        description: "Nous recevrons votre demande et vous répondrons dans les 24h.",
+      });
+      setDone(true);
+    } else {
+      toast({
+        title: "Erreur d'envoi",
+        description: result.message,
+        variant: "destructive",
+      });
+    }
   };
 
   if (done) {
