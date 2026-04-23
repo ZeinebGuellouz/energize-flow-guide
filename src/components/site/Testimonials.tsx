@@ -20,25 +20,25 @@ const reviews = [
 
 export const Testimonials = () => {
   return (
-    <section id="avis" className="py-24 md:py-32 bg-gradient-dark text-primary-foreground relative overflow-hidden">
+    <section id="avis" className="py-16 md:py-32 bg-gradient-dark text-primary-foreground relative overflow-hidden">
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--accent))_0%,transparent_50%)]" />
       <div className="container-px max-w-7xl mx-auto relative">
-        <div className="text-center max-w-3xl mx-auto mb-16 reveal">
-          <span className="text-accent font-semibold uppercase tracking-widest text-sm">Témoignages</span>
-          <h2 className="text-3xl md:text-5xl font-black mt-3 mb-5">
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16 reveal">
+          <span className="text-accent font-semibold uppercase tracking-widest text-xs sm:text-sm">Témoignages</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mt-3 mb-4 md:mb-5 leading-tight">
             Ils ont <span className="text-gradient-accent">transformé leur quotidien</span>
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-5 md:gap-6">
           {reviews.map((r, i) => (
             <div
               key={r.name}
-              className="reveal bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-500 hover:-translate-y-1"
+              className="reveal bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-8 hover:bg-white/10 transition-all duration-500 hover:-translate-y-1"
               style={{ transitionDelay: `${i * 80}ms` }}
             >
-              <Quote className="w-10 h-10 text-accent mb-4 opacity-80" />
-              <p className="text-primary-foreground/90 leading-relaxed mb-6 text-lg">"{r.text}"</p>
+              <Quote className="w-8 h-8 md:w-10 md:h-10 text-accent mb-3 md:mb-4 opacity-80" />
+              <p className="text-primary-foreground/90 leading-relaxed mb-5 md:mb-6 text-base md:text-lg">"{r.text}"</p>
               <div className="flex items-center justify-between">
                 <div>
                   <div className="font-bold">{r.name}</div>

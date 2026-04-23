@@ -12,9 +12,9 @@ const steps = [
 
 export const HowItWorks = () => {
   return (
-    <section id="seance" className="py-24 md:py-32 bg-background">
+    <section id="seance" className="py-16 md:py-32 bg-background">
       <div className="container-px max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 md:gap-12 lg:gap-20 items-center">
           <div className="reveal-left order-2 lg:order-1">
             <div className="relative">
               <img
@@ -26,37 +26,37 @@ export const HowItWorks = () => {
               <div className="absolute -bottom-6 -right-6 hidden md:block w-48 h-48 rounded-3xl overflow-hidden shadow-glow border-4 border-background">
                 <img src={coachImg} alt="Coach EMS Fréjus" loading="lazy" className="w-full h-full object-cover" />
               </div>
-              <div className="absolute -top-4 -left-4 bg-accent text-accent-foreground px-5 py-3 rounded-2xl shadow-glow font-bold">
+              <div className="absolute -top-3 -left-3 sm:-top-4 sm:-left-4 bg-accent text-accent-foreground px-3 py-2 sm:px-5 sm:py-3 rounded-2xl shadow-glow font-bold text-sm sm:text-base">
                 20 min · 350 muscles
               </div>
             </div>
           </div>
 
           <div className="reveal-right order-1 lg:order-2">
-            <span className="text-accent font-semibold uppercase tracking-widest text-sm">Comment ça marche ?</span>
-            <h2 className="text-3xl md:text-5xl font-black mt-3 mb-6">
+            <span className="text-accent font-semibold uppercase tracking-widest text-xs sm:text-sm">Comment ça marche ?</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mt-3 mb-4 md:mb-6 leading-tight">
               Une séance <span className="text-gradient-accent">simple, intense, encadrée</span>
             </h2>
-            <p className="text-lg text-muted-foreground mb-10">
+            <p className="text-base md:text-lg text-muted-foreground mb-8 md:mb-10">
               Une séance EMS chez Nutri-Forme dure 20 minutes effectives, toujours encadrée par un coach
               certifié. Pas besoin d'expérience sportive : la technologie s'adapte à vous.
             </p>
 
-            <ol className="space-y-6 mb-10">
+            <ol className="space-y-5 md:space-y-6 mb-8 md:mb-10">
               {steps.map((s) => (
-                <li key={s.n} className="flex gap-5">
-                  <div className="shrink-0 w-12 h-12 rounded-xl bg-secondary grid place-items-center font-black text-accent text-lg">
+                <li key={s.n} className="flex gap-4 sm:gap-5">
+                  <div className="shrink-0 w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-secondary grid place-items-center font-black text-accent text-base sm:text-lg">
                     {s.n}
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg mb-1">{s.title}</h3>
-                    <p className="text-muted-foreground">{s.text}</p>
+                    <h3 className="font-bold text-base sm:text-lg mb-1">{s.title}</h3>
+                    <p className="text-sm sm:text-base text-muted-foreground">{s.text}</p>
                   </div>
                 </li>
               ))}
             </ol>
 
-            <Button variant="hero" size="lg" onClick={() => scrollToId("decouverte")}>
+            <Button variant="hero" size="lg" className="w-full sm:w-auto" onClick={() => scrollToId("decouverte")}>
               Réserver ma 1ère séance offerte
             </Button>
           </div>

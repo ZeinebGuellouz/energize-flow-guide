@@ -3,26 +3,26 @@ import { SITE } from "@/lib/site";
 
 export const ContactInfo = () => {
   return (
-    <section id="contact-info" className="py-24 md:py-28 bg-gradient-soft">
+    <section id="contact-info" className="py-16 md:py-28 bg-gradient-soft">
       <div className="container-px max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-12 reveal">
-          <span className="text-accent font-semibold uppercase tracking-widest text-sm">Nous trouver</span>
-          <h2 className="text-3xl md:text-5xl font-black mt-3 mb-5">
+        <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12 reveal">
+          <span className="text-accent font-semibold uppercase tracking-widest text-xs sm:text-sm">Nous trouver</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mt-3 mb-4 md:mb-5 leading-tight">
             Au cœur de <span className="text-gradient-accent">Fréjus Plage</span>
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 items-stretch">
-          <div className="reveal-left rounded-3xl overflow-hidden shadow-elevated min-h-[360px] border border-border">
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-8 items-stretch">
+          <div className="reveal-left rounded-3xl overflow-hidden shadow-elevated min-h-[280px] md:min-h-[360px] border border-border order-2 lg:order-1">
             <iframe
               title="Localisation Espace Nutri-Forme Fréjus Plage"
               src={SITE.mapsEmbed}
-              className="w-full h-full min-h-[360px] border-0"
+              className="w-full h-full min-h-[280px] md:min-h-[360px] border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
-          <div className="reveal-right space-y-4">
+          <div className="reveal-right space-y-3 md:space-y-4 order-1 lg:order-2">
             <InfoRow icon={MapPin} title="Adresse">
               <p>{SITE.addressLine1}</p>
               <p>{SITE.addressLine2}</p>
