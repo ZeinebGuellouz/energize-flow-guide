@@ -117,15 +117,15 @@ export const EmsRequestForm = ({
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="bg-card rounded-3xl shadow-elevated p-6 md:p-10 border border-border"
+      className="bg-card rounded-3xl shadow-elevated p-5 sm:p-6 md:p-10 border border-border"
     >
       <div className="flex items-center gap-3 mb-6">
         <div className="w-12 h-12 rounded-2xl bg-gradient-accent grid place-items-center shadow-glow">
           <Dumbbell className="w-6 h-6 text-accent-foreground" />
         </div>
         <div>
-          <h3 className="text-xl md:text-2xl font-black">Demander mes séances EMS</h3>
-          <p className="text-sm text-muted-foreground">Achat / informations · 1 personne</p>
+          <h3 className="text-lg sm:text-xl md:text-2xl font-black leading-tight">{title}</h3>
+          <p className="text-sm text-muted-foreground">{subtitle}</p>
         </div>
       </div>
 
@@ -160,7 +160,7 @@ export const EmsRequestForm = ({
           <Input type="tel" {...register("telephone")} placeholder="06 12 34 56 78" />
         </Field>
         <Field label="Objectif *" error={errors.objectif?.message}>
-          <Select onValueChange={(v) => setValue("objectif", v, { shouldValidate: true })}>
+          <Select value={objectif} onValueChange={(v) => setValue("objectif", v, { shouldValidate: true })}>
             <SelectTrigger><SelectValue placeholder="Choisissez votre objectif" /></SelectTrigger>
             <SelectContent>
               {objectifs.map((o) => <SelectItem key={o} value={o}>{o}</SelectItem>)}
@@ -168,10 +168,24 @@ export const EmsRequestForm = ({
           </Select>
         </Field>
         <Field label="Formule souhaitée *" error={errors.formule?.message}>
-          <Select onValueChange={(v) => setValue("formule", v, { shouldValidate: true })}>
+          <Select value={formule} onValueChange={(v) => setValue("formule", v, { shouldValidate: true })}>
             <SelectTrigger><SelectValue placeholder="Choisissez une formule" /></SelectTrigger>
             <SelectContent>
               {formules.map((f) => <SelectItem key={f} value={f}>{f}</SelectItem>)}
+            </SelectContent>
+          </Select>
+        </Field>
+      </div>
+
+      <div className="grid sm:grid-cols-2 gap-4 mb-5 p-4 rounded-xl bg-secondary/40 border border-border">
+        <Field label="Date souhaitée *" error={errors.dateSouhaitee?.message}>
+          <Input type="date" min={todayISO()} {...register("dateSouhaitee")} />
+        </Field>
+        <Field label="Créneau souhaité *" error={errors.creneau?.message}>
+          <Select value={creneau} onValueChange={(v) => setValue("creneau", v, { shouldValidate: true })}>
+            <SelectTrigger><SelectValue placeholder="Choisir une heure" /></SelectTrigger>
+            <SelectContent className="max-h-64">
+              {TIME_SLOTS.map((t) => <SelectItem key={t} value={t}>{t}</SelectItem>)}
             </SelectContent>
           </Select>
         </Field>
