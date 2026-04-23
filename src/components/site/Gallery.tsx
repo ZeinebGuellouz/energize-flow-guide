@@ -16,16 +16,16 @@ const imgs = [
 
 export const Gallery = () => {
   return (
-    <section id="galerie" className="py-24 md:py-32 bg-background">
+    <section id="galerie" className="py-16 md:py-32 bg-background">
       <div className="container-px max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-14 reveal">
-          <span className="text-accent font-semibold uppercase tracking-widest text-sm">Galerie</span>
-          <h2 className="text-3xl md:text-5xl font-black mt-3 mb-5">
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14 reveal">
+          <span className="text-accent font-semibold uppercase tracking-widest text-xs sm:text-sm">Galerie</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mt-3 mb-4 leading-tight">
             Bienvenue dans <span className="text-gradient-accent">notre studio</span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 auto-rows-[180px] md:auto-rows-[240px] gap-3 md:gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-3 auto-rows-[140px] sm:auto-rows-[200px] md:auto-rows-[240px] gap-2 sm:gap-3 md:gap-4">
           {imgs.map((im, i) => (
             <div
               key={i}

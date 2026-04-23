@@ -9,6 +9,22 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { toast } from "@/hooks/use-toast";
 import { CheckCircle2, Gift, Users } from "lucide-react";
+import { buildMailto, openMailto } from "@/lib/mailto";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
+const TIME_SLOTS = [
+  "09:00", "09:30", "10:00", "10:30", "11:00", "11:30",
+  "12:00", "14:00", "14:30", "15:00", "15:30", "16:00",
+  "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30",
+];
+
+const todayISO = () => new Date().toISOString().split("T")[0];
 
 const schema = z.object({
   civilite: z.enum(["mme", "mr"] as const, { message: "Sélectionnez une civilité" }),
@@ -17,6 +33,8 @@ const schema = z.object({
   email: z.string().trim().email("Email invalide").max(150),
   mobile: z.string().trim().regex(/^[0-9 +.\-()]{8,20}$/, "Téléphone invalide"),
   codePostal: z.string().trim().regex(/^[0-9]{5}$/, "Code postal à 5 chiffres"),
+  dateSouhaitee: z.string().min(1, "Date requise"),
+  creneau: z.string().min(1, "Créneau requis"),
   smsOk: z.literal(true, { message: "Acceptation requise" }),
   amiNom: z.string().trim().min(2, "Nom de l'ami requis").max(60),
   amiPrenom: z.string().trim().min(2, "Prénom de l'ami requis").max(60),
@@ -36,11 +54,36 @@ export const DiscoveryForm = () => {
   } = useForm<FormValues>({ resolver: zodResolver(schema) });
 
   const onSubmit = async (data: FormValues) => {
-    await new Promise((r) => setTimeout(r, 600));
-    console.log("Discovery booking:", data);
+    const civText = data.civilite === "mme" ? "Madame" : "Monsieur";
+    const url = buildMailto({
+      subject: `Réservation séance découverte EMS — ${data.prenom} ${data.nom}`,
+      bodyLines: [
+        "Nouvelle demande de séance découverte EMS (offerte, 2 personnes)",
+        "",
+        "— Personne principale —",
+        ["Civilité", civText],
+        ["Nom", data.nom],
+        ["Prénom", data.prenom],
+        ["Email", data.email],
+        ["Mobile", data.mobile],
+        ["Code postal", data.codePostal],
+        "",
+        "— Créneau souhaité —",
+        ["Date", data.dateSouhaitee],
+        ["Heure", data.creneau],
+        "",
+        "— Ami·e accompagnant·e —",
+        ["Nom", data.amiNom],
+        ["Prénom", data.amiPrenom],
+        ["Mobile", data.amiMobile],
+        "",
+        "Acceptation SMS d'information : Oui",
+      ],
+    });
+    openMailto(url);
     toast({
-      title: "Demande envoyée 🎉",
-      description: "Nous vous contactons sous 24h pour fixer votre séance offerte.",
+      title: "Email prêt à envoyer 🎉",
+      description: "Votre messagerie s'ouvre avec la demande pré-remplie. Cliquez sur Envoyer.",
     });
     setDone(true);
   };
@@ -49,27 +92,28 @@ export const DiscoveryForm = () => {
     return (
       <div className="bg-card rounded-3xl shadow-elevated p-10 text-center border border-border">
         <CheckCircle2 className="w-16 h-16 text-accent mx-auto mb-4" />
-        <h3 className="text-2xl font-black mb-2">Demande bien reçue !</h3>
+        <h3 className="text-2xl font-black mb-2">Presque terminé !</h3>
         <p className="text-muted-foreground">
-          Notre équipe vous appelle très vite pour fixer votre séance découverte offerte.
+          Votre messagerie s'est ouverte avec votre demande. Vérifiez et appuyez sur <strong>Envoyer</strong> pour nous transmettre votre réservation.
         </p>
       </div>
     );
   }
 
   const civ = watch("civilite");
+  const creneau = watch("creneau");
 
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="bg-card rounded-3xl shadow-elevated p-6 md:p-10 border border-border"
+      className="bg-card rounded-3xl shadow-elevated p-5 sm:p-6 md:p-10 border border-border"
     >
       <div className="flex items-center gap-3 mb-6">
         <div className="w-12 h-12 rounded-2xl bg-gradient-accent grid place-items-center shadow-glow">
           <Gift className="w-6 h-6 text-accent-foreground" />
         </div>
         <div>
-          <h3 className="text-xl md:text-2xl font-black">Séance découverte offerte</h3>
+          <h3 className="text-lg sm:text-xl md:text-2xl font-black leading-tight">Séance découverte offerte</h3>
           <p className="text-sm text-muted-foreground">Pour vous + 1 ami·e</p>
         </div>
       </div>
@@ -107,6 +151,27 @@ export const DiscoveryForm = () => {
         </Field>
         <Field label="Code postal *" error={errors.codePostal?.message}>
           <Input {...register("codePostal")} placeholder="83600" maxLength={5} />
+        </Field>
+      </div>
+
+      <div className="grid sm:grid-cols-2 gap-4 mb-5 p-4 rounded-xl bg-secondary/40 border border-border">
+        <Field label="Date souhaitée *" error={errors.dateSouhaitee?.message}>
+          <Input
+            type="date"
+            min={todayISO()}
+            {...register("dateSouhaitee")}
+          />
+        </Field>
+        <Field label="Créneau souhaité *" error={errors.creneau?.message}>
+          <Select
+            value={creneau}
+            onValueChange={(v) => setValue("creneau", v, { shouldValidate: true })}
+          >
+            <SelectTrigger><SelectValue placeholder="Choisir une heure" /></SelectTrigger>
+            <SelectContent className="max-h-64">
+              {TIME_SLOTS.map((t) => <SelectItem key={t} value={t}>{t}</SelectItem>)}
+            </SelectContent>
+          </Select>
         </Field>
       </div>
 
