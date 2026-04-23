@@ -106,14 +106,14 @@ export const DiscoveryForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="bg-card rounded-3xl shadow-elevated p-6 md:p-10 border border-border"
+      className="bg-card rounded-3xl shadow-elevated p-5 sm:p-6 md:p-10 border border-border"
     >
       <div className="flex items-center gap-3 mb-6">
         <div className="w-12 h-12 rounded-2xl bg-gradient-accent grid place-items-center shadow-glow">
           <Gift className="w-6 h-6 text-accent-foreground" />
         </div>
         <div>
-          <h3 className="text-xl md:text-2xl font-black">Séance découverte offerte</h3>
+          <h3 className="text-lg sm:text-xl md:text-2xl font-black leading-tight">Séance découverte offerte</h3>
           <p className="text-sm text-muted-foreground">Pour vous + 1 ami·e</p>
         </div>
       </div>
@@ -151,6 +151,27 @@ export const DiscoveryForm = () => {
         </Field>
         <Field label="Code postal *" error={errors.codePostal?.message}>
           <Input {...register("codePostal")} placeholder="83600" maxLength={5} />
+        </Field>
+      </div>
+
+      <div className="grid sm:grid-cols-2 gap-4 mb-5 p-4 rounded-xl bg-secondary/40 border border-border">
+        <Field label="Date souhaitée *" error={errors.dateSouhaitee?.message}>
+          <Input
+            type="date"
+            min={todayISO()}
+            {...register("dateSouhaitee")}
+          />
+        </Field>
+        <Field label="Créneau souhaité *" error={errors.creneau?.message}>
+          <Select
+            value={creneau}
+            onValueChange={(v) => setValue("creneau", v, { shouldValidate: true })}
+          >
+            <SelectTrigger><SelectValue placeholder="Choisir une heure" /></SelectTrigger>
+            <SelectContent className="max-h-64">
+              {TIME_SLOTS.map((t) => <SelectItem key={t} value={t}>{t}</SelectItem>)}
+            </SelectContent>
+          </Select>
         </Field>
       </div>
 
