@@ -4,6 +4,7 @@ export const SITE = {
   phone: "06.98.89.04.01",
   phoneIntl: "+33698890401",
   whatsapp: "33698890401",
+  email: "zeineb.guellouz@medtech.tn",
   address: "La Grande Galerie - 137 Bd de la Libération, 83600 Fréjus",
   addressLine1: "La Grande Galerie",
   addressLine2: "137 Bd de la Libération",
