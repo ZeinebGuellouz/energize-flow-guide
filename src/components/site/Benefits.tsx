@@ -1,11 +1,9 @@
-import { Activity, Heart, Shield, TrendingDown, Dumbbell, Sparkles } from "lucide-react";
+import { Heart, TrendingDown, Dumbbell, Sparkles } from "lucide-react";
 
 const items = [
   { icon: TrendingDown, title: "Perte de poids", text: "Brûlez des calories et affinez votre silhouette en peu de temps." },
   { icon: Dumbbell, title: "Gain musculaire", text: "Renforcez et tonifiez l'ensemble de votre corps en profondeur." },
   { icon: Heart, title: "Meilleure circulation", text: "Stimulez la micro-circulation et boostez votre énergie." },
-  { icon: Activity, title: "Récupération musculaire", text: "Accélérez la récupération après l'effort, sans surcharge articulaire." },
-  { icon: Shield, title: "Prévention des blessures", text: "Renforcez les muscles profonds et stabilisateurs en douceur." },
   { icon: Sparkles, title: "Bien-être global", text: "Sentez-vous plus tonique, plus léger·e, plus serein·e au quotidien." },
 ];
 

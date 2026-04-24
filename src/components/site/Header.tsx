@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { SITE, scrollToId } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -30,11 +29,6 @@ export const Header = () => {
     if (pathname === item.to && item.hash) {
       scrollToId(item.hash);
     }
-  };
-
-  const handleCta = () => {
-    if (pathname === "/") scrollToId("decouverte");
-    else navigate("/contact");
   };
 
   return (
@@ -98,14 +92,6 @@ export const Header = () => {
           >
             <Phone className="w-4 h-4" />
           </a>
-          <Button
-            variant="hero"
-            size="sm"
-            onClick={handleCta}
-            className="text-xs sm:text-sm"
-          >
-            Séance offerte
-          </Button>
         </div>
       </div>
     </header>
