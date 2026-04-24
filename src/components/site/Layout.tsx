@@ -16,7 +16,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
-      <main className="flex-1 pt-16 md:pt-20" id="top">
+      <main className="flex-1 pt-14 md:pt-20" id="top">
         {children}
       </main>
       <Footer />
