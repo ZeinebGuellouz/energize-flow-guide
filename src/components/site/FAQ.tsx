@@ -3,7 +3,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 const faqs = [
   {
     q: "L'EMS est-elle adaptée à tout le monde ?",
-    a: "Oui, l'électrostimulation EMS s'adapte à tous les niveaux : débutants, sportifs, seniors, personnes en rééducation. Un bilan préalable est réalisé avec votre coach. Quelques contre-indications existent (grossesse, pacemaker) — nous en discutons ensemble.",
+    a: "Oui, l'électrostimulation EMS s'adapte à tous les niveaux : débutants, sportifs, seniors, personnes en rééducation. Un bilan préalable est réalisé avec votre coach. Quelques contre-indications existent (grossesse, pacemaker), nous en discutons ensemble.",
   },
   {
     q: "À quelle fréquence dois-je venir ?",
@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: "Puis-je combiner EMS et nutrition Herbalife ?",
-    a: "Absolument, c'est même notre approche complète. Nous vous accompagnons sur l'aspect nutrition pour maximiser vos résultats — perte de poids, prise de masse ou bien-être général.",
+    a: "Absolument, c'est même notre approche complète. Nous vous accompagnons sur l'aspect nutrition pour maximiser vos résultats : perte de poids, prise de masse ou bien-être général.",
   },
 ];
 
