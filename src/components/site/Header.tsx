@@ -26,6 +26,12 @@ export const Header = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const handleNavClick = (item: typeof NAV[0]) => {
+    if (pathname === item.to && item.hash) {
+      scrollToId(item.hash);
+    }
+  };
+
   const handleCta = () => {
     if (pathname === "/") scrollToId("decouverte");
     else navigate("/contact");
@@ -63,6 +69,7 @@ export const Header = () => {
             <Link
               key={item.to}
               to={item.to}
+              onClick={() => handleNavClick(item)}
               className={cn(
                 "px-2.5 md:px-4 py-2 rounded-full text-xs md:text-sm font-medium whitespace-nowrap transition-all duration-300",
                 pathname === item.to
@@ -95,7 +102,7 @@ export const Header = () => {
             variant="hero"
             size="sm"
             onClick={handleCta}
-            className="hidden sm:inline-flex"
+            className="text-xs sm:text-sm"
           >
             Séance offerte
           </Button>

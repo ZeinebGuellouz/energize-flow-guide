@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
 import { CheckCircle2, Dumbbell } from "lucide-react";
-import { buildMailto, openMailto } from "@/lib/mailto";
+import { submitRequestForm } from "@/lib/emailjs";
 
 const objectifs = ["Perte de poids", "Prise de masse / tonification", "Récupération / bien-être", "Préparation physique", "Autre"];
 const formules = ["Séance unitaire", "Pack 5 séances", "Pack 10 séances", "Abonnement mensuel", "Je ne sais pas encore"];
@@ -67,43 +67,47 @@ export const EmsRequestForm = ({
 
   const onSubmit = async (data: FormValues) => {
     const civText = data.civilite === "mme" ? "Madame" : "Monsieur";
-    const url = buildMailto({
+
+    const formData = {
+      from_name: `${data.prenom} ${data.nom}`,
+      from_email: data.email,
       subject: `Demande EMS — ${data.formule} — ${data.prenom} ${data.nom}`,
-      bodyLines: [
-        "Nouvelle demande de réservation EMS",
-        "",
-        ["Civilité", civText],
-        ["Nom", data.nom],
-        ["Prénom", data.prenom],
-        ["Email", data.email],
-        ["Téléphone", data.telephone],
-        "",
-        ["Objectif", data.objectif],
-        ["Formule souhaitée", data.formule],
-        "",
-        "— Créneau souhaité —",
-        ["Date", data.dateSouhaitee],
-        ["Heure", data.creneau],
-        "",
-        "— Message —",
-        data.message || "(aucun)",
-      ],
-    });
-    openMailto(url);
-    toast({
-      title: "Email prêt à envoyer ✅",
-      description: "Votre messagerie s'ouvre. Cliquez sur Envoyer pour confirmer.",
-    });
-    setDone(true);
+      civilite: civText,
+      nom: data.nom,
+      prenom: data.prenom,
+      email: data.email,
+      telephone: data.telephone,
+      objectif: data.objectif,
+      formule: data.formule,
+      date: data.dateSouhaitee,
+      creneau: data.creneau,
+      message: data.message || "(aucun)",
+    };
+
+    const result = await submitRequestForm(formData);
+
+    if (result.success) {
+      toast({
+        title: "Demande envoyée ✅",
+        description: "Nous recevrons votre demande et vous répondrons dans les 24h.",
+      });
+      setDone(true);
+    } else {
+      toast({
+        title: "Erreur d'envoi",
+        description: result.message,
+        variant: "destructive",
+      });
+    }
   };
 
   if (done) {
     return (
-      <div className="bg-card rounded-3xl shadow-elevated p-10 text-center border border-border">
-        <CheckCircle2 className="w-16 h-16 text-accent mx-auto mb-4" />
-        <h3 className="text-2xl font-black mb-2">Presque terminé !</h3>
-        <p className="text-muted-foreground">
-          Votre messagerie s'est ouverte avec votre demande. Vérifiez et cliquez sur <strong>Envoyer</strong>.
+      <div className="bg-card rounded-3xl shadow-elevated p-8 md:p-10 text-center border border-border">
+        <CheckCircle2 className="w-14 h-14 md:w-16 md:h-16 text-accent mx-auto mb-4" />
+        <h3 className="text-xl md:text-2xl font-black mb-3">Demande reçue ✅</h3>
+        <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+          Votre demande a été envoyée avec succès! Nous traiterons votre dossier et vous recontacterons par téléphone ou email dans les 24h ouvrées.
         </p>
       </div>
     );
