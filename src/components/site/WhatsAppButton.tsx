@@ -11,9 +11,10 @@ export const WhatsAppButton = () => {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Contacter sur WhatsApp"
-      className="fixed bottom-5 right-5 z-40 w-14 h-14 rounded-full bg-[#25D366] text-white grid place-items-center shadow-glow animate-pulse-glow hover:scale-110 transition-transform"
+      style={{ bottom: "calc(1.25rem + env(safe-area-inset-bottom))" }}
+      className="fixed right-4 sm:right-5 z-40 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] text-white grid place-items-center shadow-glow animate-pulse-glow hover:scale-110 transition-transform"
     >
-      <MessageCircle className="w-7 h-7" fill="currentColor" />
+      <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7" fill="currentColor" />
     </a>
   );
 };
