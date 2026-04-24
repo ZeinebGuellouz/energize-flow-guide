@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Phone } from "lucide-react";
 import { SITE, scrollToId } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -16,7 +16,6 @@ const NAV = [
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const { pathname } = useLocation();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
