@@ -103,11 +103,11 @@ export const EmsRequestForm = ({
 
   if (done) {
     return (
-      <div className="bg-card rounded-3xl shadow-elevated p-10 text-center border border-border">
-        <CheckCircle2 className="w-16 h-16 text-accent mx-auto mb-4" />
-        <h3 className="text-2xl font-black mb-2">Presque terminé !</h3>
-        <p className="text-muted-foreground">
-          Votre messagerie s'est ouverte avec votre demande. Vérifiez et cliquez sur <strong>Envoyer</strong>.
+      <div className="bg-card rounded-3xl shadow-elevated p-8 md:p-10 text-center border border-border">
+        <CheckCircle2 className="w-14 h-14 md:w-16 md:h-16 text-accent mx-auto mb-4" />
+        <h3 className="text-xl md:text-2xl font-black mb-3">Demande reçue ✅</h3>
+        <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+          Votre demande a été envoyée avec succès! Nous traiterons votre dossier et vous recontacterons par téléphone ou email dans les 24h ouvrées.
         </p>
       </div>
     );

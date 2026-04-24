@@ -93,11 +93,11 @@ export const DiscoveryForm = () => {
 
   if (done) {
     return (
-      <div className="bg-card rounded-3xl shadow-elevated p-10 text-center border border-border">
-        <CheckCircle2 className="w-16 h-16 text-accent mx-auto mb-4" />
-        <h3 className="text-2xl font-black mb-2">Presque terminé !</h3>
-        <p className="text-muted-foreground">
-          Votre messagerie s'est ouverte avec votre demande. Vérifiez et appuyez sur <strong>Envoyer</strong> pour nous transmettre votre réservation.
+      <div className="bg-card rounded-3xl shadow-elevated p-8 md:p-10 text-center border border-border">
+        <CheckCircle2 className="w-14 h-14 md:w-16 md:h-16 text-accent mx-auto mb-4" />
+        <h3 className="text-xl md:text-2xl font-black mb-3">Demande reçue ✅</h3>
+        <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+          Votre réservation a été envoyée avec succès! Nous traiterons votre demande et vous recontacterons par téléphone ou email dans les 24h ouvrées.
         </p>
       </div>
     );
@@ -111,35 +111,35 @@ export const DiscoveryForm = () => {
       onSubmit={handleSubmit(onSubmit)}
       className="bg-card rounded-3xl shadow-elevated p-5 sm:p-6 md:p-10 border border-border"
     >
-      <div className="flex items-center gap-3 mb-6">
-        <div className="w-12 h-12 rounded-2xl bg-gradient-accent grid place-items-center shadow-glow">
+      <div className="flex items-center gap-3 mb-8">
+        <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-gradient-accent grid place-items-center shadow-glow flex-shrink-0">
           <Gift className="w-6 h-6 text-accent-foreground" />
         </div>
-        <div>
-          <h3 className="text-lg sm:text-xl md:text-2xl font-black leading-tight">Séance découverte offerte</h3>
-          <p className="text-sm text-muted-foreground">Pour vous + 1 ami·e</p>
+        <div className="min-w-0">
+          <h3 className="text-base sm:text-lg md:text-2xl font-black leading-tight">Séance découverte offerte</h3>
+          <p className="text-xs sm:text-sm text-muted-foreground">Pour vous + 1 ami·e</p>
         </div>
       </div>
 
       {/* Civilité */}
-      <div className="mb-5">
-        <Label className="mb-2 block">Civilité *</Label>
+      <div className="mb-6">
+        <Label className="mb-3 block text-sm">Civilité *</Label>
         <RadioGroup
           value={civ}
           onValueChange={(v) => setValue("civilite", v as "mme" | "mr", { shouldValidate: true })}
-          className="flex gap-4"
+          className="flex gap-4 sm:gap-6"
         >
           <label className="flex items-center gap-2 cursor-pointer">
-            <RadioGroupItem value="mme" id="civ-mme" /> <span>Madame</span>
+            <RadioGroupItem value="mme" id="civ-mme" /> <span className="text-sm sm:text-base">Madame</span>
           </label>
           <label className="flex items-center gap-2 cursor-pointer">
-            <RadioGroupItem value="mr" id="civ-mr" /> <span>Monsieur</span>
+            <RadioGroupItem value="mr" id="civ-mr" /> <span className="text-sm sm:text-base">Monsieur</span>
           </label>
         </RadioGroup>
         {errors.civilite && <p className="text-destructive text-xs mt-1">{errors.civilite.message}</p>}
       </div>
 
-      <div className="grid sm:grid-cols-2 gap-4 mb-5">
+      <div className="grid sm:grid-cols-2 gap-4 mb-6">
         <Field label="Nom *" error={errors.nom?.message}>
           <Input {...register("nom")} placeholder="Dupont" />
         </Field>
