@@ -29,7 +29,7 @@ const faqs = [
 
 export const FAQ = () => {
   return (
-    <section id="faq" className="py-16 md:py-32 bg-gradient-soft">
+    <section id="faq" className="py-12 md:py-32 bg-gradient-soft">
       <div className="container-px max-w-4xl mx-auto">
         <div className="text-center mb-8 md:mb-12 reveal">
           <span className="text-accent font-semibold uppercase tracking-widest text-xs sm:text-sm">FAQ</span>

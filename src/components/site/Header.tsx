@@ -39,12 +39,12 @@ export const Header = () => {
           : "bg-transparent"
       )}
     >
-      <div className="container-px max-w-7xl mx-auto flex items-center justify-between gap-2 h-16 md:h-20">
-        <Link to="/" className="flex items-center gap-2 group shrink-0">
-          <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-gradient-accent grid place-items-center font-black text-accent-foreground shadow-glow group-hover:scale-105 transition-transform">
+      <div className="container-px max-w-7xl mx-auto flex items-center justify-between gap-1 sm:gap-2 h-14 md:h-20">
+        <Link to="/" className="flex items-center gap-2 group shrink-0" aria-label="Accueil Nutri-Forme">
+          <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-gradient-accent grid place-items-center font-black text-accent-foreground shadow-glow group-hover:scale-105 transition-transform text-sm md:text-base">
             N
           </div>
-          <div className="leading-tight hidden sm:block">
+          <div className="leading-tight hidden md:block">
             <div className={cn("font-bold text-sm md:text-base", scrolled ? "text-foreground" : "text-foreground")}>
               Nutri-Forme
             </div>
@@ -55,7 +55,7 @@ export const Header = () => {
         </Link>
 
         <nav
-          className="flex-1 flex items-center justify-center gap-0.5 md:gap-1 overflow-x-auto no-scrollbar"
+          className="flex-1 flex items-center justify-center gap-0 md:gap-1 overflow-x-auto no-scrollbar"
           aria-label="Navigation principale"
         >
           {NAV.map((item) => (
@@ -64,7 +64,7 @@ export const Header = () => {
               to={item.to}
               onClick={() => handleNavClick(item)}
               className={cn(
-                "px-2.5 md:px-4 py-2 rounded-full text-xs md:text-sm font-medium whitespace-nowrap transition-all duration-300",
+                "px-2 md:px-4 py-1.5 md:py-2 rounded-full text-[11px] md:text-sm font-medium whitespace-nowrap transition-all duration-300",
                 pathname === item.to
                   ? "text-accent bg-secondary"
                   : "text-foreground/80 hover:text-accent hover:bg-secondary"
@@ -75,7 +75,7 @@ export const Header = () => {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2 md:gap-3 shrink-0">
+        <div className="flex items-center gap-1 md:gap-3 shrink-0">
           <a
             href={`tel:${SITE.phoneIntl}`}
             aria-label={`Appeler ${SITE.phone}`}
@@ -87,7 +87,7 @@ export const Header = () => {
           <a
             href={`tel:${SITE.phoneIntl}`}
             aria-label="Appeler"
-            className="md:hidden p-2 rounded-full text-foreground hover:bg-secondary hover:text-accent transition-colors"
+            className="md:hidden p-1.5 rounded-full text-foreground hover:bg-secondary hover:text-accent transition-colors"
           >
             <Phone className="w-4 h-4" />
           </a>

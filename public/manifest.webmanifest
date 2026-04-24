@@ -1,0 +1,26 @@
+{
+  "name": "Espace Nutri-Forme Fréjus Plage",
+  "short_name": "Nutri-Forme",
+  "description": "Studio EMS premium à Fréjus Plage. Réservez votre séance d'électrostimulation.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a1628",
+  "theme_color": "#0ea5e9",
+  "lang": "fr-FR",
+  "icons": [
+    {
+      "src": "/app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
