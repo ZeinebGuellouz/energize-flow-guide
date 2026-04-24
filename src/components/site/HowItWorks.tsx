@@ -5,7 +5,7 @@ import { scrollToId } from "@/lib/site";
 
 const steps = [
   { n: "01", title: "Accueil & bilan", text: "Votre coach analyse vos objectifs, votre forme et personnalise votre programme." },
-  { n: "02", title: "Mise en tenue EMS", text: "Vous enfilez la combinaison connectée — confort optimal, électrodes humidifiées." },
+  { n: "02", title: "Mise en tenue EMS", text: "Vous enfilez la combinaison connectée, confort optimal, électrodes humidifiées." },
   { n: "03", title: "20 min d'entraînement", text: "Mouvements simples guidés par votre coach, intensité ajustée en temps réel." },
   { n: "04", title: "Étirements & conseils", text: "Récupération active et conseils nutrition pour prolonger les bénéfices." },
 ];
