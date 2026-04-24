@@ -9,7 +9,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { toast } from "@/hooks/use-toast";
 import { CheckCircle2, Gift, Users } from "lucide-react";
-import { submitFormspreeForm } from "@/lib/formspree";
+import { submitDiscoveryForm } from "@/lib/emailjs";
 import {
   Select,
   SelectContent,
@@ -57,32 +57,24 @@ export const DiscoveryForm = () => {
     const civText = data.civilite === "mme" ? "Madame" : "Monsieur";
 
     const formData = {
+      from_name: `${data.prenom} ${data.nom}`,
+      from_email: data.email,
       subject: `Réservation séance découverte EMS — ${data.prenom} ${data.nom}`,
-      "Civilité (principal)": civText,
-      "Nom (principal)": data.nom,
-      "Prénom (principal)": data.prenom,
-      "Email (principal)": data.email,
-      "Mobile (principal)": data.mobile,
-      "Code postal": data.codePostal,
-      "Date souhaitée": data.dateSouhaitee,
-      "Créneau souhaité": data.creneau,
-      "Ami - Nom": data.amiNom,
-      "Ami - Prénom": data.amiPrenom,
-      "Ami - Mobile": data.amiMobile,
-      "Acceptation SMS": "Oui",
-      _replyto: data.email,
+      civilite: civText,
+      nom: data.nom,
+      prenom: data.prenom,
+      email: data.email,
+      mobile: data.mobile,
+      code_postal: data.codePostal,
+      date: data.dateSouhaitee,
+      creneau: data.creneau,
+      ami_nom: data.amiNom,
+      ami_prenom: data.amiPrenom,
+      ami_mobile: data.amiMobile,
+      sms_accepte: "Oui",
     };
 
-    const formEmail = import.meta.env.VITE_FORM_EMAIL || import.meta.env.VITE_FORMSPREE_DISCOVERY_ID;
-    if (!formEmail) {
-      toast({
-        title: "Configuration manquante",
-        description: "Les variables d'environnement Formspree ne sont pas configurées.",
-        variant: "destructive",
-      });
-      return;
-    }
-    const result = await submitFormspreeForm(formEmail, formData);
+    const result = await submitDiscoveryForm(formData);
 
     if (result.success) {
       toast({

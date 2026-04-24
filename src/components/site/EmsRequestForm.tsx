@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
 import { CheckCircle2, Dumbbell } from "lucide-react";
-import { submitFormspreeForm } from "@/lib/formspree";
+import { submitRequestForm } from "@/lib/emailjs";
 
 const objectifs = ["Perte de poids", "Prise de masse / tonification", "Récupération / bien-être", "Préparation physique", "Autre"];
 const formules = ["Séance unitaire", "Pack 5 séances", "Pack 10 séances", "Abonnement mensuel", "Je ne sais pas encore"];
@@ -69,30 +69,22 @@ export const EmsRequestForm = ({
     const civText = data.civilite === "mme" ? "Madame" : "Monsieur";
 
     const formData = {
+      from_name: `${data.prenom} ${data.nom}`,
+      from_email: data.email,
       subject: `Demande EMS — ${data.formule} — ${data.prenom} ${data.nom}`,
-      "Civilité": civText,
-      "Nom": data.nom,
-      "Prénom": data.prenom,
-      "Email": data.email,
-      "Téléphone": data.telephone,
-      "Objectif": data.objectif,
-      "Formule souhaitée": data.formule,
-      "Date souhaitée": data.dateSouhaitee,
-      "Créneau souhaité": data.creneau,
-      "Message": data.message || "(aucun)",
-      _replyto: data.email,
+      civilite: civText,
+      nom: data.nom,
+      prenom: data.prenom,
+      email: data.email,
+      telephone: data.telephone,
+      objectif: data.objectif,
+      formule: data.formule,
+      date: data.dateSouhaitee,
+      creneau: data.creneau,
+      message: data.message || "(aucun)",
     };
 
-    const formEmail = import.meta.env.VITE_FORM_EMAIL || import.meta.env.VITE_FORMSPREE_REQUEST_ID;
-    if (!formEmail) {
-      toast({
-        title: "Configuration manquante",
-        description: "Les variables d'environnement Formspree ne sont pas configurées.",
-        variant: "destructive",
-      });
-      return;
-    }
-    const result = await submitFormspreeForm(formEmail, formData);
+    const result = await submitRequestForm(formData);
 
     if (result.success) {
       toast({
