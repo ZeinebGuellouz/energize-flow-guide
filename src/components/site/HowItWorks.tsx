@@ -12,7 +12,7 @@ const steps = [
 
 export const HowItWorks = () => {
   return (
-    <section id="seance" className="py-16 md:py-32 bg-background">
+    <section id="seance" className="py-12 md:py-32 bg-background">
       <div className="container-px max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-10 md:gap-12 lg:gap-20 items-center">
           <div className="reveal-left order-2 lg:order-1">

@@ -20,7 +20,7 @@ const reviews = [
 
 export const Testimonials = () => {
   return (
-    <section id="avis" className="py-16 md:py-32 bg-gradient-dark text-primary-foreground relative overflow-hidden">
+    <section id="avis" className="py-12 md:py-32 bg-gradient-dark text-primary-foreground relative overflow-hidden">
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--accent))_0%,transparent_50%)]" />
       <div className="container-px max-w-7xl mx-auto relative">
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16 reveal">
