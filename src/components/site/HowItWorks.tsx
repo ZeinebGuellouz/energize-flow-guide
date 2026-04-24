@@ -15,18 +15,18 @@ export const HowItWorks = () => {
     <section id="seance" className="py-12 md:py-20 bg-background">
       <div className="container-px max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-10 md:gap-12 lg:gap-20 items-center">
-          <div className="reveal-left order-2 lg:order-1 flex justify-center">
-            <div className="relative w-full max-w-sm lg:max-w-md">
+          <div className="reveal-left order-2 lg:order-1">
+            <div className="relative">
               <img
                 src={emsImg}
                 alt="Combinaison EMS électrostimulation"
                 loading="lazy"
                 className="rounded-3xl shadow-elevated w-full aspect-[4/5] object-cover"
               />
-              <div className="absolute -bottom-5 -right-5 hidden md:block w-32 h-32 lg:w-36 lg:h-36 rounded-3xl overflow-hidden shadow-glow border-4 border-background">
+              <div className="absolute -bottom-6 -right-6 hidden md:block w-48 h-48 rounded-3xl overflow-hidden shadow-glow border-4 border-background">
                 <img src={coachImg} alt="Coach EMS Fréjus" loading="lazy" className="w-full h-full object-cover" />
               </div>
-              <div className="absolute -top-3 -left-3 bg-accent text-accent-foreground px-3 py-1.5 rounded-2xl shadow-glow font-bold text-xs sm:text-sm">
+              <div className="absolute -top-3 -left-3 sm:-top-4 sm:-left-4 bg-accent text-accent-foreground px-3 py-2 sm:px-5 sm:py-3 rounded-2xl shadow-glow font-bold text-sm sm:text-base">
                 20 min · 350 muscles
               </div>
             </div>
