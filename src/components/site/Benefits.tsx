@@ -9,7 +9,7 @@ const items = [
 
 export const Benefits = () => {
   return (
-    <section id="benefices" className="py-12 md:py-32 bg-gradient-soft">
+    <section id="benefices" className="py-12 md:py-20 bg-gradient-soft">
       <div className="container-px max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-16 reveal">
           <span className="text-accent font-semibold uppercase tracking-widest text-xs sm:text-sm">Bénéfices</span>

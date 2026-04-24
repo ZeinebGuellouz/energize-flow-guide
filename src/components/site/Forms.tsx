@@ -2,7 +2,7 @@ import { DiscoveryForm } from "./DiscoveryForm";
 
 export const Forms = () => {
   return (
-    <section id="decouverte" className="py-12 md:py-32 bg-background relative scroll-mt-20">
+    <section id="decouverte" className="py-12 md:py-20 bg-background relative scroll-mt-20">
       <div className="container-px max-w-3xl mx-auto">
         <div className="text-center mb-8 md:mb-14 reveal">
           <span className="text-accent font-semibold uppercase tracking-widest text-xs sm:text-sm">
