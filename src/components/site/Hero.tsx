@@ -5,7 +5,7 @@ import heroImg from "@/assets/hero-ems.jpg";
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-[100svh] flex items-center overflow-hidden -mt-16 md:-mt-20 pt-20 md:pt-20">
+    <section className="relative min-h-[100svh] flex items-center overflow-hidden -mt-14 md:-mt-20 pt-16 md:pt-20">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <img
@@ -26,14 +26,14 @@ export const Hero = () => {
             Studio EMS premium · Fréjus Plage
           </div>
 
-          <h1 className="text-[2.25rem] leading-[1.05] sm:text-5xl md:text-7xl font-black text-foreground mb-5 md:mb-6 animate-slide-up">
+          <h1 className="text-[2rem] leading-[1.05] sm:text-5xl md:text-7xl font-black text-foreground mb-5 md:mb-6 animate-slide-up">
             Stimule{" "}
             <span className="text-gradient-accent">350 muscles</span>
             <br />
             en seulement <span className="text-gradient-accent">20 min</span>
           </h1>
 
-          <p className="text-base sm:text-lg md:text-2xl text-muted-foreground mb-8 md:mb-10 max-w-2xl animate-slide-up font-light" style={{ animationDelay: "120ms" }}>
+          <p className="text-sm sm:text-lg md:text-2xl text-muted-foreground mb-6 md:mb-10 max-w-2xl animate-slide-up font-light" style={{ animationDelay: "120ms" }}>
             Nouvelle génération d'<strong className="font-semibold text-foreground">électrostimulation</strong>.
             Performance, silhouette et bien-être réunis dans une expérience unique.
           </p>
