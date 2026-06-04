@@ -21,9 +21,11 @@ import { submitRequestForm } from "@/lib/emailjs";
 const objectifs = ["Perte de poids", "Prise de masse / tonification", "Récupération / bien-être", "Préparation physique", "Autre"];
 const formules = ["Séance unitaire", "Pack 5 séances", "Pack 10 séances", "Abonnement mensuel", "Je ne sais pas encore"];
 const TIME_SLOTS = [
-  "09:00", "09:30", "10:00", "10:30", "11:00", "11:30",
-  "12:00", "14:00", "14:30", "15:00", "15:30", "16:00",
-  "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30",
+  "09:00","09:15","09:30","09:45","10:00","10:15","10:30","10:45",
+  "11:00","11:15","11:30","11:45","12:00","12:15","12:30","12:45",
+  "14:00","14:15","14:30","14:45","15:00","15:15","15:30","15:45",
+  "16:00","16:15","16:30","16:45","17:00","17:15","17:30","17:45",
+  "18:00","18:15","18:30","18:45","19:00","19:15","19:30","19:45",
 ];
 const todayISO = () => new Date().toISOString().split("T")[0];
 

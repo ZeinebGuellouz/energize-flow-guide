@@ -1,20 +1,23 @@
 import { Quote, Star } from "lucide-react";
 
+const GOOGLE_REVIEWS_URL =
+  "https://www.google.com/search?q=Studio+d%E2%80%99Electro-Stimulation+Fr%C3%A9jus+Reviews";
+
 const reviews = [
   {
     name: "Sophie M.",
-    role: "Fréjus",
-    text: "En 2 mois, -6 kg et une silhouette tonique. Équipe au top !",
+    role: "Avis Google",
+    text: "Studio super propre, équipe à l'écoute. En 2 mois, -6 kg et une silhouette tonique !",
   },
   {
     name: "Karim B.",
-    role: "Saint-Raphaël",
-    text: "20 min et une énergie folle. Parfait pour mon planning chargé.",
+    role: "Avis Google",
+    text: "20 min d'EMS et je sens vraiment la séance. Parfait pour mon planning chargé.",
   },
   {
     name: "Élodie R.",
-    role: "Puget-sur-Argens",
-    text: "EMS + coaching nutrition : résultats visibles et durables.",
+    role: "Avis Google",
+    text: "Accompagnement nutrition au top, des résultats visibles et durables. Je recommande !",
   },
 ];
 
@@ -24,10 +27,19 @@ export const Testimonials = () => {
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--accent))_0%,transparent_50%)]" />
       <div className="container-px max-w-7xl mx-auto relative">
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12 reveal">
-          <span className="text-accent font-semibold uppercase tracking-widest text-xs sm:text-sm">Témoignages</span>
+          <span className="text-accent font-semibold uppercase tracking-widest text-xs sm:text-sm">Avis Google</span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black mt-3 mb-3 leading-tight">
             Ils ont <span className="text-gradient-accent">transformé leur quotidien</span>
           </h2>
+          <div className="flex items-center justify-center gap-2 mt-3 text-sm text-primary-foreground/80">
+            <div className="flex gap-0.5">
+              {[...Array(5)].map((_, k) => (
+                <Star key={k} className="w-4 h-4 fill-accent text-accent" />
+              ))}
+            </div>
+            <span className="font-semibold">5,0</span>
+            <span className="text-primary-foreground/60">· Avis vérifiés Google</span>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-5">
@@ -52,6 +64,17 @@ export const Testimonials = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="text-center mt-8">
+          <a
+            href={GOOGLE_REVIEWS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-sm font-semibold transition-colors"
+          >
+            Voir tous les avis sur Google →
+          </a>
         </div>
       </div>
     </section>
