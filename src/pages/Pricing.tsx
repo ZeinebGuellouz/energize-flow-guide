@@ -1,4 +1,5 @@
 import { Layout } from "@/components/site/Layout";
+import { SEO } from "@/components/site/SEO";
 import { PageHero } from "@/components/site/PageHero";
 import { Button } from "@/components/ui/button";
 import { Check, Sparkles } from "lucide-react";
@@ -61,6 +62,11 @@ const Pricing = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Tarifs EMS — Espace Nutri-Forme Fréjus Plage"
+        description="Formules EMS simples et transparentes à Fréjus Plage. Séance découverte offerte, abonnements mensuels. Souscription au studio après bilan."
+        path="/tarifs"
+      />
       <PageHero
         eyebrow="Tarifs"
         title={<>Des formules <span className="text-gradient-accent">simples et transparentes</span></>}

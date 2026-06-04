@@ -1,4 +1,5 @@
 import { Layout } from "@/components/site/Layout";
+import { SEO } from "@/components/site/SEO";
 import { PageHero } from "@/components/site/PageHero";
 import { CTABand } from "@/components/site/CTABand";
 import { Heart, Target, Users, Award } from "lucide-react";
@@ -15,6 +16,11 @@ const values = [
 const About = () => {
   return (
     <Layout>
+      <SEO
+        title="À propos — Espace Nutri-Forme Fréjus Plage"
+        description="Découvrez l'Espace Nutri-Forme à Fréjus Plage : équipe certifiée, matériel EMS dernière génération et accompagnement bienveillant."
+        path="/a-propos"
+      />
       <PageHero
         eyebrow="À propos"
         title={<>L'Espace Nutri-Forme, <span className="text-gradient-accent">votre studio à Fréjus Plage</span></>}
