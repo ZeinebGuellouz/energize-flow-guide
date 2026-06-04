@@ -37,6 +37,11 @@ const ranges = [
 const Herbalife = () => {
   return (
     <Layout>
+      <SEO
+        title="Nutrition Herbalife — Espace Nutri-Forme Fréjus"
+        description="Programmes nutrition Herbalife à Fréjus Plage : perte de poids, énergie, performance. Accompagnement personnalisé par votre coach."
+        path="/herbalife"
+      />
       <PageHero
         eyebrow="Produits Herbalife"
         title={<>Une nutrition <span className="text-gradient-accent">qui démultiplie vos résultats</span></>}
