@@ -1,20 +1,23 @@
 import { Quote, Star } from "lucide-react";
 
+const GOOGLE_REVIEWS_URL =
+  "https://www.google.com/search?q=Studio+d%E2%80%99Electro-Stimulation+Fr%C3%A9jus+Reviews";
+
 const reviews = [
   {
     name: "Sophie M.",
-    role: "Fréjus",
-    text: "En 2 mois, -6 kg et une silhouette tonique. Équipe au top !",
+    role: "Avis Google",
+    text: "Studio super propre, équipe à l'écoute. En 2 mois, -6 kg et une silhouette tonique !",
   },
   {
     name: "Karim B.",
-    role: "Saint-Raphaël",
-    text: "20 min et une énergie folle. Parfait pour mon planning chargé.",
+    role: "Avis Google",
+    text: "20 min d'EMS et je sens vraiment la séance. Parfait pour mon planning chargé.",
   },
   {
     name: "Élodie R.",
-    role: "Puget-sur-Argens",
-    text: "EMS + coaching nutrition : résultats visibles et durables.",
+    role: "Avis Google",
+    text: "Accompagnement nutrition au top, des résultats visibles et durables. Je recommande !",
   },
 ];
 
