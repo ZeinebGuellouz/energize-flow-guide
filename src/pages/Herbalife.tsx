@@ -1,4 +1,5 @@
 import { Layout } from "@/components/site/Layout";
+import { SEO } from "@/components/site/SEO";
 import { PageHero } from "@/components/site/PageHero";
 import { CTABand } from "@/components/site/CTABand";
 import { Button } from "@/components/ui/button";
