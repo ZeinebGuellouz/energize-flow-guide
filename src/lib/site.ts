@@ -5,9 +5,9 @@ export const SITE = {
   phoneIntl: "+33698890401",
   whatsapp: "33698890401",
   email: "zeineb.guellouz@medtech.tn",
-  address: "La Grande Galerie - 137 Bd de la Libération, 83600 Fréjus",
-  addressLine1: "La Grande Galerie",
-  addressLine2: "137 Bd de la Libération",
+  address: "194 Rue de la République, 83600 Fréjus",
+  addressLine1: "194 Rue de la République",
+  addressLine2: "",
   postalCode: "83600",
   city: "Fréjus",
   hours: [
@@ -16,9 +16,9 @@ export const SITE = {
     { day: "Dimanche", time: "Fermé" },
   ],
   mapsEmbed:
-    "https://www.google.com/maps?q=137+Bd+de+la+Lib%C3%A9ration+83600+Fr%C3%A9jus&output=embed",
+    "https://www.google.com/maps?q=194+Rue+de+la+R%C3%A9publique+83600+Fr%C3%A9jus&output=embed",
   mapsLink:
-    "https://www.google.com/maps/search/?api=1&query=137+Bd+de+la+Lib%C3%A9ration+83600+Fr%C3%A9jus",
+    "https://www.google.com/maps/search/?api=1&query=194+Rue+de+la+R%C3%A9publique+83600+Fr%C3%A9jus",
 };
 
 export const scrollToId = (id: string) => {
