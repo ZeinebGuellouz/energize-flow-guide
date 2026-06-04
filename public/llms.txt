@@ -1,0 +1,12 @@
+# Espace Nutri-Forme Fréjus Plage
+
+> Studio d'électrostimulation (EMS) et nutrition Herbalife à Fréjus Plage. Séances de 20 min activant 350 muscles, accompagnement personnalisé.
+
+## Pages
+
+- [Accueil](/): Présentation du studio EMS et séance découverte offerte.
+- [À propos](/a-propos): Équipe, valeurs et matériel du studio.
+- [Services EMS](/services-ems): Bénéfices, déroulé d'une séance, FAQ.
+- [Nutrition Herbalife](/herbalife): Programmes nutrition et accompagnement.
+- [Tarifs](/tarifs): Formules et abonnements.
+- [Contact](/contact): Adresse 194 Rue de la République 83600 Fréjus, téléphone 06 98 89 04 01.
