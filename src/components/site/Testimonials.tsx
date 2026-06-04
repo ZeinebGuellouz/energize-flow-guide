@@ -4,22 +4,23 @@ const GOOGLE_REVIEWS_URL =
   "https://www.google.com/search?sca_esv=88d66a416da09828&sxsrf=ANbL-n5ycST_8UECStSP_BQWNNJL9BrqUg:1780581163081&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOaJDE5uxAhXfUt1FXB_Vu4xYlVfKTF5DYb6BqSHApHHxmx2GQy8TmhclecJ3n80l3jyjHbbq-IFnx9ur01fPhmBxXxaKjzDM-BaiKeeCI3skRUzyMw%3D%3D&q=Studio+d%E2%80%99Electro-Stimulation+Reviews&sa=X&ved=2ahUKEwi1k-Dd3e2UAxXszgIHHU2lMPwQ0bkNegQIIhAH";
 
 const reviews = [
-  {
-    name: "Sophie M.",
-    role: "Avis Google",
-    text: "Studio super propre, équipe à l'écoute. En 2 mois, -6 kg et une silhouette tonique !",
-  },
-  {
-    name: "Karim B.",
-    role: "Avis Google",
-    text: "20 min d'EMS et je sens vraiment la séance. Parfait pour mon planning chargé.",
-  },
-  {
-    name: "Élodie R.",
-    role: "Avis Google",
-    text: "Accompagnement nutrition au top, des résultats visibles et durables. Je recommande !",
-  },
+{
+name: "René Barsi",
+role: "Avis Google",
+text: "À 80 ans, cela fait maintenant deux ans que je fréquente ce studio. Le concept est innovant, parfaitement encadré et adapté à chacun. Une expérience que je recommande vivement.",
+},
+{
+name: "Solène Riou",
+role: "Avis Google",
+text: "Ravie des résultats obtenus ! Tonicité, fermeté et silhouette transformée. L’ambiance est excellente à chaque séance et les conseils nutrition font toute la différence.",
+},
+{
+name: "Ophélie Courieux",
+role: "Avis Google",
+text: "J'ai perdu 11 cm de tour de taille en seulement 3 semaines. Mon corps s'est affiné, ma peau s'est raffermie et j'ai gagné en tonicité. Une expérience incroyable.",
+},
 ];
+
 
 export const Testimonials = () => {
   return (
@@ -38,7 +39,7 @@ export const Testimonials = () => {
               ))}
             </div>
             <span className="font-semibold">5,0</span>
-            <span className="text-primary-foreground/60">· Avis vérifiés Google</span>
+            <span className="text-primary-foreground/60">· 72 Avis vérifiés Google</span>
           </div>
         </div>
 
