@@ -1,7 +1,7 @@
 import { Quote, Star } from "lucide-react";
 
 const GOOGLE_REVIEWS_URL =
-  "https://www.google.com/search?q=Studio+d%E2%80%99Electro-Stimulation+Fr%C3%A9jus+Reviews";
+  "https://www.google.com/search?sca_esv=88d66a416da09828&sxsrf=ANbL-n5ycST_8UECStSP_BQWNNJL9BrqUg:1780581163081&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOaJDE5uxAhXfUt1FXB_Vu4xYlVfKTF5DYb6BqSHApHHxmx2GQy8TmhclecJ3n80l3jyjHbbq-IFnx9ur01fPhmBxXxaKjzDM-BaiKeeCI3skRUzyMw%3D%3D&q=Studio+d%E2%80%99Electro-Stimulation+Reviews&sa=X&ved=2ahUKEwi1k-Dd3e2UAxXszgIHHU2lMPwQ0bkNegQIIhAH";
 
 const reviews = [
   {
