@@ -11,6 +11,12 @@ import posterSmoothiesBar from "@/assets/poster-smoothies-bar.jpg.asset.json";
 import posterDelicieux from "@/assets/poster-delicieux.jpg.asset.json";
 import posterRecuperation from "@/assets/poster-recuperation.jpg.asset.json";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { useState } from "react";
+
+import {
+  Dialog,
+  DialogContent,
+} from "@/components/ui/dialog";
 
 const smoothieSlides = [
   {
@@ -67,6 +73,7 @@ const ranges = [
 ];
 
 const Herbalife = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
   return (
     <Layout>
       <SEO
@@ -120,9 +127,10 @@ const Herbalife = () => {
               {smoothieSlides.map((slide, i) => (
                 <CarouselItem key={slide.alt} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
                   <div
-                    className="reveal relative overflow-hidden rounded-2xl aspect-[4/5] group shadow-soft hover:shadow-elevated transition-all duration-500"
-                    style={{ transitionDelay: `${i * 80}ms` }}
-                  >
+  onClick={() => setSelectedImage(slide)}
+  className="reveal relative overflow-hidden rounded-2xl aspect-[4/5] group shadow-soft hover:shadow-elevated transition-all duration-500 cursor-pointer"
+  style={{ transitionDelay: `${i * 80}ms` }}
+>
                     <img
                       src={slide.src}
                       alt={slide.alt}
@@ -195,6 +203,20 @@ const Herbalife = () => {
       </section>
 
       <CTABand />
+    <Dialog
+        open={!!selectedImage}
+        onOpenChange={() => setSelectedImage(null)}
+      >
+        <DialogContent className="max-w-6xl p-0 bg-transparent border-none shadow-none">
+          {selectedImage && (
+            <img
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+              className="w-full max-h-[90vh] object-contain rounded-xl"
+            />
+          )}
+        </DialogContent>
+      </Dialog>
     </Layout>
   );
 };
