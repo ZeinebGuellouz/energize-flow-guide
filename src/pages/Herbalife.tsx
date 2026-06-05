@@ -172,15 +172,15 @@ const Herbalife = () => {
             <span className="text-accent font-semibold uppercase tracking-widest text-sm">Gammes</span>
             <h2 className="text-3xl md:text-5xl font-black mt-3">Nos univers Herbalife</h2>
           </div>
-<Carousel opts={{ loop: true, align: "start" }} className="w-full">
-  <CarouselContent className="-ml-4">
+<Carousel opts={{ loop: true, align: "start" }} className="w-full overflow-hidden">
+  <CarouselContent className="-ml-4 flex">
     {ranges.map((r, i) => (
       <CarouselItem
         key={r.title}
-        className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
+        className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3 shrink-0"
       >
         <div
-          className="reveal h-full bg-card rounded-2xl p-8 shadow-soft hover:shadow-elevated transition-all hover:-translate-y-1 border border-border"
+          className="reveal h-full min-h-[320px] bg-card rounded-2xl p-8 shadow-soft hover:shadow-elevated transition-all hover:-translate-y-1 border border-border"
           style={{ transitionDelay: `${i * 80}ms` }}
         >
           <div className="flex items-start gap-5">
@@ -189,9 +189,7 @@ const Herbalife = () => {
             </div>
 
             <div className="flex-1">
-              <h3 className="text-xl font-bold mb-2">
-                {r.title}
-              </h3>
+              <h3 className="text-xl font-bold mb-2">{r.title}</h3>
 
               <p className="text-muted-foreground mb-4">
                 {r.text}
