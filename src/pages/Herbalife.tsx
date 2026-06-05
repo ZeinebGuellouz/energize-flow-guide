@@ -82,6 +82,28 @@ const Herbalife = () => {
         </div>
       </section>
 
+      <section className="py-14 md:py-24 bg-background">
+        <div className="container-px max-w-7xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14 reveal">
+            <span className="text-accent font-semibold uppercase tracking-widest text-xs sm:text-sm">Bar à smoothies</span>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black mt-3 leading-tight">
+              Notre <span className="text-gradient-accent">univers nutrition</span> en images
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            {posters.map((p, i) => (
+              <div
+                key={p.alt}
+                className="reveal overflow-hidden rounded-2xl shadow-soft hover:shadow-elevated transition-all duration-500 hover:-translate-y-1 bg-card"
+                style={{ transitionDelay: `${i * 60}ms` }}
+              >
+                <img src={p.src} alt={p.alt} loading="lazy" className="w-full h-64 sm:h-80 md:h-96 object-cover" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 md:py-28 bg-gradient-soft">
         <div className="container-px max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-14 reveal">
@@ -120,28 +142,6 @@ const Herbalife = () => {
             <Link to="/contact">
               <Button variant="hero" size="xl">Être conseillé·e par un coach</Button>
             </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-14 md:py-24 bg-gradient-soft">
-        <div className="container-px max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14 reveal">
-            <span className="text-accent font-semibold uppercase tracking-widest text-xs sm:text-sm">Bar à smoothies</span>
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black mt-3 leading-tight">
-              Notre <span className="text-gradient-accent">univers nutrition</span> en images
-            </h2>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-            {posters.map((p, i) => (
-              <div
-                key={p.alt}
-                className="reveal overflow-hidden rounded-2xl shadow-soft hover:shadow-elevated transition-all duration-500 hover:-translate-y-1 bg-card"
-                style={{ transitionDelay: `${i * 60}ms` }}
-              >
-                <img src={p.src} alt={p.alt} loading="lazy" className="w-full h-64 sm:h-80 md:h-96 object-cover" />
-              </div>
-            ))}
           </div>
         </div>
       </section>
