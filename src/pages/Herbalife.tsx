@@ -125,6 +125,28 @@ const Herbalife = () => {
       </section>
 
       <CTABand />
+
+      <section className="py-12 md:py-20 bg-background">
+        <div className="container-px max-w-7xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12 reveal">
+            <span className="text-accent font-semibold uppercase tracking-widest text-xs sm:text-sm">Bar à smoothies</span>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black mt-3 leading-tight">
+              Notre <span className="text-gradient-accent">univers nutrition</span> en images
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
+            {posters.map((p, i) => (
+              <div
+                key={p.alt}
+                className="reveal overflow-hidden rounded-2xl shadow-soft hover:shadow-elevated transition-all duration-500 hover:-translate-y-1 bg-card"
+                style={{ transitionDelay: `${i * 60}ms` }}
+              >
+                <img src={p.src} alt={p.alt} loading="lazy" className="w-full h-full object-cover" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 };
