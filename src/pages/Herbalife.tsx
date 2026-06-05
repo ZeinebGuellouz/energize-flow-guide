@@ -10,12 +10,33 @@ import posterNourrissez from "@/assets/poster-nourrissez.jpg.asset.json";
 import posterSmoothiesBar from "@/assets/poster-smoothies-bar.jpg.asset.json";
 import posterDelicieux from "@/assets/poster-delicieux.jpg.asset.json";
 import posterRecuperation from "@/assets/poster-recuperation.jpg.asset.json";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
-const posters = [
-  { src: posterSmoothiesBar.url, alt: "Bar à smoothies nutritionnels Fréjus Plage" },
-  { src: posterRecuperation.url, alt: "Formule récupération après séance EMS" },
-  { src: posterDelicieux.url, alt: "Smoothie Herbalife délicieux et bon pour vous" },
-  { src: posterNourrissez.url, alt: "Nourrissez vos résultats — duo EMS + Smoothie" },
+const smoothieSlides = [
+  {
+    src: posterSmoothiesBar.url,
+    alt: "Bar à smoothies nutritionnels Fréjus Plage",
+    title: "Bar à Smoothies",
+    desc: "Smoothies nutritionnels préparés sur place avec les produits Herbalife. Le complément parfait après votre séance EMS.",
+  },
+  {
+    src: posterRecuperation.url,
+    alt: "Formule récupération après séance EMS",
+    title: "Formule Récupération",
+    desc: "Protéines et acides aminés pour optimiser votre récupération musculaire post-EMS et accélérer vos résultats.",
+  },
+  {
+    src: posterDelicieux.url,
+    alt: "Smoothie Herbalife délicieux et bon pour vous",
+    title: "Goût & Nutrition",
+    desc: "Des recettes délicieuses qui allient plaisir et résultats. Parce que manger sain, c'est aussi savourer chaque gorgée.",
+  },
+  {
+    src: posterNourrissez.url,
+    alt: "Nourrissez vos résultats — duo EMS + Smoothie",
+    title: "Duo EMS + Nutrition",
+    desc: "Associez vos séances EMS à une nutrition adaptée pour des résultats explosifs et durables.",
+  },
 ];
 
 const ranges = [
@@ -82,24 +103,51 @@ const Herbalife = () => {
         </div>
       </section>
 
-      <section className="py-14 md:py-24 bg-background">
-        <div className="container-px max-w-7xl mx-auto">
+      <section className="py-16 md:py-28 bg-gradient-soft">
+        <div className="container-px max-w-6xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14 reveal">
             <span className="text-accent font-semibold uppercase tracking-widest text-xs sm:text-sm">Bar à smoothies</span>
             <h2 className="text-2xl sm:text-4xl md:text-5xl font-black mt-3 leading-tight">
-              Notre <span className="text-gradient-accent">univers nutrition</span> en images
+              Rechargez vos batteries après <span className="text-gradient-accent">chaque séance</span>
             </h2>
+            <p className="text-muted-foreground mt-4 text-base md:text-lg max-w-2xl mx-auto">
+              Nos formules nutritionnelles sur mesure pour maximiser vos résultats EMS. Un vrai bar à smoothies dans votre studio.
+            </p>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-            {posters.map((p, i) => (
-              <div
-                key={p.alt}
-                className="reveal overflow-hidden rounded-2xl shadow-soft hover:shadow-elevated transition-all duration-500 hover:-translate-y-1 bg-card"
-                style={{ transitionDelay: `${i * 60}ms` }}
-              >
-                <img src={p.src} alt={p.alt} loading="lazy" className="w-full h-64 sm:h-80 md:h-96 object-cover" />
-              </div>
-            ))}
+
+          <Carousel opts={{ loop: true, align: "start" }} className="w-full">
+            <CarouselContent className="-ml-4">
+              {smoothieSlides.map((slide, i) => (
+                <CarouselItem key={slide.alt} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                  <div
+                    className="reveal relative overflow-hidden rounded-2xl aspect-[4/5] group shadow-soft hover:shadow-elevated transition-all duration-500"
+                    style={{ transitionDelay: `${i * 80}ms` }}
+                  >
+                    <img
+                      src={slide.src}
+                      alt={slide.alt}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 text-white">
+                      <h3 className="text-lg md:text-xl font-bold leading-tight">{slide.title}</h3>
+                      <p className="text-white/80 text-sm mt-1.5 leading-relaxed">{slide.desc}</p>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="flex justify-center gap-3 mt-8">
+              <CarouselPrevious className="static translate-y-0 -left-0" />
+              <CarouselNext className="static translate-y-0 -right-0" />
+            </div>
+          </Carousel>
+
+          <div className="text-center mt-10 reveal">
+            <Link to="/contact">
+              <Button variant="hero" size="lg">Venir goûter nos formules</Button>
+            </Link>
           </div>
         </div>
       </section>
