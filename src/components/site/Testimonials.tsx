@@ -52,6 +52,7 @@ export const Testimonials = () => {
             </div>
 
             <span className="font-semibold">5,0</span>
+
             <span className="text-primary-foreground/60">
               · 72 Avis vérifiés Google
             </span>
@@ -61,39 +62,39 @@ export const Testimonials = () => {
         <div className="relative overflow-hidden">
           <div className="flex gap-5 animate-testimonials-scroll hover:[animation-play-state:paused]">
             {repeatedReviews.map((r, i) => (
-             <div
-  key={`${r.name}-${i}`}
-  className="min-w-[650px] max-w-[650px] min-h-[260px] bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-500"
->
-  <div className="flex flex-col h-full">
-    <Quote className="w-10 h-10 text-accent mb-5 opacity-80" />
+              <div
+                key={`${r.name}-${i}`}
+                className="min-w-[320px] max-w-[320px] sm:min-w-[360px] sm:max-w-[360px] md:min-w-[420px] md:max-w-[420px] min-h-[420px] bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 md:p-8 hover:bg-white/10 transition-all duration-500"
+              >
+                <div className="flex flex-col h-full">
+                  <Quote className="w-8 h-8 md:w-10 md:h-10 text-accent mb-5 opacity-80" />
 
-    <p className="text-primary-foreground/90 leading-relaxed text-lg flex-1">
-      "{r.text}"
-    </p>
+                  <p className="text-primary-foreground/90 leading-loose text-base flex-1">
+                    "{r.text}"
+                  </p>
 
-    <div className="flex items-center justify-between mt-6 pt-4 border-t border-white/10">
-      <div>
-        <div className="font-bold text-lg">
-          {r.name}
-        </div>
+                  <div className="flex items-center justify-between mt-6 pt-4 border-t border-white/10">
+                    <div>
+                      <div className="font-bold text-base md:text-lg">
+                        {r.name}
+                      </div>
 
-        <div className="text-sm text-primary-foreground/60">
-          {r.role}
-        </div>
-      </div>
+                      <div className="text-sm text-primary-foreground/60">
+                        {r.role}
+                      </div>
+                    </div>
 
-      <div className="flex gap-1">
-        {[...Array(5)].map((_, k) => (
-          <Star
-            key={k}
-            className="w-4 h-4 fill-accent text-accent"
-          />
-        ))}
-      </div>
-    </div>
-  </div>
-</div>
+                    <div className="flex gap-1">
+                      {[...Array(5)].map((_, k) => (
+                        <Star
+                          key={k}
+                          className="w-4 h-4 fill-accent text-accent"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
