@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Layout } from "@/components/site/Layout";
 import { SEO } from "@/components/site/SEO";
 import { PageHero } from "@/components/site/PageHero";
@@ -11,13 +10,9 @@ import posterNourrissez from "@/assets/poster-nourrissez.jpg.asset.json";
 import posterSmoothiesBar from "@/assets/poster-smoothies-bar.jpg.asset.json";
 import posterDelicieux from "@/assets/poster-delicieux.jpg.asset.json";
 import posterRecuperation from "@/assets/poster-recuperation.jpg.asset.json";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { useState } from "react";
+
 import {
   Dialog,
   DialogContent,
@@ -79,7 +74,6 @@ const ranges = [
 
 const Herbalife = () => {
   const [selectedImage, setSelectedImage] = useState(null);
-
   return (
     <Layout>
       <SEO
@@ -87,59 +81,37 @@ const Herbalife = () => {
         description="Programmes nutrition Herbalife à Fréjus Plage : perte de poids, énergie, performance. Accompagnement personnalisé par votre coach."
         path="/herbalife"
       />
-
       <PageHero
         eyebrow="Produits Herbalife"
-        title={
-          <>
-            Une nutrition{" "}
-            <span className="text-gradient-accent">
-              qui démultiplie vos résultats
-            </span>
-          </>
-        }
+        title={<>Une nutrition <span className="text-gradient-accent">qui démultiplie vos résultats</span></>}
         subtitle="Parce que sport et nutrition vont de pair, nous vous proposons les solutions Herbalife les mieux adaptées à vos objectifs."
       />
 
       <section className="py-20 md:py-28 bg-background">
         <div className="container-px max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div className="reveal-left">
-            <img
-              src={herbal}
-              loading="lazy"
-              alt="Produits Herbalife nutrition"
-              className="rounded-3xl shadow-elevated"
-            />
+            <img src={herbal} loading="lazy" alt="Produits Herbalife nutrition" className="rounded-3xl shadow-elevated" />
           </div>
-
           <div className="reveal-right space-y-5">
-            <span className="text-accent font-semibold uppercase tracking-widest text-sm">
-              Notre approche
-            </span>
-
+            <span className="text-accent font-semibold uppercase tracking-widest text-sm">Notre approche</span>
             <h2 className="text-3xl md:text-4xl font-black">
-              Nutrition + EMS ={" "}
-              <span className="text-gradient-accent">résultats accélérés</span>
+              Nutrition + EMS = <span className="text-gradient-accent">résultats accélérés</span>
             </h2>
-
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Distributeur indépendant Herbalife, nous vous conseillons des
-              produits parfaitement adaptés à vos objectifs : silhouette,
-              énergie, performance, récupération.
+              Distributeur indépendant Herbalife, nous vous conseillons des produits
+              parfaitement adaptés à vos objectifs : silhouette, énergie, performance, récupération.
             </p>
-
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Bénéficiez d'un{" "}
-              <strong className="text-foreground">bilan nutrition offert</strong>{" "}
-              lors de votre séance découverte EMS et repartez avec un plan
-              personnalisé.
+              Bénéficiez d'un <strong className="text-foreground">bilan nutrition offert</strong> lors
+              de votre séance découverte EMS et repartez avec un plan personnalisé.
             </p>
-
-            <Link to="/contact">
-              <Button variant="hero" size="lg">
-                Demander un conseil nutrition
-              </Button>
-            </Link>
+         <div className="flex justify-center">
+  <Link to="/contact">
+    <Button variant="hero" size="lg">
+      Demander un conseil nutrition
+    </Button>
+  </Link>
+</div>
           </div>
         </div>
       </section>
@@ -147,56 +119,39 @@ const Herbalife = () => {
       <section className="py-16 md:py-28 bg-gradient-soft">
         <div className="container-px max-w-6xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14 reveal">
-            <span className="text-accent font-semibold uppercase tracking-widest text-xs sm:text-sm">
-              Bar à smoothies
-            </span>
-
+            <span className="text-accent font-semibold uppercase tracking-widest text-xs sm:text-sm">Bar à smoothies</span>
             <h2 className="text-2xl sm:text-4xl md:text-5xl font-black mt-3 leading-tight">
-              Rechargez vos batteries après{" "}
-              <span className="text-gradient-accent">chaque séance</span>
+              Rechargez vos batteries après <span className="text-gradient-accent">chaque séance</span>
             </h2>
-
             <p className="text-muted-foreground mt-4 text-base md:text-lg max-w-2xl mx-auto">
-              Nos formules nutritionnelles sur mesure pour maximiser vos
-              résultats EMS. Un vrai bar à smoothies dans votre studio.
+              Nos formules nutritionnelles sur mesure pour maximiser vos résultats EMS. Un vrai bar à smoothies dans votre studio.
             </p>
           </div>
 
           <Carousel opts={{ loop: true, align: "start" }} className="w-full">
             <CarouselContent className="-ml-4">
               {smoothieSlides.map((slide, i) => (
-                <CarouselItem
-                  key={slide.alt}
-                  className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
-                >
+                <CarouselItem key={slide.alt} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
                   <div
-                    onClick={() => setSelectedImage(slide)}
-                    className="reveal relative overflow-hidden rounded-2xl aspect-[4/5] group shadow-soft hover:shadow-elevated transition-all duration-500 cursor-pointer"
-                    style={{ transitionDelay: `${i * 80}ms` }}
-                  >
+  onClick={() => setSelectedImage(slide)}
+  className="reveal relative overflow-hidden rounded-2xl aspect-[4/5] group shadow-soft hover:shadow-elevated transition-all duration-500 cursor-pointer"
+  style={{ transitionDelay: `${i * 80}ms` }}
+>
                     <img
                       src={slide.src}
                       alt={slide.alt}
                       loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
-
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-
                     <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 text-white">
-                      <h3 className="text-lg md:text-xl font-bold leading-tight">
-                        {slide.title}
-                      </h3>
-
-                      <p className="text-white/80 text-sm mt-1.5 leading-relaxed">
-                        {slide.desc}
-                      </p>
+                      <h3 className="text-lg md:text-xl font-bold leading-tight">{slide.title}</h3>
+                      <p className="text-white/80 text-sm mt-1.5 leading-relaxed">{slide.desc}</p>
                     </div>
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-
             <div className="flex justify-center gap-3 mt-8">
               <CarouselPrevious className="static translate-y-0 -left-0" />
               <CarouselNext className="static translate-y-0 -right-0" />
@@ -205,9 +160,7 @@ const Herbalife = () => {
 
           <div className="text-center mt-10 reveal">
             <Link to="/contact">
-              <Button variant="hero" size="lg">
-                Venir goûter nos formules
-              </Button>
+              <Button variant="hero" size="lg">Venir goûter nos formules</Button>
             </Link>
           </div>
         </div>
@@ -216,75 +169,68 @@ const Herbalife = () => {
       <section className="py-20 md:py-28 bg-gradient-soft">
         <div className="container-px max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-14 reveal">
-            <span className="text-accent font-semibold uppercase tracking-widest text-sm">
-              Gammes
-            </span>
-
-            <h2 className="text-3xl md:text-5xl font-black mt-3">
-              Nos univers Herbalife
-            </h2>
+            <span className="text-accent font-semibold uppercase tracking-widest text-sm">Gammes</span>
+            <h2 className="text-3xl md:text-5xl font-black mt-3">Nos univers Herbalife</h2>
           </div>
-
-          <Carousel opts={{ loop: true, align: "start" }} className="w-full">
-            <CarouselContent className="-ml-4">
-              {ranges.map((r, i) => (
-                <CarouselItem
-                  key={r.title}
-                  className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
-                >
-                  <div
-                    className="reveal h-full bg-card rounded-2xl p-8 shadow-soft hover:shadow-elevated transition-all hover:-translate-y-1 border border-border"
-                    style={{ transitionDelay: `${i * 80}ms` }}
-                  >
-                    <div className="flex items-start gap-5">
-                      <div className="w-14 h-14 rounded-2xl bg-gradient-accent grid place-items-center shadow-glow shrink-0">
-                        <r.icon className="w-7 h-7 text-accent-foreground" />
-                      </div>
-
-                      <div className="flex-1">
-                        <h3 className="text-xl font-bold mb-2">{r.title}</h3>
-
-                        <p className="text-muted-foreground mb-4">
-                          {r.text}
-                        </p>
-
-                        <ul className="space-y-1.5">
-                          {r.benefits.map((b) => (
-                            <li
-                              key={b}
-                              className="flex items-center gap-2 text-sm"
-                            >
-                              <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                              {b}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-
-            <div className="flex justify-center gap-3 mt-8">
-              <CarouselPrevious className="static translate-y-0 -left-0" />
-              <CarouselNext className="static translate-y-0 -right-0" />
+<Carousel opts={{ loop: true, align: "start" }} className="w-full">
+  <CarouselContent className="-ml-4">
+    {ranges.map((r, i) => (
+      <CarouselItem
+        key={r.title}
+        className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
+      >
+        <div
+          className="reveal h-full bg-card rounded-2xl p-8 shadow-soft hover:shadow-elevated transition-all hover:-translate-y-1 border border-border"
+          style={{ transitionDelay: `${i * 80}ms` }}
+        >
+          <div className="flex items-start gap-5">
+            <div className="w-14 h-14 rounded-2xl bg-gradient-accent grid place-items-center shadow-glow shrink-0">
+              <r.icon className="w-7 h-7 text-accent-foreground" />
             </div>
-          </Carousel>
+
+            <div className="flex-1">
+              <h3 className="text-xl font-bold mb-2">
+                {r.title}
+              </h3>
+
+              <p className="text-muted-foreground mb-4">
+                {r.text}
+              </p>
+
+              <ul className="space-y-1.5">
+                {r.benefits.map((b) => (
+                  <li
+                    key={b}
+                    className="flex items-center gap-2 text-sm"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </CarouselItem>
+    ))}
+  </CarouselContent>
+
+  <div className="flex justify-center gap-3 mt-8">
+    <CarouselPrevious className="static translate-y-0 -left-0" />
+    <CarouselNext className="static translate-y-0 -right-0" />
+  </div>
+</Carousel>
 
           <div className="text-center mt-14 reveal">
             <Link to="/contact">
-              <Button variant="hero" size="xl">
-                Être conseillé·e par un coach
-              </Button>
+              <Button variant="hero" size="xl">Être conseillé·e par un coach</Button>
             </Link>
           </div>
         </div>
       </section>
 
       <CTABand />
-
-      <Dialog
+    <Dialog
         open={!!selectedImage}
         onOpenChange={() => setSelectedImage(null)}
       >
