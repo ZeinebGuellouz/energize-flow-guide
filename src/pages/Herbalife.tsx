@@ -10,12 +10,33 @@ import posterNourrissez from "@/assets/poster-nourrissez.jpg.asset.json";
 import posterSmoothiesBar from "@/assets/poster-smoothies-bar.jpg.asset.json";
 import posterDelicieux from "@/assets/poster-delicieux.jpg.asset.json";
 import posterRecuperation from "@/assets/poster-recuperation.jpg.asset.json";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
-const posters = [
-  { src: posterSmoothiesBar.url, alt: "Bar à smoothies nutritionnels Fréjus Plage" },
-  { src: posterRecuperation.url, alt: "Formule récupération après séance EMS" },
-  { src: posterDelicieux.url, alt: "Smoothie Herbalife délicieux et bon pour vous" },
-  { src: posterNourrissez.url, alt: "Nourrissez vos résultats — duo EMS + Smoothie" },
+const smoothieSlides = [
+  {
+    src: posterSmoothiesBar.url,
+    alt: "Bar à smoothies nutritionnels Fréjus Plage",
+    title: "Bar à Smoothies",
+    desc: "Smoothies nutritionnels préparés sur place avec les produits Herbalife. Le complément parfait après votre séance EMS.",
+  },
+  {
+    src: posterRecuperation.url,
+    alt: "Formule récupération après séance EMS",
+    title: "Formule Récupération",
+    desc: "Protéines et acides aminés pour optimiser votre récupération musculaire post-EMS et accélérer vos résultats.",
+  },
+  {
+    src: posterDelicieux.url,
+    alt: "Smoothie Herbalife délicieux et bon pour vous",
+    title: "Goût & Nutrition",
+    desc: "Des recettes délicieuses qui allient plaisir et résultats. Parce que manger sain, c'est aussi savourer chaque gorgée.",
+  },
+  {
+    src: posterNourrissez.url,
+    alt: "Nourrissez vos résultats — duo EMS + Smoothie",
+    title: "Duo EMS + Nutrition",
+    desc: "Associez vos séances EMS à une nutrition adaptée pour des résultats explosifs et durables.",
+  },
 ];
 
 const ranges = [
