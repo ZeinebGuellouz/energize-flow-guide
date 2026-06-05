@@ -6,6 +6,17 @@ import { Button } from "@/components/ui/button";
 import { Apple, Battery, Leaf, Scale } from "lucide-react";
 import { Link } from "react-router-dom";
 import herbal from "@/assets/herbalife-products.jpg";
+import posterNourrissez from "@/assets/poster-nourrissez.jpg.asset.json";
+import posterSmoothiesBar from "@/assets/poster-smoothies-bar.jpg.asset.json";
+import posterDelicieux from "@/assets/poster-delicieux.jpg.asset.json";
+import posterRecuperation from "@/assets/poster-recuperation.jpg.asset.json";
+
+const posters = [
+  { src: posterSmoothiesBar.url, alt: "Bar à smoothies nutritionnels Fréjus Plage" },
+  { src: posterRecuperation.url, alt: "Formule récupération après séance EMS" },
+  { src: posterDelicieux.url, alt: "Smoothie Herbalife délicieux et bon pour vous" },
+  { src: posterNourrissez.url, alt: "Nourrissez vos résultats — duo EMS + Smoothie" },
+];
 
 const ranges = [
   {
