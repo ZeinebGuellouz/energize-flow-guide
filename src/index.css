@@ -207,4 +207,20 @@ All colors MUST be HSL.
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+  @layer utilities {
+  @keyframes testimonials-scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-testimonials-scroll {
+    animation: testimonials-scroll 28s linear infinite;
+    width: max-content;
+  }
+}
 }
