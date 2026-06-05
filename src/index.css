@@ -219,7 +219,7 @@ All colors MUST be HSL.
   }
 
   .animate-testimonials-scroll {
-    animation: testimonials-scroll 28s linear infinite;
+    animation: testimonials-scroll 70s linear infinite;
     width: max-content;
   }
 }
