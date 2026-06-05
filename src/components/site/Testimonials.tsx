@@ -61,37 +61,39 @@ export const Testimonials = () => {
         <div className="relative overflow-hidden">
           <div className="flex gap-5 animate-testimonials-scroll hover:[animation-play-state:paused]">
             {repeatedReviews.map((r, i) => (
-              <div
-                key={`${r.name}-${i}`}
-                className="min-w-[300px] md:min-w-[380px] lg:min-w-[420px] bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 md:p-6 hover:bg-white/10 transition-all duration-500"
-              >
-                <Quote className="w-6 h-6 md:w-8 md:h-8 text-accent mb-2 md:mb-3 opacity-80" />
+             <div
+  key={`${r.name}-${i}`}
+  className="min-w-[650px] max-w-[650px] min-h-[260px] bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-500"
+>
+  <div className="flex flex-col h-full">
+    <Quote className="w-10 h-10 text-accent mb-5 opacity-80" />
 
-                <p className="text-primary-foreground/90 leading-relaxed mb-4 text-sm md:text-base">
-                  "{r.text}"
-                </p>
+    <p className="text-primary-foreground/90 leading-relaxed text-lg flex-1">
+      "{r.text}"
+    </p>
 
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="font-bold text-sm md:text-base">
-                      {r.name}
-                    </div>
+    <div className="flex items-center justify-between mt-6 pt-4 border-t border-white/10">
+      <div>
+        <div className="font-bold text-lg">
+          {r.name}
+        </div>
 
-                    <div className="text-xs md:text-sm text-primary-foreground/60">
-                      {r.role}
-                    </div>
-                  </div>
+        <div className="text-sm text-primary-foreground/60">
+          {r.role}
+        </div>
+      </div>
 
-                  <div className="flex gap-0.5">
-                    {[...Array(5)].map((_, k) => (
-                      <Star
-                        key={k}
-                        className="w-3.5 h-3.5 fill-accent text-accent"
-                      />
-                    ))}
-                  </div>
-                </div>
-              </div>
+      <div className="flex gap-1">
+        {[...Array(5)].map((_, k) => (
+          <Star
+            key={k}
+            className="w-4 h-4 fill-accent text-accent"
+          />
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
             ))}
           </div>
         </div>
