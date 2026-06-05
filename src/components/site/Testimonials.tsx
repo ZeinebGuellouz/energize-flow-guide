@@ -7,21 +7,65 @@ const reviews = [
   {
     name: "René Barsi",
     role: "Avis Google",
-    text: "À 80 ans, cela fait maintenant deux ans que je fréquente ce studio. Le concept est innovant, parfaitement encadré et adapté à chacun. Une expérience que je recommande vivement.",
+    text: "À 80 ans, cela fait maintenant deux ans que je fréquente cette salle. Le concept avec les combinaisons à électrodes est innovant, très bien encadré et adapté à chacun. Une expérience extrêmement positive que je recommande à tout âge.",
+  },
+  {
+    name: "Jacques Grandmaison",
+    role: "Avis Google",
+    text: "Accueil très chaleureux, bienveillant, amical et gai. Après quelques semaines, on sent que les muscles réapparaissent et que le corps est mieux soutenu. Après une séance, on se sent léger, heureux et serein.",
   },
   {
     name: "Solène Riou",
     role: "Avis Google",
-    text: "Ravie des résultats obtenus ! Tonicité, fermeté et silhouette transformée. L’ambiance est excellente à chaque séance et les conseils nutrition font toute la différence.",
+    text: "Ravie des résultats obtenus au bout d’un peu plus d’un an ! Tonicité, fermeté et silhouette transformée. L’ambiance est super à chaque séance et les conseils nutrition font toute la différence.",
   },
   {
-    name: "Ophélie Courieux",
+    name: "Noémie Kleiber",
     role: "Avis Google",
-    text: "J'ai perdu 11 cm de tour de taille en seulement 3 semaines. Mon corps s'est affiné, ma peau s'est raffermie et j'ai gagné en tonicité. Une expérience incroyable.",
+    text: "Excellente expérience avec Monia au studio. Son accompagnement est professionnel, motivant et très personnalisé. Dès les premières semaines, j’ai ressenti un corps plus tonique, plus ferme et une silhouette qui se redessine.",
+  },
+  {
+    name: "Serge Dewaele",
+    role: "Avis Google",
+    text: "Je recommande fortement ce centre. L’équipe est très professionnelle, conviviale et à l’écoute. Les séances sont encadrées dans une ambiance familiale, chaleureuse et toujours dans la bonne humeur.",
+  },
+  {
+    name: "Yanis Barriol",
+    role: "Avis Google",
+    text: "Une expérience très intéressante et efficace. Les sensations sont intenses mais bien maîtrisées. On sent clairement les muscles travailler en profondeur, avec une sensation de légèreté et de tonicité après la séance.",
+  },
+  {
+    name: "Alain Pradines",
+    role: "Avis Google",
+    text: "L’électro-stimulation : l’essayer, c’est l’adopter. Je ne peux plus m’en passer. Très bon travail musculaire sans courbature, avec une équipe aux petits soins dans une ambiance sympathique.",
+  },
+  {
+    name: "Patricia To",
+    role: "Avis Google",
+    text: "Soucieuse de notre bien-être, l’équipe nous accompagne avec le sourire et la bonne humeur. J’ai trouvé ma peau raffermie et j’ai perdu au niveau des bras au bout de quelques mois.",
+  },
+  {
+    name: "Fabienne Wyss",
+    role: "Avis Google",
+    text: "Monia est aux petits soins, toujours dans la bienveillance. Les progrès et les effets sont rapides, un vrai plaisir. Des séances où l’on ressort revigoré.",
+  },
+  {
+    name: "Jean Yves Morvan",
+    role: "Avis Google",
+    text: "Une équipe professionnelle, souriante, respectueuse et dynamique. Une très belle expérience que je conseille à tous. Prendre soin de soi est primordial, et une séance gratuite permet de tester sans engagement.",
+  },
+  {
+    name: "BY FAT",
+    role: "Avis Google",
+    text: "Monia et son équipe coachent très bien, toujours avec le sourire et la bonne humeur. Le programme est personnalisé avec un suivi régulier. Les résultats sont visibles et je me sens mieux dans ma peau.",
+  },
+  {
+    name: "Nicole Miry",
+    role: "Avis Google",
+    text: "À 73 ans et sportive, j’ai fait un essai très concluant. C’est une excellente façon de se tonifier. L’accueil est chaleureux et la récupération est vraiment bienvenue.",
   },
 ];
-
-const repeatedReviews = [...reviews, ...reviews];
+const repeatedReviews = [...reviews, ...reviews, ...reviews];
 
 export const Testimonials = () => {
   return (
