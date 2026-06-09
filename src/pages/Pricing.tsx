@@ -67,7 +67,6 @@ const packs = [
     features: [
       "10 séances EMS de 20 min",
       "Bilan complet + suivi",
-      "Programme nutrition Herbalife",
       "Réductions partenaires",
     ],
     cta: "Choisir cette formule",
@@ -82,7 +81,6 @@ const packs = [
     features: [
       "20 séances EMS de 20 min",
       "Bilan complet + suivi avancé",
-      "Programme nutrition Herbalife",
       "Réductions partenaires",
     ],
     cta: "Choisir cette formule",
@@ -112,7 +110,7 @@ const aboSolo: AboPlan[] = [
       "4 séances EMS / mois",
       "Engagement annuel",
       "Coach personnel",
-      "Pause possible (1 mois)",
+     
     ],
     cta: "Choisir cet abonnement",
     formule: "Abonnement annuel solo — 4 séances/mois",
@@ -126,7 +124,7 @@ const aboSolo: AboPlan[] = [
       "8 séances EMS / mois",
       "Engagement annuel",
       "Coach personnel + suivi",
-      "Pause possible (1 mois)",
+     
     ],
     cta: "Choisir cet abonnement",
     highlight: true,
@@ -141,7 +139,7 @@ const aboSolo: AboPlan[] = [
       "12 séances EMS / mois",
       "Engagement annuel",
       "Coach personnel + suivi avancé",
-      "Pause possible (1 mois)",
+     
     ],
     cta: "Choisir cet abonnement",
     formule: "Abonnement annuel solo — 12 séances/mois",
@@ -158,7 +156,7 @@ const aboDuo: AboPlan[] = [
       "4 séances EMS / mois",
       "Engagement annuel",
       "Coach personnel",
-      "Pause possible (1 mois)",
+     
     ],
     cta: "Choisir cet abonnement",
     formule: "Abonnement annuel duo — 4 séances/mois",
@@ -172,7 +170,7 @@ const aboDuo: AboPlan[] = [
       "8 séances EMS / mois",
       "Engagement annuel",
       "Coach personnel + suivi",
-      "Pause possible (1 mois)",
+     
     ],
     cta: "Choisir cet abonnement",
     highlight: true,
@@ -187,7 +185,7 @@ const aboDuo: AboPlan[] = [
       "12 séances EMS / mois",
       "Engagement annuel",
       "Coach personnel + suivi avancé",
-      "Pause possible (1 mois)",
+     
     ],
     cta: "Choisir cet abonnement",
     formule: "Abonnement annuel duo — 12 séances/mois",
