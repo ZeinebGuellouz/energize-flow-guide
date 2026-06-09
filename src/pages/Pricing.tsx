@@ -201,7 +201,7 @@ const Pricing = () => {
   const allPlans = [...packs, ...aboSolo, ...aboDuo];
   const activePlan = allPlans.find((p) => p.id === openPlan);
 
-  const renderCard = (p: (typeof packs)[0], i: number) => (
+  const renderCard = (p: (typeof packs)[0] | AboPlan, i: number) => (
     <div
       key={p.id}
       className={`reveal relative rounded-3xl p-6 md:p-8 border transition-all hover:-translate-y-1 flex flex-col ${
