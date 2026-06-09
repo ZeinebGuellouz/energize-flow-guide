@@ -204,7 +204,7 @@ const Pricing = () => {
   const renderCard = (p: (typeof packs)[0] | AboPlan, i: number) => (
     <div
       key={p.id}
-      className={`reveal relative rounded-3xl p-6 md:p-8 border transition-all hover:-translate-y-1 flex flex-col ${
+      className={`relative rounded-3xl p-6 md:p-8 border transition-all hover:-translate-y-1 flex flex-col ${
         p.highlight
           ? "bg-gradient-dark text-primary-foreground border-accent shadow-glow"
           : "bg-card text-foreground border-border shadow-soft hover:shadow-elevated"
@@ -343,6 +343,10 @@ const Pricing = () => {
               renderCard(p, i)
             )}
           </div>
+
+          <p className="text-center text-muted-foreground text-sm mt-10 reveal">
+            Frais d'inscription : <span className="font-semibold text-foreground">59€</span> (uniques, à la souscription).
+          </p>
         </div>
       </section>
 
