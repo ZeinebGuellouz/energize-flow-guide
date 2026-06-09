@@ -177,7 +177,10 @@ export const EmsRequestForm = ({
           <Select value={formule} onValueChange={(v) => setValue("formule", v, { shouldValidate: true })}>
             <SelectTrigger><SelectValue placeholder="Choisissez une formule" /></SelectTrigger>
             <SelectContent>
-              {formules.map((f) => <SelectItem key={f} value={f}>{f}</SelectItem>)}
+            {(defaultFormule && !formules.includes(defaultFormule)
+              ? [defaultFormule, ...formules]
+              : formules
+            ).map((f) => <SelectItem key={f} value={f}>{f}</SelectItem>)}
             </SelectContent>
           </Select>
         </Field>
