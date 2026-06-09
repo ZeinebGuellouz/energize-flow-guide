@@ -53,7 +53,6 @@ const packs = [
       "5 séances EMS de 20 min",
       "Coach personnel à chaque séance",
       "Suivi de progression",
-      "Conseils nutrition inclus",
     ],
     cta: "Choisir cette formule",
     highlight: false,
