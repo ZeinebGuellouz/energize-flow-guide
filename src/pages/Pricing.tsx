@@ -270,6 +270,29 @@ const Pricing = () => {
         subtitle="Choisissez l'option qui vous convient. Sans paiement en ligne : la souscription se fait directement au studio, sereinement, après votre bilan."
       />
 
+      <section className="py-10 md:py-14 bg-background">
+        <div className="container-px max-w-4xl mx-auto prose prose-lg dark:prose-invert">
+          <h2 className="text-2xl md:text-3xl font-black mb-3">Nos tarifs EMS à Fréjus Plage</h2>
+          <p className="text-muted-foreground">
+            Toutes nos formules incluent <strong>un coach personnel à chaque séance</strong>,
+            la <strong>combinaison technique</strong>, l'accès au <strong>bar à smoothies</strong>
+            et un <strong>suivi de progression</strong>. Pas de mauvaise surprise&nbsp;: aucun
+            paiement en ligne, vous souscrivez directement au studio après votre bilan offert.
+          </p>
+          <ul className="text-muted-foreground">
+            <li><strong>Séance découverte</strong>&nbsp;: offerte, sans engagement, pour vous et un·e ami·e</li>
+            <li><strong>Séances à l'unité &amp; packs</strong> (1, 5, 10 ou 20 séances)&nbsp;: idéal pour tester ou pour un objectif court (été, événement, post-grossesse)</li>
+            <li><strong>Abonnements annuels solo</strong> (4, 8 ou 12 séances par mois)&nbsp;: le meilleur rapport qualité/prix pour des résultats durables</li>
+            <li><strong>Abonnements annuels duo</strong>&nbsp;: venez à deux, profitez d'un tarif préférentiel et restez motivé·e·s ensemble</li>
+          </ul>
+          <p className="text-muted-foreground">
+            Les abonnements annuels comportent des <strong>frais d'inscription uniques de 59€</strong>.
+            Une simulation personnalisée vous est remise après votre bilan&nbsp;; demandez-nous
+            la formule la plus adaptée à votre objectif et à votre rythme.
+          </p>
+        </div>
+      </section>
+
       {/* Packs séances */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container-px max-w-7xl mx-auto">
