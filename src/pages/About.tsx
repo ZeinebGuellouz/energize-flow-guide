@@ -95,6 +95,44 @@ const About = () => {
         </div>
       </section>
 
+      <section className="py-16 md:py-20 bg-gradient-soft">
+        <div className="container-px max-w-4xl mx-auto prose prose-lg dark:prose-invert">
+          <h2 className="text-2xl md:text-3xl font-black mb-4">Pourquoi avoir ouvert un studio EMS à Fréjus Plage&nbsp;?</h2>
+          <p className="text-muted-foreground">
+            Espace Nutri-Forme est né d'une conviction simple&nbsp;: <strong>il est possible de
+            se remettre en forme efficacement, sans y consacrer des heures chaque semaine</strong>.
+            Entre vie professionnelle, vie de famille et obligations, le manque de temps reste
+            la première raison d'abandon en salle de sport classique. L'électrostimulation
+            répond à ce problème&nbsp;: <strong>20 minutes deux fois par semaine</strong> suffisent
+            à déclencher des résultats visibles sur la silhouette, le tonus et la posture.
+          </p>
+          <h3 className="text-xl font-bold mt-6 mb-2">Une méthode complète&nbsp;: EMS + nutrition + coaching</h3>
+          <p className="text-muted-foreground">
+            Nous avons fait le choix d'associer trois piliers indissociables&nbsp;: l'entraînement
+            EMS dernière génération, un suivi nutrition personnalisé avec les produits Herbalife,
+            et un coaching individuel à chaque séance. Cette approche permet à nos adhérent·e·s,
+            qu'ils soient débutants, en reprise d'activité, sportifs confirmés ou en
+            préparation estivale, d'atteindre leurs objectifs durablement.
+          </p>
+          <h3 className="text-xl font-bold mt-6 mb-2">Nos qualifications</h3>
+          <p className="text-muted-foreground">
+            Toute l'équipe est <strong>certifiée à l'utilisation de l'électrostimulation</strong>
+            (formations constructeur et techniques de coaching EMS), formée au conseil
+            nutritionnel Herbalife et à l'accompagnement personnalisé. Nous mettons à jour
+            nos connaissances régulièrement pour vous proposer les meilleures pratiques en
+            matière de remise en forme, perte de poids, raffermissement et récupération
+            musculaire.
+          </p>
+          <h3 className="text-xl font-bold mt-6 mb-2">Un studio pensé pour vous</h3>
+          <p className="text-muted-foreground">
+            Notre studio de Fréjus Plage propose un cadre intimiste et premium&nbsp;: séances
+            individuelles ou en duo, vestiaires privatifs, combinaisons techniques fournies,
+            bar à smoothies, ambiance chaleureuse. L'objectif&nbsp;: que chaque visite soit un
+            moment pour vous, loin du brouhaha des salles surchargées.
+          </p>
+        </div>
+      </section>
+
       <CTABand />
     </Layout>
   );
