@@ -9,8 +9,8 @@ const Contact = () => {
   return (
     <Layout>
       <SEO
-        title="Contact — Espace Nutri-Forme Fréjus Plage"
-        description="Contactez l'Espace Nutri-Forme à Fréjus Plage : 114 Rue Victor Reybaud, 06.98.89.04.01. Réservation séance découverte EMS et conseils nutrition Herbalife."
+        title="Contact studio EMS Fréjus Plage — 114 Rue Victor Reybaud"
+        description="Studio EMS & nutrition Herbalife à Fréjus Plage, 114 Rue Victor Reybaud. Réservez votre séance d'électrostimulation découverte offerte au 06.98.89.04.01."
         path="/contact"
       />
       <PageHero

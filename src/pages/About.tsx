@@ -17,8 +17,8 @@ const About = () => {
   return (
     <Layout>
       <SEO
-        title="À propos — Espace Nutri-Forme Fréjus Plage"
-        description="Découvrez l'Espace Nutri-Forme à Fréjus Plage : équipe certifiée, matériel EMS dernière génération et accompagnement bienveillant."
+        title="À propos — Studio EMS & coach remise en forme à Fréjus Plage"
+        description="Espace Nutri-Forme à Fréjus Plage : coachs certifiés EMS et Herbalife, méthode dédiée à la perte de poids, la prise de masse et la remise en forme durable."
         path="/a-propos"
       />
       <PageHero
