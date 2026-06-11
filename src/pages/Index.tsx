@@ -27,8 +27,8 @@ const Index = () => {
   return (
     <Layout>
       <SEO
-        title="Espace Nutri-Forme Fréjus — EMS & Nutrition Premium"
-        description="Studio EMS premium à Fréjus Plage. Stimulez 350 muscles en 20 min. Séance découverte offerte. 06.98.89.04.01."
+        title="EMS Fréjus Plage — Électrostimulation, perte de poids & nutrition"
+        description="Studio EMS premium à Fréjus Plage : 20 min = 4 h de sport, 350 muscles activés. Perte de poids, prise de masse, nutrition Herbalife. Séance découverte offerte."
         path="/"
         jsonLd={faqJsonLd}
       />

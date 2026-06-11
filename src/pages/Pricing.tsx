@@ -255,8 +255,8 @@ const Pricing = () => {
   return (
     <Layout>
       <SEO
-        title="Tarifs EMS — Espace Nutri-Forme Fréjus Plage"
-        description="Formules EMS simples et transparentes à Fréjus Plage. Séance découverte offerte, packs 1 à 20 séances, abonnements annuels solo et duo. Souscription au studio après bilan."
+        title="Tarifs EMS Fréjus Plage — Séance offerte, packs & abonnements"
+        description="Tarifs EMS à Fréjus : séance découverte offerte, packs 1 à 20 séances dès 28€, abonnements solo & duo pour perte de poids, prise de masse et remise en forme."
         path="/tarifs"
       />
       <PageHero
