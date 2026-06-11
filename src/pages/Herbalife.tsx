@@ -292,52 +292,12 @@ const Herbalife = () => {
         </div>
       </section>
 
-      <section className="py-16 md:py-20 bg-background">
-        <div className="container-px max-w-4xl mx-auto prose prose-lg dark:prose-invert">
-          <h2 className="text-2xl md:text-3xl font-black mb-4">Nutrition Herbalife à Fréjus Plage&nbsp;: nos produits et leurs bénéfices</h2>
-          <p className="text-muted-foreground">
-            En tant que <strong>distributeurs indépendants Herbalife</strong>, nous vous
-            proposons au studio une sélection de produits adaptés à vos objectifs de remise
-            en forme, perte de poids, gain de tonus ou récupération sportive. Chaque conseil
-            est personnalisé&nbsp;: aucun produit n'est imposé, nous partons de votre mode de
-            vie, vos goûts et votre objectif.
-          </p>
-          <h3 className="text-xl font-bold mt-6 mb-2">Formula 1 — substitut de repas équilibré</h3>
-          <p className="text-muted-foreground">
-            Le shake <strong>Formula 1</strong> est un repas complet préparé en moins de
-            5 minutes. Il apporte des <strong>protéines</strong> (lait et soja), 25 vitamines
-            et minéraux essentiels, peu de calories et un goût gourmand (vanille, chocolat,
-            cookies &amp; cream, fruits rouges…). Idéal pour le petit-déjeuner pressé ou un
-            déjeuner léger&nbsp;: vous mangez équilibré sans réfléchir.
-          </p>
-          <h3 className="text-xl font-bold mt-6 mb-2">Boissons énergie &amp; pré-entraînement</h3>
-          <p className="text-muted-foreground">
-            Notre gamme <strong>Énergie &amp; performance</strong> (Liftoff, CR7 Drive,
-            N-R-G…) apporte un coup de boost avant une séance EMS, un footing ou une journée
-            chargée&nbsp;: caféine naturelle, vitamines B, hydratation optimale, sans sucre
-            ajouté pour certaines références.
-          </p>
-          <h3 className="text-xl font-bold mt-6 mb-2">Protéines &amp; récupération musculaire</h3>
-          <p className="text-muted-foreground">
-            Après une séance d'électrostimulation, l'apport en protéines est essentiel pour
-            <strong> reconstruire les fibres musculaires</strong> et favoriser le
-            raffermissement. Nos shakes <strong>Rebuild Strength</strong> et nos
-            barres protéinées Herbalife sont parfaits pour la récupération&nbsp;: digestion
-            facile, acides aminés essentiels (BCAA), goût agréable.
-          </p>
-          <h3 className="text-xl font-bold mt-6 mb-2">Programme gestion du poids personnalisé</h3>
-          <p className="text-muted-foreground">
-            Nous accompagnons aussi les personnes qui souhaitent <strong>perdre du poids
-            durablement</strong> ou au contraire <strong>prendre de la masse maigre</strong>.
-            Bilan offert, plan nutritionnel adapté à votre quotidien, suivi régulier au
-            studio&nbsp;: vous n'êtes pas seul·e dans la démarche, et les résultats sont
-            visibles dès les premières semaines lorsqu'ils sont combinés à vos séances EMS.
-          </p>
-          <h3 className="text-xl font-bold mt-6 mb-2">Bar à smoothies sur place</h3>
-          <p className="text-muted-foreground">
-            Après chaque séance, profitez de notre <strong>bar à smoothies Herbalife</strong>
-            au studio&nbsp;: formules récupération, énergie ou plaisir, préparées sur place
-            par votre coach. Une façon gourmande de prolonger les bénéfices de votre séance.
+      <section className="py-10 md:py-14 bg-background">
+        <div className="container-px max-w-4xl mx-auto text-center">
+          <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
+            Nutrition Herbalife à Fréjus Plage&nbsp;: Formula 1, protéines, boissons
+            énergie et programme perte de poids personnalisé. Bar à smoothies au
+            studio pour prolonger les bénéfices de votre séance EMS.
           </p>
         </div>
       </section>
