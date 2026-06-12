@@ -1,6 +1,6 @@
 export const SITE = {
-  name: "Espace Nutri-Forme Fréjus Plage",
-  shortName: "Nutri-Forme",
+  name: "VitaFit Fréjus Plage",
+  shortName: "VitaFit",
   phone: "06.98.89.04.01",
   phoneIntl: "+33698890401",
   whatsapp: "33698890401",

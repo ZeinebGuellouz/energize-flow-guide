@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Phone } from "lucide-react";
 import { SITE, scrollToId } from "@/lib/site";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/vitafit-logo.png";
 
 const NAV = [
   { label: "Accueil", to: "/", hash: "top" },
@@ -40,16 +41,18 @@ export const Header = () => {
       )}
     >
       <div className="container-px max-w-7xl mx-auto flex items-center justify-between gap-1 sm:gap-2 h-14 md:h-20">
-        <Link to="/" className="flex items-center gap-2 group shrink-0" aria-label="Accueil Nutri-Forme">
-          <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-gradient-accent grid place-items-center font-black text-accent-foreground shadow-glow group-hover:scale-105 transition-transform text-sm md:text-base">
-            N
-          </div>
+        <Link to="/" className="flex items-center gap-2 group shrink-0" aria-label="Accueil VitaFit Fréjus Plage">
+          <img
+            src={logo}
+            alt="VitaFit Fréjus Plage — EMS, Nutrition, Coaching"
+            className="w-9 h-9 md:w-11 md:h-11 rounded-full bg-foreground object-contain p-0.5 shadow-glow group-hover:scale-105 transition-transform"
+          />
           <div className="leading-tight hidden md:block">
             <div className={cn("font-bold text-sm md:text-base", scrolled ? "text-foreground" : "text-foreground")}>
-              Nutri-Forme
+              VitaFit
             </div>
             <div className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-widest">
-              Fréjus Plage
+              EMS · Nutrition · Coaching
             </div>
           </div>
         </Link>

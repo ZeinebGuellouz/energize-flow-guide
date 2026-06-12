@@ -1,7 +1,7 @@
 {
-  "name": "Espace Nutri-Forme Fréjus Plage",
-  "short_name": "Nutri-Forme",
-  "description": "Studio EMS premium à Fréjus Plage. Réservez votre séance d'électrostimulation.",
+  "name": "VitaFit Fréjus Plage",
+  "short_name": "VitaFit",
+  "description": "VitaFit Fréjus Plage — studio EMS, nutrition Herbalife et coaching. Réservez votre séance découverte.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
@@ -11,13 +11,13 @@
   "lang": "fr-FR",
   "icons": [
     {
-      "src": "/app-icon-192.png",
+      "src": "/vitafit-logo.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/app-icon-512.png",
+      "src": "/vitafit-logo.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"

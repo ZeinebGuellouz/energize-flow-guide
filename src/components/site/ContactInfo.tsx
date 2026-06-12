@@ -14,7 +14,7 @@ export const ContactInfo = () => {
         <div className="grid md:grid-cols-2 gap-4 md:gap-6 items-stretch reveal">
           <div className="rounded-2xl overflow-hidden shadow-elevated border border-border min-h-[220px] md:min-h-[260px] order-2 md:order-1">
             <iframe
-              title="Localisation Espace Nutri-Forme Fréjus Plage"
+              title="Localisation VitaFit Fréjus Plage"
               src={SITE.mapsEmbed}
               className="w-full h-full min-h-[220px] md:min-h-[260px] border-0"
               loading="lazy"

@@ -186,7 +186,7 @@ export const DiscoveryForm = () => {
           onCheckedChange={(v) => setValue("smsOk", v === true ? true : (false as never), { shouldValidate: true })}
         />
         <Label htmlFor="sms" className="text-sm leading-relaxed cursor-pointer">
-          J'accepte de recevoir des SMS d'information de la part d'Espace Nutri-Forme Fréjus Plage. *
+          J'accepte de recevoir des SMS d'information de la part d'VitaFit Fréjus Plage. *
           {errors.smsOk && <span className="block text-destructive text-xs mt-1">{errors.smsOk.message}</span>}
         </Label>
       </div>

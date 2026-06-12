@@ -3,7 +3,7 @@ import { SITE } from "@/lib/site";
 
 export const WhatsAppButton = () => {
   const url = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(
-    "Bonjour, je souhaite des informations sur les séances EMS chez Espace Nutri-Forme Fréjus Plage."
+    "Bonjour, je souhaite des informations sur les séances EMS chez VitaFit Fréjus Plage."
   )}`;
   return (
     <a
