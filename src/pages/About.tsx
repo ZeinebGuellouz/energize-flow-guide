@@ -17,13 +17,13 @@ const About = () => {
   return (
     <Layout>
       <SEO
-        title="À propos — Studio EMS & coach remise en forme à Fréjus Plage"
-        description="VitaFit à Fréjus Plage : coachs certifiés EMS et Herbalife, méthode dédiée à la perte de poids, la prise de masse et la remise en forme durable."
+        title="À propos VitaFit — Studio EMS & coach remise en forme à Fréjus Plage"
+        description="VitaFit Fréjus Plage : coachs certifiés EMS, nutrition Herbalife et coaching personnalisé pour perte de poids, prise de masse et remise en forme durable."
         path="/a-propos"
       />
       <PageHero
         eyebrow="À propos"
-        title={<>L'VitaFit, <span className="text-gradient-accent">votre studio à Fréjus Plage</span></>}
+        title={<>VitaFit, <span className="text-gradient-accent">votre studio EMS à Fréjus Plage</span></>}
         subtitle="Une approche complète : entraînement EMS, nutrition, coaching personnalisé. Pour vous sentir bien dans votre corps, durablement."
       />
 

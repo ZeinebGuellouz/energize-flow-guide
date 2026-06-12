@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { SITE } from "@/lib/site";
+import logo from "@/assets/vitafit-logo.png";
 
 const NAV = [
   { l: "Accueil", to: "/" },
@@ -15,13 +16,15 @@ export const Footer = () => {
     <footer className="bg-gradient-dark text-primary-foreground py-8 md:py-10">
       <div className="container-px max-w-6xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-6">
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl bg-gradient-accent grid place-items-center font-black shadow-glow">
-            N
-          </div>
+          <img
+            src={logo}
+            alt="VitaFit Fréjus Plage"
+            className="w-10 h-10 rounded-full bg-primary-foreground/95 object-contain p-0.5 shadow-glow"
+          />
           <div className="leading-tight">
-            <div className="font-bold text-sm">Nutri-Forme</div>
+            <div className="font-bold text-sm">VitaFit</div>
             <div className="text-[10px] text-primary-foreground/60 uppercase tracking-widest">
-              Fréjus Plage
+              EMS · Nutrition · Coaching
             </div>
           </div>
         </div>
