@@ -18,12 +18,12 @@ const About = () => {
     <Layout>
       <SEO
         title="À propos — Studio EMS & coach remise en forme à Fréjus Plage"
-        description="Espace Nutri-Forme à Fréjus Plage : coachs certifiés EMS et Herbalife, méthode dédiée à la perte de poids, la prise de masse et la remise en forme durable."
+        description="VitaFit à Fréjus Plage : coachs certifiés EMS et Herbalife, méthode dédiée à la perte de poids, la prise de masse et la remise en forme durable."
         path="/a-propos"
       />
       <PageHero
         eyebrow="À propos"
-        title={<>L'Espace Nutri-Forme, <span className="text-gradient-accent">votre studio à Fréjus Plage</span></>}
+        title={<>L'VitaFit, <span className="text-gradient-accent">votre studio à Fréjus Plage</span></>}
         subtitle="Une approche complète : entraînement EMS, nutrition, coaching personnalisé. Pour vous sentir bien dans votre corps, durablement."
       />
 
@@ -39,7 +39,7 @@ const About = () => {
             </h2>
             <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
               <p>
-                Implanté au cœur de Fréjus Plage, Espace Nutri-Forme est né de la volonté
+                Implanté au cœur de Fréjus Plage, VitaFit est né de la volonté
                 d'offrir une expérience fitness et bien-être réellement adaptée à chacun.
               </p>
               <p>
@@ -98,7 +98,7 @@ const About = () => {
       <section className="py-10 md:py-14 bg-gradient-soft">
         <div className="container-px max-w-4xl mx-auto text-center">
           <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-            Espace Nutri-Forme est votre studio EMS et nutrition à Fréjus Plage&nbsp;:
+            VitaFit est votre studio EMS et nutrition à Fréjus Plage&nbsp;:
             une équipe certifiée, un coaching personnalisé et une méthode qui combine
             électrostimulation, Herbalife et suivi sur-mesure.
           </p>

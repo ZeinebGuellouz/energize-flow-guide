@@ -15,7 +15,7 @@ const Contact = () => {
       />
       <PageHero
         eyebrow="Contact"
-        title={<>Contactez <span className="text-gradient-accent">Espace Nutri-Forme</span></>}
+        title={<>Contactez <span className="text-gradient-accent">VitaFit</span></>}
         subtitle="Une question, une réservation, un projet bien-être ? Nous sommes là pour vous accompagner."
       />
       <ContactInfo />

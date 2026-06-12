@@ -38,7 +38,7 @@ export const HowItWorks = () => {
               Une séance <span className="text-gradient-accent">simple, intense, encadrée</span>
             </h2>
             <p className="text-base md:text-lg text-muted-foreground mb-8 md:mb-10">
-              Une séance EMS chez Nutri-Forme dure 20 minutes effectives, toujours encadrée par un coach
+              Une séance EMS chez VitaFit dure 20 minutes effectives, toujours encadrée par un coach
               certifié. Pas besoin d'expérience sportive : la technologie s'adapte à vous.
             </p>
 
