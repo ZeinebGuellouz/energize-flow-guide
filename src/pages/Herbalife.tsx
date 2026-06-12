@@ -7,10 +7,10 @@ import { Button } from "@/components/ui/button";
 import { Apple, Battery, Leaf, Scale } from "lucide-react";
 import { Link } from "react-router-dom";
 import herbal from "@/assets/herbalife-products.jpg";
-import posterNourrissez from "@/assets/poster-nourrissez.jpg.asset.json";
-import posterSmoothiesBar from "@/assets/poster-smoothies-bar.jpg.asset.json";
-import posterDelicieux from "@/assets/poster-delicieux.jpg.asset.json";
-import posterRecuperation from "@/assets/poster-recuperation.jpg.asset.json";
+import posterNourrissez from "@/assets/poster-nourrissez.jpg";
+import posterSmoothiesBar from "@/assets/poster-smoothies-bar.jpg";
+import posterDelicieux from "@/assets/poster-delicieux.jpg";
+import posterRecuperation from "@/assets/poster-recuperation.jpg";
 import {
   Carousel,
   CarouselContent,
@@ -25,22 +25,22 @@ import {
 
 const smoothieSlides = [
   {
-    src: posterSmoothiesBar.url,
+    src: posterSmoothiesBar,
     alt: "Bar à smoothies nutritionnels Fréjus Plage",
     title: "Bar à Smoothies",
   },
   {
-    src: posterRecuperation.url,
+    src: posterRecuperation,
     alt: "Formule récupération après séance EMS",
     title: "Formule Récupération",
   },
   {
-    src: posterDelicieux.url,
+    src: posterDelicieux,
     alt: "Smoothie Herbalife délicieux et bon pour vous",
     title: "Goût & Nutrition",
   },
   {
-    src: posterNourrissez.url,
+    src: posterNourrissez,
     alt: "Nourrissez vos résultats — duo EMS + Smoothie",
     title: "Duo EMS + Nutrition",
   },
