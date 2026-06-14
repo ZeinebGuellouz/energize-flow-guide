@@ -17,16 +17,16 @@ import {
 const packs = [
   {
     id: "decouverte",
-    name: "1ère séance",
-    price: "19,95€",
-    note: "Soit -50% (39,90€)",
+    name: "1ère séance offerte",
+    price: "0€",
+    note: "Offerte (valeur 39,90€)",
     features: [
       "Bilan personnalisé",
       "1 séance EMS de 20 min",
       "Combinaison fournie",
       "Sans engagement",
     ],
-    cta: "Réserver ma 1ère séance",
+    cta: "Réserver ma séance offerte",
     highlight: false,
   },
   {
