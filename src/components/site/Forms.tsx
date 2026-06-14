@@ -9,10 +9,10 @@ export const Forms = () => {
             Réserver ma séance
           </span>
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-black mt-3 mb-3 md:mb-5 leading-tight">
-            <span className="text-gradient-accent">Séance découverte</span> offerte à 2
+            <span className="text-gradient-accent">-50% sur la première séance</span>
           </h2>
           <p className="text-sm md:text-lg text-muted-foreground">
-            Venez tester l'EMS avec un·e ami·e. Sans engagement, on s'occupe du reste.
+            Venez tester l'EMS à moitié prix. Sans engagement, on s'occupe du reste.
           </p>
         </div>
 

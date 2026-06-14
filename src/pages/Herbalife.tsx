@@ -127,7 +127,7 @@ const Herbalife = () => {
             <p className="text-lg text-muted-foreground leading-relaxed">
               Bénéficiez d'un{" "}
               <strong className="text-foreground">bilan nutrition offert</strong>{" "}
-              lors de votre séance découverte EMS et repartez avec un plan personnalisé.
+              lors de votre première séance EMS et repartez avec un plan personnalisé.
             </p>
 
             <div className="flex justify-center">
