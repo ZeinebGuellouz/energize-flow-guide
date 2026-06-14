@@ -12,7 +12,7 @@ export const Forms = () => {
             <span className="text-gradient-accent">1ère séance offerte</span>
           </h2>
           <p className="text-sm md:text-lg text-muted-foreground">
-            Venez tester l'EMS à moitié prix. Sans engagement, on s'occupe du reste.
+            Venez tester l'EMS gratuitement. Sans engagement, on s'occupe du reste.
           </p>
         </div>
 
