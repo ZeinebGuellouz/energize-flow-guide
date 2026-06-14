@@ -10,7 +10,7 @@ const Contact = () => {
     <Layout>
       <SEO
         title="Contact VitaFit Fréjus Plage — 114 Rue Victor Reybaud"
-        description="VitaFit, studio EMS & nutrition Herbalife à Fréjus Plage, 114 Rue Victor Reybaud. Réservez votre première séance à -50% au 06.98.89.04.01."
+        description="VitaFit, studio EMS & nutrition Herbalife à Fréjus Plage, 114 Rue Victor Reybaud. Réservez votre première séance offerte au 06.98.89.04.01."
         path="/contact"
       />
       <PageHero
@@ -23,7 +23,7 @@ const Contact = () => {
         <div className="container-px max-w-4xl mx-auto text-center">
           <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
             Studio EMS à Fréjus Plage&nbsp;: 114 Rue Victor Reybaud, 83600 Fréjus.
-            Réservez votre première séance d'électrostimulation à -50% au{" "}
+            Réservez votre première séance d'électrostimulation offerte au{" "}
             <a href="tel:+33698890401" className="text-accent font-semibold">06.98.89.04.01</a>{" "}
             ou via WhatsApp.
           </p>
