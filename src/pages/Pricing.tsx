@@ -17,16 +17,16 @@ import {
 const packs = [
   {
     id: "decouverte",
-    name: "1ère séance",
-    price: "19,95€",
-    note: "Soit -50% (39,90€)",
+    name: "1ère séance offerte",
+    price: "0€",
+    note: "Offerte (valeur 39,90€)",
     features: [
       "Bilan personnalisé",
       "1 séance EMS de 20 min",
       "Combinaison fournie",
       "Sans engagement",
     ],
-    cta: "Réserver ma 1ère séance",
+    cta: "Réserver ma séance offerte",
     highlight: false,
   },
   {
@@ -255,8 +255,8 @@ const Pricing = () => {
   return (
     <Layout>
       <SEO
-        title="Tarifs EMS Fréjus Plage — -50% première séance, packs & abonnements"
-        description="Tarifs EMS à Fréjus : -50% sur la première séance, packs 1 à 20 séances dès 28€, abonnements solo & duo pour perte de poids, prise de masse et remise en forme."
+        title="Tarifs EMS Fréjus Plage — 1ère séance offerte, packs & abonnements"
+        description="Tarifs EMS à Fréjus : 1ère séance offerte, packs 1 à 20 séances dès 28€, abonnements solo & duo pour perte de poids, prise de masse et remise en forme."
         path="/tarifs"
       />
       <PageHero
@@ -273,7 +273,7 @@ const Pricing = () => {
       <section className="py-8 md:py-10 bg-background">
         <div className="container-px max-w-4xl mx-auto text-center">
           <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-            Tarifs EMS à Fréjus Plage&nbsp;: -50% sur la première séance, séances à
+            Tarifs EMS à Fréjus Plage&nbsp;: 1ère séance offerte, séances à
             l'unité, packs ou abonnements annuels solo et duo. Coach, combinaison et
             bar à smoothies inclus. Frais d'inscription uniques de 59€ pour les
             abonnements.

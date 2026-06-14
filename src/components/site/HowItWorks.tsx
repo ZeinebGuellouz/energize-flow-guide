@@ -57,7 +57,7 @@ export const HowItWorks = () => {
             </ol>
 
             <Button variant="hero" size="lg" className="w-full sm:w-auto" onClick={() => scrollToId("decouverte")}>
-              Réserver avec -50%
+              Réserver ma séance offerte
             </Button>
           </div>
         </div>
