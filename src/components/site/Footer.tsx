@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { SITE } from "@/lib/site";
-import logo from "@/assets/vitafit-logo.png";
+const logo = "/ChatGPT_Image_12_juin_2026__08_13_47-removebg-preview.png";
 
 const NAV = [
   { l: "Accueil", to: "/" },
@@ -19,7 +19,7 @@ export const Footer = () => {
           <img
             src={logo}
             alt="VitaFit Fréjus Plage"
-            className="w-10 h-10 rounded-full bg-primary-foreground/95 object-contain p-0.5 shadow-glow"
+            className="w-10 h-10 rounded-full bg-white object-contain p-0.5 shadow-glow"
           />
           <div className="leading-tight">
             <div className="font-bold text-sm">VitaFit</div>

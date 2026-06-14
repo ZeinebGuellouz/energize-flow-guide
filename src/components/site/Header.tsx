@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Phone } from "lucide-react";
 import { SITE, scrollToId } from "@/lib/site";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/vitafit-logo.png";
+const logo = "/ChatGPT_Image_12_juin_2026__08_13_47-removebg-preview.png";
 
 const NAV = [
   { label: "Accueil", to: "/", hash: "top" },
@@ -45,7 +45,7 @@ export const Header = () => {
           <img
             src={logo}
             alt="VitaFit Fréjus Plage — EMS, Nutrition, Coaching"
-            className="w-9 h-9 md:w-11 md:h-11 rounded-full bg-foreground object-contain p-0.5 shadow-glow group-hover:scale-105 transition-transform"
+            className="w-9 h-9 md:w-11 md:h-11 rounded-full bg-white object-contain p-0.5 shadow-glow group-hover:scale-105 transition-transform"
           />
           <div className="leading-tight hidden md:block">
             <div className={cn("font-bold text-sm md:text-base", scrolled ? "text-foreground" : "text-foreground")}>
