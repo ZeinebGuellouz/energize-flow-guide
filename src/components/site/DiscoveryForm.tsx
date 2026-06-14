@@ -61,7 +61,7 @@ export const DiscoveryForm = () => {
     const formData = {
       from_name: `${data.prenom} ${data.nom}`,
       from_email: data.email,
-      subject: `Réservation séance découverte EMS — ${data.prenom} ${data.nom}`,
+      subject: `Réservation première séance EMS -50% — ${data.prenom} ${data.nom}`,
       civilite: civText,
       nom: data.nom,
       prenom: data.prenom,
@@ -118,8 +118,8 @@ export const DiscoveryForm = () => {
           <Gift className="w-6 h-6 text-accent-foreground" />
         </div>
         <div className="min-w-0">
-          <h3 className="text-base sm:text-lg md:text-2xl font-black leading-tight">Séance découverte offerte</h3>
-          <p className="text-xs sm:text-sm text-muted-foreground">Pour vous + 1 ami·e</p>
+          <h3 className="text-base sm:text-lg md:text-2xl font-black leading-tight">-50% sur la première séance</h3>
+          <p className="text-xs sm:text-sm text-muted-foreground">Offre découverte</p>
         </div>
       </div>
 
@@ -210,7 +210,7 @@ export const DiscoveryForm = () => {
       </div>
 
       <Button type="submit" variant="hero" size="xl" className="w-full" disabled={isSubmitting}>
-        {isSubmitting ? "Envoi en cours..." : "Réserver notre séance offerte"}
+        {isSubmitting ? "Envoi en cours..." : "Réserver avec -50%"}
       </Button>
       <p className="text-xs text-muted-foreground text-center mt-3">
         Sans engagement · Réponse sous 24h ouvrées
