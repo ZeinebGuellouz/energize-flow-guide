@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 
-const SITE_URL = "https://nutri-forme.lovable.app";
+const SITE_URL = "https://vitafit-frejus.lovable.app";
 
 type Props = {
   title: string;
