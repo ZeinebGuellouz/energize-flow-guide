@@ -14,8 +14,8 @@ const faqs = [
     a: "Les premières sensations (tonicité, énergie) apparaissent dès la 2e séance. Les résultats visibles sur la silhouette s'observent généralement entre la 4e et la 6e séance.",
   },
   {
-    q: "Comment fonctionne l'offre 1ère séance offerte ?",
-    a: "Réservez votre première séance EMS offerte. Vous bénéficiez d'un bilan personnalisé, de la combinaison et de 20 min d'entraînement encadré. Sans engagement.",
+    q: "Comment fonctionne l'offre -50% sur la première séance ?",
+    a: "Réservez votre première séance EMS à -50%. Vous bénéficiez d'un bilan personnalisé, de la combinaison et de 20 min d'entraînement encadré. Sans engagement.",
   },
   {
     q: "Est-ce que je transpire beaucoup ?",

@@ -46,7 +46,7 @@ export const Hero = () => {
               onClick={() => scrollToId("decouverte")}
             >
               <Zap className="w-5 h-5" />
-              1ère séance offerte
+              -50% sur la première séance
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button

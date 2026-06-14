@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { toast } from "@/hooks/use-toast";
-import { CheckCircle2, Gift } from "lucide-react";
+import { CheckCircle2, Gift, Users } from "lucide-react";
 import { submitDiscoveryForm } from "@/lib/emailjs";
 import {
   Select,
@@ -38,6 +38,9 @@ const schema = z.object({
   dateSouhaitee: z.string().min(1, "Date requise"),
   creneau: z.string().min(1, "Créneau requis"),
   smsOk: z.literal(true, { message: "Acceptation requise" }),
+  amiNom: z.string().trim().min(2, "Nom de l'ami requis").max(60),
+  amiPrenom: z.string().trim().min(2, "Prénom de l'ami requis").max(60),
+  amiMobile: z.string().trim().regex(/^[0-9 +.\-()]{8,20}$/, "Téléphone invalide"),
 });
 
 type FormValues = z.infer<typeof schema>;
@@ -58,7 +61,7 @@ export const DiscoveryForm = () => {
     const formData = {
       from_name: `${data.prenom} ${data.nom}`,
       from_email: data.email,
-      subject: `Réservation 1ère séance EMS offerte — ${data.prenom} ${data.nom}`,
+      subject: `Réservation première séance EMS -50% — ${data.prenom} ${data.nom}`,
       civilite: civText,
       nom: data.nom,
       prenom: data.prenom,
@@ -67,6 +70,9 @@ export const DiscoveryForm = () => {
       code_postal: data.codePostal,
       date: data.dateSouhaitee,
       creneau: data.creneau,
+      ami_nom: data.amiNom,
+      ami_prenom: data.amiPrenom,
+      ami_mobile: data.amiMobile,
       sms_accepte: "Oui",
     };
 
@@ -112,8 +118,8 @@ export const DiscoveryForm = () => {
           <Gift className="w-6 h-6 text-accent-foreground" />
         </div>
         <div className="min-w-0">
-          <h3 className="text-base sm:text-lg md:text-2xl font-black leading-tight">1ère séance offerte</h3>
-          <p className="text-xs sm:text-sm text-muted-foreground">Offre découverte · Sans engagement</p>
+          <h3 className="text-base sm:text-lg md:text-2xl font-black leading-tight">-50% sur la première séance</h3>
+          <p className="text-xs sm:text-sm text-muted-foreground">Offre découverte</p>
         </div>
       </div>
 
@@ -185,8 +191,26 @@ export const DiscoveryForm = () => {
         </Label>
       </div>
 
+      <div className="border-t border-border pt-6 mb-5">
+        <div className="flex items-center gap-2 mb-4">
+          <Users className="w-5 h-5 text-accent" />
+          <h4 className="font-bold">Coordonnées de votre ami·e</h4>
+        </div>
+        <div className="grid sm:grid-cols-2 gap-4">
+          <Field label="Nom *" error={errors.amiNom?.message}>
+            <Input {...register("amiNom")} placeholder="Martin" />
+          </Field>
+          <Field label="Prénom *" error={errors.amiPrenom?.message}>
+            <Input {...register("amiPrenom")} placeholder="Julie" />
+          </Field>
+          <Field label="Mobile *" error={errors.amiMobile?.message} className="sm:col-span-2">
+            <Input type="tel" {...register("amiMobile")} placeholder="06 98 76 54 32" />
+          </Field>
+        </div>
+      </div>
+
       <Button type="submit" variant="hero" size="xl" className="w-full" disabled={isSubmitting}>
-        {isSubmitting ? "Envoi en cours..." : "Réserver ma séance offerte"}
+        {isSubmitting ? "Envoi en cours..." : "Réserver avec -50%"}
       </Button>
       <p className="text-xs text-muted-foreground text-center mt-3">
         Sans engagement · Réponse sous 24h ouvrées

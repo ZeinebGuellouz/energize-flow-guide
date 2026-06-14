@@ -11,7 +11,7 @@ export const CTABand = () => {
         <div className="reveal-left text-accent-foreground">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black mb-2 leading-tight">Prêt·e à vivre votre 1ère séance EMS ?</h2>
           <p className="text-accent-foreground/90 text-base md:text-lg">
-            1ère séance EMS offerte. Sans engagement.
+            -50% sur votre première séance EMS. Sans engagement.
           </p>
         </div>
         <div className="reveal-right flex flex-col sm:flex-row gap-3 w-full md:w-auto">
