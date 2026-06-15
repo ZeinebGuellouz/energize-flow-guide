@@ -177,9 +177,7 @@ const Herbalife = () => {
             Votre formule complète
           </span>
 
-          <h2 className="text-2xl md:text-5xl font-black mt-3 mb-8">
-            EMS → Hydratation → Nutrition → Résultats
-          </h2>
+    
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 mb-8">
             {steps.map((step, i) => (
