@@ -259,16 +259,7 @@ const Pricing = () => {
         subtitle="Choisissez l'option qui vous convient. Sans paiement en ligne : la souscription se fait directement au studio, sereinement, après votre bilan."
       />
 
-      <section className="py-8 md:py-10 bg-background">
-        <div className="container-px max-w-4xl mx-auto text-center">
-          <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-            Tarifs EMS à Fréjus Plage&nbsp;: séance découverte à -50%, séances à
-            l'unité, packs ou abonnements annuels solo et duo. Coach, combinaison
-            et bar à smoothies inclus. Frais d'inscription uniques de 59€ pour les
-            abonnements.
-          </p>
-        </div>
-      </section>
+     
 
       <section className="py-16 md:py-24 bg-background">
         <div className="container-px max-w-7xl mx-auto">
