@@ -17,22 +17,22 @@ import {
 const packs = [
   {
     id: "decouverte",
-    name: "1ère séance",
-    price: "19,95€",
-    note: "Soit -50% (39,90€)",
+    name: "Séance découverte",
+    price: "19,50€",
+    note: "Au lieu de 39€",
     features: [
       "Bilan personnalisé",
       "1 séance EMS de 20 min",
       "Combinaison fournie",
       "Sans engagement",
     ],
-    cta: "Réserver ma 1ère séance",
-    highlight: false,
+    cta: "Réserver l'offre -50%",
+    highlight: true,
   },
   {
     id: "seance1",
     name: "1 séance",
-    price: "39,90€",
+    price: "39€",
     note: "Séance unique",
     features: [
       "1 séance EMS de 20 min",
@@ -105,12 +105,7 @@ const aboSolo: AboPlan[] = [
     name: "4 séances / mois",
     price: "115€/mois",
     note: "Abonnement annuel solo",
-    features: [
-      "4 séances EMS / mois",
-      "Engagement annuel",
-      "Coach personnel",
-     
-    ],
+    features: ["4 séances EMS / mois", "Engagement annuel", "Coach personnel"],
     cta: "Choisir cet abonnement",
     formule: "Abonnement annuel solo — 4 séances/mois",
   },
@@ -123,7 +118,6 @@ const aboSolo: AboPlan[] = [
       "8 séances EMS / mois",
       "Engagement annuel",
       "Coach personnel + suivi",
-     
     ],
     cta: "Choisir cet abonnement",
     highlight: true,
@@ -138,7 +132,6 @@ const aboSolo: AboPlan[] = [
       "12 séances EMS / mois",
       "Engagement annuel",
       "Coach personnel + suivi avancé",
-     
     ],
     cta: "Choisir cet abonnement",
     formule: "Abonnement annuel solo — 12 séances/mois",
@@ -151,12 +144,7 @@ const aboDuo: AboPlan[] = [
     name: "4 séances / mois",
     price: "105€/mois",
     note: "Abonnement annuel duo/pers",
-    features: [
-      "4 séances EMS / mois",
-      "Engagement annuel",
-      "Coach personnel",
-     
-    ],
+    features: ["4 séances EMS / mois", "Engagement annuel", "Coach personnel"],
     cta: "Choisir cet abonnement",
     formule: "Abonnement annuel duo — 4 séances/mois",
   },
@@ -169,7 +157,6 @@ const aboDuo: AboPlan[] = [
       "8 séances EMS / mois",
       "Engagement annuel",
       "Coach personnel + suivi",
-     
     ],
     cta: "Choisir cet abonnement",
     highlight: true,
@@ -184,7 +171,6 @@ const aboDuo: AboPlan[] = [
       "12 séances EMS / mois",
       "Engagement annuel",
       "Coach personnel + suivi avancé",
-     
     ],
     cta: "Choisir cet abonnement",
     formule: "Abonnement annuel duo — 12 séances/mois",
@@ -209,11 +195,14 @@ const Pricing = () => {
       style={{ transitionDelay: `${i * 60}ms` }}
     >
       {p.highlight && (
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-accent text-accent-foreground text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-full shadow-glow flex items-center gap-1">
-          <Sparkles className="w-3 h-3" /> Populaire
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-accent text-accent-foreground text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-full shadow-glow flex items-center gap-1 whitespace-nowrap">
+          <Sparkles className="w-3 h-3" />
+          {p.id === "decouverte" ? "Offre -50%" : "Populaire"}
         </div>
       )}
+
       <h3 className="text-lg font-bold mb-1">{p.name}</h3>
+
       <div
         className={`text-2xl md:text-3xl font-black mb-1 ${
           p.highlight ? "" : "text-foreground"
@@ -221,6 +210,7 @@ const Pricing = () => {
       >
         {p.price}
       </div>
+
       <p
         className={`text-sm mb-6 ${
           p.highlight ? "text-primary-foreground/70" : "text-muted-foreground"
@@ -228,20 +218,18 @@ const Pricing = () => {
       >
         {p.note}
       </p>
+
       <ul className="space-y-3 mb-8 flex-1">
         {p.features.map((f) => (
           <li key={f} className="flex gap-2 items-start text-sm">
-            <Check
-              className={`w-4 h-4 mt-0.5 shrink-0 ${
-                p.highlight ? "text-accent" : "text-accent"
-              }`}
-            />
+            <Check className="w-4 h-4 mt-0.5 shrink-0 text-accent" />
             <span className={p.highlight ? "text-primary-foreground/90" : ""}>
               {f}
             </span>
           </li>
         ))}
       </ul>
+
       <Button
         variant={p.highlight ? "hero" : "dark"}
         className="w-full"
@@ -255,10 +243,11 @@ const Pricing = () => {
   return (
     <Layout>
       <SEO
-        title="Tarifs EMS Fréjus Plage — -50% première séance, packs & abonnements"
-        description="Tarifs EMS à Fréjus : -50% sur la première séance, packs 1 à 20 séances dès 28€, abonnements solo & duo pour perte de poids, prise de masse et remise en forme."
+        title="Tarifs EMS Fréjus Plage — -50% séance découverte, packs & abonnements"
+        description="Tarifs EMS à Fréjus : -50% sur la séance découverte, packs 1 à 20 séances dès 28€, abonnements solo & duo pour perte de poids, prise de masse et remise en forme."
         path="/tarifs"
       />
+
       <PageHero
         eyebrow="Tarifs"
         title={
@@ -273,15 +262,14 @@ const Pricing = () => {
       <section className="py-8 md:py-10 bg-background">
         <div className="container-px max-w-4xl mx-auto text-center">
           <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-            Tarifs EMS à Fréjus Plage&nbsp;: -50% sur la première séance, séances à
-            l'unité, packs ou abonnements annuels solo et duo. Coach, combinaison et
-            bar à smoothies inclus. Frais d'inscription uniques de 59€ pour les
+            Tarifs EMS à Fréjus Plage&nbsp;: séance découverte à -50%, séances à
+            l'unité, packs ou abonnements annuels solo et duo. Coach, combinaison
+            et bar à smoothies inclus. Frais d'inscription uniques de 59€ pour les
             abonnements.
           </p>
         </div>
       </section>
 
-      {/* Packs séances */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container-px max-w-7xl mx-auto">
           <div className="text-center mb-10 md:mb-14 reveal">
@@ -304,7 +292,6 @@ const Pricing = () => {
         </div>
       </section>
 
-      {/* Abonnements annuels */}
       <section className="py-16 md:py-24 bg-secondary/30">
         <div className="container-px max-w-5xl mx-auto">
           <div className="text-center mb-10 md:mb-14 reveal">
@@ -320,7 +307,6 @@ const Pricing = () => {
             </p>
           </div>
 
-          {/* Toggle */}
           <div className="flex justify-center mb-10 reveal">
             <div className="inline-flex rounded-full bg-muted p-1 border border-border">
               <button
@@ -333,6 +319,7 @@ const Pricing = () => {
               >
                 <User className="w-4 h-4" /> Solo
               </button>
+
               <button
                 onClick={() => setAboMode("duo")}
                 className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all ${
@@ -353,7 +340,9 @@ const Pricing = () => {
           </div>
 
           <p className="text-center text-muted-foreground text-sm mt-10 reveal">
-            Frais d'inscription : <span className="font-semibold text-foreground">59€</span> (uniques, à la souscription).
+            Frais d'inscription :{" "}
+            <span className="font-semibold text-foreground">59€</span> uniques,
+            à la souscription.
           </p>
         </div>
       </section>
@@ -366,6 +355,7 @@ const Pricing = () => {
           <DialogHeader className="sr-only">
             <DialogTitle>{activePlan?.name ?? "Réservation"}</DialogTitle>
           </DialogHeader>
+
           {activePlan?.id === "decouverte" ? (
             <DiscoveryForm />
           ) : activePlan ? (
