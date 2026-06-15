@@ -179,7 +179,7 @@ const Herbalife = () => {
 
     
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 mb-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 mb-2">
             {steps.map((step, i) => (
               <div
                 key={step}
