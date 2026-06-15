@@ -200,23 +200,7 @@ const Herbalife = () => {
         </div>
       </section>
 
-      <section className="py-12 md:py-20 bg-background">
-        <div className="container-px max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl md:text-5xl font-black">
-            Prêt(e) à découvrir l'expérience VitaFit ?
-          </h2>
-
-          <p className="text-base md:text-xl text-muted-foreground mt-4 mb-6">
-            Profitez de -50 % sur votre première séance EMS.
-          </p>
-
-          <Link to="/contact" className="block sm:inline-block">
-            <Button variant="hero" size="xl" className="w-full sm:w-auto">
-              Réserver ma séance
-            </Button>
-          </Link>
-        </div>
-      </section>
+      
 
       <CTABand />
 
