@@ -136,7 +136,7 @@ const Herbalife = () => {
                 alt: "Affiche VitaFit Bar à Smoothies — frais, sain, gourmand",
               })
             }
-            className="w-full overflow-hidden rounded-3xl shadow-elevated bg-card mb-4"
+             className="w-full overflow-hidden rounded-3xl shadow-elevated bg-card mb-6"
           >
             <img
               src="/images/flyer-vitafit-smoothies.jpg"
@@ -146,7 +146,7 @@ const Herbalife = () => {
             />
           </button>
 
-          <div className="text-center space-y-3 max-w-3xl mx-auto">
+         <div className="text-center space-y-4 max-w-3xl mx-auto">
             <span className="text-accent font-semibold uppercase tracking-widest text-xs md:text-sm">
               Bar à smoothies VitaFit
             </span>
