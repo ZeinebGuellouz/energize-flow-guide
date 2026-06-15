@@ -368,7 +368,7 @@ const Pricing = () => {
         </DialogContent>
       </Dialog>
 
-      <CTABand />
+   
     </Layout>
   );
 };
