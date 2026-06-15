@@ -22,7 +22,7 @@ const faqs = [
     a: "Oui, l'EMS est très intense. Nous vous fournissons une combinaison technique. Prévoyez simplement de quoi vous changer.",
   },
   {
-    q: "Puis-je combiner EMS et nutrition Herbalife ?",
+    q: "Puis-je combiner EMS et accompagnement nutritionnel ?",
     a: "Absolument, c'est même notre approche complète. Nous vous accompagnons sur l'aspect nutrition pour maximiser vos résultats : perte de poids, prise de masse ou bien-être général.",
   },
 ];
