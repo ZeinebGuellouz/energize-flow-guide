@@ -8,8 +8,7 @@ const logo = "/ChatGPT_Image_12_juin_2026__08_13_47-removebg-preview.png";
 const NAV = [
   { label: "Accueil", to: "/", hash: "top" },
   { label: "À propos", to: "/a-propos" },
-  { label: "Services EMS", to: "/services-ems" },
-  { label: "Herbalife", to: "/herbalife" },
+  { label: "Nutrition", to: "/herbalife" },
   { label: "Tarifs", to: "/tarifs" },
   { label: "Contact", to: "/contact" },
 ];
