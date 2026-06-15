@@ -9,7 +9,7 @@ const Contact = () => {
   return (
     <Layout>
       <SEO
-        title="Contact VitaFit Fréjus Plage — 114 Rue Victor Reybaud"
+        title="Contact VitaFit Fréjus Plage | 114 Rue Victor Reybaud"
         description="VitaFit, studio EMS & nutrition Herbalife à Fréjus Plage, 114 Rue Victor Reybaud. Réservez votre première séance à -50% au 06.98.89.04.01."
         path="/contact"
       />
