@@ -136,7 +136,7 @@ const Herbalife = () => {
                 alt: "Affiche VitaFit Bar à Smoothies — frais, sain, gourmand",
               })
             }
-            className="w-full overflow-hidden rounded-3xl shadow-elevated bg-card mb-6"
+            className="w-full overflow-hidden rounded-3xl shadow-elevated bg-card mb-4"
           >
             <img
               src="/images/flyer-vitafit-smoothies.jpg"
@@ -146,7 +146,7 @@ const Herbalife = () => {
             />
           </button>
 
-          <div className="text-center space-y-4 max-w-3xl mx-auto">
+          <div className="text-center space-y-3 max-w-3xl mx-auto">
             <span className="text-accent font-semibold uppercase tracking-widest text-xs md:text-sm">
               Bar à smoothies VitaFit
             </span>
@@ -171,14 +171,8 @@ const Herbalife = () => {
         </div>
       </section>
 
-      <section className="py-6 md:py-12 bg-gradient-soft">
+      <section className="pt-2 pb-8 md:pt-6 md:pb-12 bg-gradient-soft">
         <div className="container-px max-w-6xl mx-auto text-center">
-          <span className="hidden">
-            Votre formule complète
-          </span>
-
-    
-
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 mb-4">
             {steps.map((step, i) => (
               <div
@@ -199,8 +193,6 @@ const Herbalife = () => {
           </p>
         </div>
       </section>
-
-      
 
       <CTABand />
 
