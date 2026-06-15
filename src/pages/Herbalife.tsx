@@ -171,7 +171,7 @@ const Herbalife = () => {
         </div>
       </section>
 
-      <section className="py-12 md:py-20 bg-gradient-soft">
+      <section className="py-6 md:py-12 bg-gradient-soft">
         <div className="container-px max-w-6xl mx-auto text-center">
           <span className="hidden">
             Votre formule complète
@@ -179,7 +179,7 @@ const Herbalife = () => {
 
     
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 mb-2">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 mb-4">
             {steps.map((step, i) => (
               <div
                 key={step}
