@@ -38,7 +38,7 @@ const Herbalife = () => {
   return (
     <Layout>
       <SEO
-        title="Nutrition Fréjus — EMS, récupération & bar à smoothies"
+        title="Nutrition Fréjus | EMS, récupération & bar à smoothies"
         description="Nutrition à Fréjus Plage : accompagnement nutritionnel, récupération après séance EMS, contrôle du poids, énergie et bar à smoothies VitaFit."
         path="/nutrition"
       />
