@@ -14,12 +14,70 @@ const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: [
-    { "@type": "Question", name: "L'EMS est-elle adaptée à tout le monde ?", acceptedAnswer: { "@type": "Answer", text: "Oui, l'électrostimulation EMS s'adapte à tous les niveaux : débutants, sportifs, seniors, personnes en rééducation. Un bilan préalable est réalisé avec votre coach. Quelques contre-indications existent (grossesse, pacemaker)." } },
-    { "@type": "Question", name: "À quelle fréquence dois-je venir ?", acceptedAnswer: { "@type": "Answer", text: "Une séance d'EMS par semaine suffit pour obtenir des résultats visibles. Le corps a besoin de 5 à 7 jours pour récupérer." } },
-    { "@type": "Question", name: "Quand vais-je voir les premiers résultats ?", acceptedAnswer: { "@type": "Answer", text: "Les premières sensations apparaissent dès la 2e séance. Les résultats visibles s'observent entre la 4e et la 6e séance." } },
-    { "@type": "Question", name: "Comment fonctionne l'offre -50% sur la première séance ?", acceptedAnswer: { "@type": "Answer", text: "Réservez votre première séance EMS à -50%. Vous bénéficiez d'un bilan personnalisé, de la combinaison et de 20 min d'entraînement encadré. Sans engagement." } },
-    { "@type": "Question", name: "Est-ce que je transpire beaucoup ?", acceptedAnswer: { "@type": "Answer", text: "Oui, l'EMS est très intense. Nous vous fournissons une combinaison technique." } },
-    { "@type": "Question", name: "Puis-je combiner EMS et nutrition Herbalife ?", acceptedAnswer: { "@type": "Answer", text: "Absolument, c'est notre approche complète. Nous vous accompagnons sur la nutrition pour maximiser vos résultats." } },
+    {
+      "@type": "Question",
+      name: "Combien de temps dure une séance EMS ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Une séance dure environ 20 minutes. Grâce à l'électrostimulation, cela équivaut à plusieurs heures d'entraînement traditionnel tout en étant encadré par un coach.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Quand vais-je voir les premiers résultats ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "La plupart de nos clients ressentent une meilleure tonicité et plus d'énergie dès les premières séances. Les résultats visibles apparaissent généralement après 4 à 6 séances selon vos objectifs et votre régularité.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "L'EMS est-elle adaptée aux débutants ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Oui. L'intensité est entièrement personnalisée. Que vous soyez débutant, sportif confirmé ou en reprise d'activité, la séance est adaptée à votre niveau.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Combien de séances par semaine sont recommandées ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Une à deux séances par semaine sont généralement recommandées pour obtenir des résultats optimaux. Votre coach adaptera la fréquence en fonction de vos objectifs, de votre niveau et de votre disponibilité.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Que comprend la séance découverte à 19,95 € ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "La séance découverte comprend un bilan personnalisé, la mise à disposition de la combinaison EMS, une séance encadrée de 20 minutes et des conseils adaptés à vos objectifs.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Faut-il être en bonne condition physique pour commencer ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Non. L'EMS convient à différents profils et permet de travailler efficacement même si vous manquez de temps ou reprenez une activité sportive.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Puis-je associer EMS et accompagnement nutritionnel ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Oui. Nous proposons un accompagnement nutritionnel et un bar à smoothies afin d'optimiser vos résultats, votre récupération et votre bien-être global.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Dois-je apporter quelque chose pour ma séance ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Non. Nous fournissons la combinaison EMS. Il vous suffit de venir avec votre motivation et une tenue confortable pour après la séance.",
+      },
+    },
   ],
 };
 
@@ -28,10 +86,11 @@ const Index = () => {
     <Layout>
       <SEO
         title="EMS Fréjus Plage — Électrostimulation, perte de poids & nutrition"
-        description="Studio EMS premium à Fréjus Plage : 20 min = 4 h de sport, 350 muscles activés. Perte de poids, prise de masse, nutrition Herbalife. -50% sur la première séance."
+        description="Studio EMS premium à Fréjus Plage : séances EMS de 20 minutes, coaching personnalisé, nutrition, bar à smoothies et accompagnement bien-être. Séance découverte à -50%."
         path="/"
         jsonLd={faqJsonLd}
       />
+
       <Hero />
       <Benefits />
       <HowItWorks />
