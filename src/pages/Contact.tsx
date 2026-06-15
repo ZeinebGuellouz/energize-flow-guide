@@ -19,16 +19,7 @@ const Contact = () => {
         subtitle="Une question, une réservation, un projet bien-être ? Nous sommes là pour vous accompagner."
       />
       <ContactInfo />
-      <section className="py-10 md:py-14 bg-background">
-        <div className="container-px max-w-4xl mx-auto text-center">
-          <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-            Studio EMS à Fréjus Plage&nbsp;: 114 Rue Victor Reybaud, 83600 Fréjus.
-            Réservez votre première séance d'électrostimulation à -50% au{" "}
-            <a href="tel:+33698890401" className="text-accent font-semibold">06.98.89.04.01</a>{" "}
-            ou via WhatsApp.
-          </p>
-        </div>
-      </section>
+     
       <Forms />
      
     </Layout>
