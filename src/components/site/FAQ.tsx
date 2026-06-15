@@ -2,31 +2,38 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 const faqs = [
   {
-    q: "L'EMS est-elle adaptée à tout le monde ?",
-    a: "Oui, l'électrostimulation EMS s'adapte à tous les niveaux : débutants, sportifs, seniors, personnes en rééducation. Un bilan préalable est réalisé avec votre coach. Quelques contre-indications existent (grossesse, pacemaker), nous en discutons ensemble.",
-  },
-  {
-    q: "À quelle fréquence dois-je venir ?",
-    a: "Une séance d'EMS par semaine suffit pour obtenir des résultats visibles. Le corps a besoin de 5 à 7 jours pour récupérer pleinement de la stimulation profonde.",
+    q: "Combien de temps dure une séance EMS ?",
+    a: "Une séance dure environ 20 minutes. Grâce à l'électrostimulation, cela équivaut à plusieurs heures d'entraînement traditionnel tout en étant encadré par un coach.",
   },
   {
     q: "Quand vais-je voir les premiers résultats ?",
-    a: "Les premières sensations (tonicité, énergie) apparaissent dès la 2e séance. Les résultats visibles sur la silhouette s'observent généralement entre la 4e et la 6e séance.",
+    a: "La plupart de nos clients ressentent une meilleure tonicité et plus d'énergie dès les premières séances. Les résultats visibles apparaissent généralement après 4 à 6 séances selon vos objectifs et votre régularité.",
   },
   {
-    q: "Comment fonctionne l'offre -50% sur la première séance ?",
-    a: "Réservez votre première séance EMS à -50%. Vous bénéficiez d'un bilan personnalisé, de la combinaison et de 20 min d'entraînement encadré. Sans engagement.",
+    q: "L'EMS est-elle adaptée aux débutants ?",
+    a: "Oui. L'intensité est entièrement personnalisée. Que vous soyez débutant, sportif confirmé ou en reprise d'activité, la séance est adaptée à votre niveau.",
   },
   {
-    q: "Est-ce que je transpire beaucoup ?",
-    a: "Oui, l'EMS est très intense. Nous vous fournissons une combinaison technique. Prévoyez simplement de quoi vous changer.",
+    q: "Combien de séances par semaine sont recommandées ?",
+    a: "Une à deux séances par semaine sont généralement recommandées pour obtenir des résultats optimaux. Votre coach adaptera la fréquence en fonction de vos objectifs, de votre niveau et de votre disponibilité.",
   },
   {
-    q: "Puis-je combiner EMS et accompagnement nutritionnel ?",
-    a: "Absolument, c'est même notre approche complète. Nous vous accompagnons sur l'aspect nutrition pour maximiser vos résultats : perte de poids, prise de masse ou bien-être général.",
+    q: "Que comprend la séance découverte à 19,95 € ?",
+    a: "La séance découverte comprend un bilan personnalisé, la mise à disposition de la combinaison EMS, une séance encadrée de 20 minutes et des conseils adaptés à vos objectifs.",
+  },
+  {
+    q: "Faut-il être en bonne condition physique pour commencer ?",
+    a: "Non. L'EMS convient à différents profils et permet de travailler efficacement même si vous manquez de temps ou reprenez une activité sportive.",
+  },
+  {
+    q: "Puis-je associer EMS et accompagnement nutritionnel ?",
+    a: "Oui. Nous proposons un accompagnement nutritionnel et un bar à smoothies afin d'optimiser vos résultats, votre récupération et votre bien-être global.",
+  },
+  {
+    q: "Dois-je apporter quelque chose pour ma séance ?",
+    a: "Non. Nous fournissons la combinaison EMS. Il vous suffit de venir avec votre motivation et une tenue confortable pour après la séance.",
   },
 ];
-
 export const FAQ = () => {
   return (
     <section id="faq" className="py-12 md:py-20 bg-gradient-soft">
