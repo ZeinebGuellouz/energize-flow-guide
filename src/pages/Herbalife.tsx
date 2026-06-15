@@ -11,22 +11,22 @@ const benefits = [
   {
     icon: Battery,
     title: "Énergie durable",
-    text: "Des solutions nutritionnelles pour soutenir votre forme et votre vitalité au quotidien.",
+    text: "Soutenez votre forme et votre vitalité au quotidien.",
   },
   {
     icon: Sparkles,
     title: "Récupération musculaire",
-    text: "Un accompagnement pensé pour prolonger les bénéfices de vos séances EMS.",
+    text: "Prolongez les bénéfices de vos séances EMS.",
   },
   {
     icon: Scale,
     title: "Contrôle du poids",
-    text: "Des conseils adaptés à vos objectifs : perte de poids, tonification ou maintien.",
+    text: "Un accompagnement adapté à vos objectifs.",
   },
   {
     icon: Heart,
     title: "Bien-être quotidien",
-    text: "Une approche globale pour vous sentir plus léger·e, plus tonique et plus en forme.",
+    text: "Une approche globale pour vous sentir mieux.",
   },
 ];
 
@@ -43,41 +43,8 @@ const Herbalife = () => {
         path="/herbalife"
       />
 
-      <section className="py-10 md:py-28 bg-background overflow-hidden">
-        <div className="container-px max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div className="reveal-left space-y-5 text-center lg:text-left">
-            <span className="inline-block text-accent font-semibold uppercase tracking-widest text-xs md:text-sm">
-              Nutrition & récupération
-            </span>
-
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-black leading-tight">
-              Nutrition & récupération pour{" "}
-              <span className="text-gradient-accent">
-                maximiser vos résultats
-              </span>
-            </h1>
-
-            <p className="text-base md:text-xl text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0">
-              Chez VitaFit, l'entraînement ne s'arrête pas à la séance EMS. Nous
-              vous accompagnons avec des solutions nutritionnelles adaptées à vos
-              objectifs : perte de poids, énergie, récupération et bien-être.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-              <Link to="/contact" className="w-full sm:w-auto">
-                <Button variant="hero" size="lg" className="w-full sm:w-auto">
-                  Réserver ma séance
-                </Button>
-              </Link>
-
-              <Link to="/tarifs" className="w-full sm:w-auto">
-                <Button variant="outline" size="lg" className="w-full sm:w-auto">
-                  Voir les tarifs
-                </Button>
-              </Link>
-            </div>
-          </div>
-
+      <section className="py-8 md:py-20 bg-background">
+        <div className="container-px max-w-md md:max-w-5xl mx-auto">
           <button
             type="button"
             onClick={() =>
@@ -86,83 +53,81 @@ const Herbalife = () => {
                 alt: "Affiche EMS Révolution — 1ère séance à -50%",
               })
             }
-            className="reveal-right group overflow-hidden rounded-2xl md:rounded-3xl shadow-elevated hover:shadow-glow transition-all bg-card max-w-sm sm:max-w-md lg:max-w-none mx-auto"
+            className="w-full overflow-hidden rounded-3xl shadow-elevated bg-card mb-6"
           >
             <img
               src="/images/flyer-ems-revolution.jpg"
               alt="Affiche EMS Révolution — 1ère séance à -50%"
               loading="eager"
-              className="w-full h-auto object-contain group-hover:scale-[1.02] transition-transform duration-700"
+              className="w-full h-auto object-contain"
             />
           </button>
+
+          <div className="text-center space-y-4 max-w-3xl mx-auto">
+            <span className="text-accent font-semibold uppercase tracking-widest text-xs md:text-sm">
+              Nutrition & récupération
+            </span>
+
+            <h1 className="text-3xl md:text-5xl font-black leading-tight">
+              Nutrition & récupération pour{" "}
+              <span className="text-gradient-accent">
+                maximiser vos résultats
+              </span>
+            </h1>
+
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              Chez VitaFit, l'entraînement ne s'arrête pas à la séance EMS. Nous
+              vous accompagnons avec des solutions nutritionnelles adaptées à vos
+              objectifs.
+            </p>
+
+            <Link to="/contact" className="block sm:inline-block">
+              <Button variant="hero" size="lg" className="w-full sm:w-auto">
+                Réserver ma séance
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
-      <section className="py-12 md:py-28 bg-gradient-soft">
-        <div className="container-px max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-8 md:mb-14 reveal">
+      <section className="py-12 md:py-20 bg-gradient-soft">
+        <div className="container-px max-w-6xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-8">
             <span className="text-accent font-semibold uppercase tracking-widest text-xs md:text-sm">
               EMS + Nutrition
             </span>
 
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black mt-3 leading-tight">
+            <h2 className="text-2xl md:text-5xl font-black mt-3 leading-tight">
               Pourquoi associer EMS et nutrition ?
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {benefits.map((b, i) => (
               <div
                 key={b.title}
-                className="reveal h-full bg-card rounded-2xl p-5 md:p-8 shadow-soft border border-border"
+                className="bg-card rounded-2xl p-4 md:p-7 shadow-soft border border-border text-center"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <div className="flex items-start gap-4 md:block">
-                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-gradient-accent grid place-items-center shadow-glow shrink-0 md:mb-5">
-                    <b.icon className="w-6 h-6 md:w-7 md:h-7 text-accent-foreground" />
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg md:text-xl font-bold mb-1.5 md:mb-3">
-                      {b.title}
-                    </h3>
-
-                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                      {b.text}
-                    </p>
-                  </div>
+                <div className="w-11 h-11 md:w-14 md:h-14 rounded-2xl bg-gradient-accent grid place-items-center shadow-glow mx-auto mb-3 md:mb-5">
+                  <b.icon className="w-5 h-5 md:w-7 md:h-7 text-accent-foreground" />
                 </div>
+
+                <h3 className="text-base md:text-xl font-bold mb-2">
+                  {b.title}
+                </h3>
+
+                <p className="text-xs md:text-base text-muted-foreground leading-relaxed">
+                  {b.text}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-12 md:py-28 bg-background overflow-hidden">
-        <div className="container-px max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div className="reveal-right space-y-5 order-1 lg:order-2 text-center lg:text-left">
-            <span className="text-accent font-semibold uppercase tracking-widest text-xs md:text-sm">
-              Bar à smoothies VitaFit
-            </span>
-
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black leading-tight">
-              Des smoothies sains, gourmands et{" "}
-              <span className="text-gradient-accent">riches en nutriments</span>
-            </h2>
-
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0">
-              Préparés à partir d'ingrédients sélectionnés, nos smoothies
-              apportent protéines, vitamines et minéraux pour accompagner vos
-              objectifs sportifs et nutritionnels.
-            </p>
-
-            <Link to="/contact" className="inline-block w-full sm:w-auto">
-              <Button variant="hero" size="lg" className="w-full sm:w-auto">
-                Découvrir le bar à smoothies
-              </Button>
-            </Link>
-          </div>
-
+      <section className="py-8 md:py-20 bg-background">
+        <div className="container-px max-w-md md:max-w-5xl mx-auto">
           <button
             type="button"
             onClick={() =>
@@ -171,25 +136,48 @@ const Herbalife = () => {
                 alt: "Affiche VitaFit Bar à Smoothies — frais, sain, gourmand",
               })
             }
-            className="reveal-left group overflow-hidden rounded-2xl md:rounded-3xl shadow-elevated hover:shadow-glow transition-all bg-card order-2 lg:order-1 max-w-sm sm:max-w-md lg:max-w-none mx-auto"
+            className="w-full overflow-hidden rounded-3xl shadow-elevated bg-card mb-6"
           >
             <img
               src="/images/flyer-vitafit-smoothies.jpg"
               alt="Affiche VitaFit Bar à Smoothies — frais, sain, gourmand"
               loading="lazy"
-              className="w-full h-auto object-contain group-hover:scale-[1.02] transition-transform duration-700"
+              className="w-full h-auto object-contain"
             />
           </button>
+
+          <div className="text-center space-y-4 max-w-3xl mx-auto">
+            <span className="text-accent font-semibold uppercase tracking-widest text-xs md:text-sm">
+              Bar à smoothies VitaFit
+            </span>
+
+            <h2 className="text-2xl md:text-5xl font-black leading-tight">
+              Des smoothies sains, gourmands et{" "}
+              <span className="text-gradient-accent">riches en nutriments</span>
+            </h2>
+
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              Préparés à partir d'ingrédients sélectionnés, nos smoothies
+              apportent protéines, vitamines et minéraux pour accompagner vos
+              objectifs sportifs et nutritionnels.
+            </p>
+
+            <Link to="/contact" className="block sm:inline-block">
+              <Button variant="hero" size="lg" className="w-full sm:w-auto">
+                Découvrir le bar à smoothies
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
-      <section className="py-12 md:py-28 bg-gradient-soft">
+      <section className="py-12 md:py-20 bg-gradient-soft">
         <div className="container-px max-w-6xl mx-auto text-center">
           <span className="text-accent font-semibold uppercase tracking-widest text-xs md:text-sm">
             Votre formule complète
           </span>
 
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-black mt-3 mb-8">
+          <h2 className="text-2xl md:text-5xl font-black mt-3 mb-8">
             EMS → Hydratation → Nutrition → Résultats
           </h2>
 
@@ -214,17 +202,17 @@ const Herbalife = () => {
         </div>
       </section>
 
-      <section className="py-12 md:py-28 bg-background">
+      <section className="py-12 md:py-20 bg-background">
         <div className="container-px max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-black">
+          <h2 className="text-2xl md:text-5xl font-black">
             Prêt(e) à découvrir l'expérience VitaFit ?
           </h2>
 
-          <p className="text-base md:text-xl text-muted-foreground mt-4 mb-6 md:mb-8">
+          <p className="text-base md:text-xl text-muted-foreground mt-4 mb-6">
             Profitez de -50 % sur votre première séance EMS.
           </p>
 
-          <Link to="/contact" className="inline-block w-full sm:w-auto">
+          <Link to="/contact" className="block sm:inline-block">
             <Button variant="hero" size="xl" className="w-full sm:w-auto">
               Réserver ma séance
             </Button>
@@ -238,7 +226,7 @@ const Herbalife = () => {
         open={!!selectedImage}
         onOpenChange={() => setSelectedImage(null)}
       >
-        <DialogContent className="w-[95vw] max-w-5xl p-2 md:p-0 bg-transparent border-none shadow-none">
+        <DialogContent className="w-[95vw] max-w-5xl p-2 bg-transparent border-none shadow-none">
           {selectedImage && (
             <img
               src={selectedImage.src}
