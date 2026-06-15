@@ -136,7 +136,7 @@ const Herbalife = () => {
                 alt: "Affiche VitaFit Bar à Smoothies — frais, sain, gourmand",
               })
             }
-             className="w-full overflow-hidden rounded-3xl shadow-elevated bg-card mb-6"
+            className="w-full overflow-hidden rounded-3xl shadow-elevated bg-card mb-6"
           >
             <img
               src="/images/flyer-vitafit-smoothies.jpg"
@@ -146,7 +146,7 @@ const Herbalife = () => {
             />
           </button>
 
-         <div className="text-center space-y-4 max-w-3xl mx-auto">
+          <div className="text-center space-y-4 max-w-3xl mx-auto">
             <span className="text-accent font-semibold uppercase tracking-widest text-xs md:text-sm">
               Bar à smoothies VitaFit
             </span>
@@ -171,7 +171,7 @@ const Herbalife = () => {
         </div>
       </section>
 
-      <section className="pt-0 pb-6 md:pt-0 md:pb-10 bg-gradient-soft -mt-8 md:-mt-6">
+      <section className="pt-8 pb-8 md:pt-12 md:pb-12 bg-gradient-soft">
         <div className="container-px max-w-6xl mx-auto text-center">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 mb-4">
             {steps.map((step, i) => (
@@ -194,7 +194,7 @@ const Herbalife = () => {
         </div>
       </section>
 
-     {/* <CTABand /> */}
+      {/* <CTABand /> */}
 
       <Dialog
         open={!!selectedImage}
