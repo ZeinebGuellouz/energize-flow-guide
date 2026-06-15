@@ -292,6 +292,58 @@ const Herbalife = () => {
         </div>
       </section>
 
+      <section className="py-20 md:py-28 bg-background">
+        <div className="container-px max-w-6xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-12 reveal">
+            <span className="text-accent font-semibold uppercase tracking-widest text-sm">
+              Nos affiches
+            </span>
+            <h2 className="text-3xl md:text-5xl font-black mt-3">
+              Découvrez nos offres en un coup d'œil
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <button
+              type="button"
+              onClick={() =>
+                setSelectedImage({
+                  src: "/images/flyer-ems-revolution.jpg",
+                  alt: "Affiche EMS Révolution — 1ère séance à -50%",
+                })
+              }
+              className="reveal group overflow-hidden rounded-3xl shadow-elevated hover:shadow-glow transition-all"
+            >
+              <img
+                src="/images/flyer-ems-revolution.jpg"
+                alt="Affiche EMS Révolution — 1ère séance à -50%"
+                loading="lazy"
+                className="w-full h-auto object-contain group-hover:scale-[1.02] transition-transform duration-700"
+              />
+            </button>
+
+            <button
+              type="button"
+              onClick={() =>
+                setSelectedImage({
+                  src: "/images/flyer-vitafit-smoothies.jpg",
+                  alt: "Affiche Vitafit Bar à Smoothies — frais, sain, gourmand",
+                })
+              }
+              className="reveal group overflow-hidden rounded-3xl shadow-elevated hover:shadow-glow transition-all"
+            >
+              <img
+                src="/images/flyer-vitafit-smoothies.jpg"
+                alt="Affiche Vitafit Bar à Smoothies — frais, sain, gourmand"
+                loading="lazy"
+                className="w-full h-auto object-contain group-hover:scale-[1.02] transition-transform duration-700"
+              />
+            </button>
+          </div>
+        </div>
+      </section>
+
+
       <section className="py-10 md:py-14 bg-background">
         <div className="container-px max-w-4xl mx-auto text-center">
           <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
