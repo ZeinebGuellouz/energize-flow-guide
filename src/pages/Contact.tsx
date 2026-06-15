@@ -30,7 +30,7 @@ const Contact = () => {
         </div>
       </section>
       <Forms />
-      <CTABand />
+     
     </Layout>
   );
 };
