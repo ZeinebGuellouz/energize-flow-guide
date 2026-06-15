@@ -268,7 +268,8 @@ const Pricing = () => {
               Séances à l'unité & packs
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-black mt-3 leading-tight">
-              Payez au fur et à mesure
+                  Commencez à votre rythme
+
             </h2>
           </div>
 
