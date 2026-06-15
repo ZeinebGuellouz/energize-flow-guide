@@ -194,7 +194,7 @@ const Herbalife = () => {
         </div>
       </section>
 
-      <CTABand />
+     {/* <CTABand /> */}
 
       <Dialog
         open={!!selectedImage}
