@@ -17,7 +17,7 @@ const About = () => {
   return (
     <Layout>
       <SEO
-        title="À propos VitaFit — Studio EMS & coach remise en forme à Fréjus Plage"
+        title="À propos VitaFit | Studio EMS & coach remise en forme à Fréjus Plage"
         description="VitaFit Fréjus Plage : coachs certifiés EMS, nutrition Herbalife et coaching personnalisé pour perte de poids, prise de masse et remise en forme durable."
         path="/a-propos"
       />
