@@ -3,7 +3,6 @@ import { SEO } from "@/components/site/SEO";
 import { PageHero } from "@/components/site/PageHero";
 import { Button } from "@/components/ui/button";
 import { Check, Sparkles, User, Users } from "lucide-react";
-import { CTABand } from "@/components/site/CTABand";
 import { useState } from "react";
 import { DiscoveryForm } from "@/components/site/DiscoveryForm";
 import { EmsRequestForm } from "@/components/site/EmsRequestForm";
@@ -243,8 +242,8 @@ const Pricing = () => {
   return (
     <Layout>
       <SEO
-        title="Tarifs EMS Fréjus Plage | -50% séance découverte, packs & abonnements"
-        description="Tarifs EMS à Fréjus : -50% sur la séance découverte, packs 1 à 20 séances dès 28€, abonnements solo & duo pour perte de poids, prise de masse et remise en forme."
+        title="Tarifs EMS Fréjus Plage | Séance découverte, packs & abonnements"
+        description="Tarifs EMS à Fréjus : séance découverte à -50%, packs 1 à 20 séances dès 28€, abonnements solo et duo pour perte de poids, tonification et remise en forme."
         path="/tarifs"
       />
 
@@ -253,13 +252,13 @@ const Pricing = () => {
         title={
           <>
             Des formules{" "}
-            <span className="text-gradient-accent">simples et transparentes</span>
+            <span className="text-gradient-accent">
+              simples et transparentes
+            </span>
           </>
         }
         subtitle="Choisissez l'option qui vous convient. Sans paiement en ligne : la souscription se fait directement au studio, sereinement, après votre bilan."
       />
-
-     
 
       <section className="py-16 md:py-24 bg-background">
         <div className="container-px max-w-7xl mx-auto">
@@ -267,17 +266,20 @@ const Pricing = () => {
             <span className="text-accent font-semibold uppercase tracking-widest text-xs sm:text-sm">
               Séances à l'unité & packs
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black mt-3 leading-tight">
-                  Commencez à votre rythme
 
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black mt-3 leading-tight">
+              Commencez à votre rythme
             </h2>
+
+            <p className="text-muted-foreground mt-3 max-w-2xl mx-auto text-sm md:text-base">
+              Séance découverte, séance à l'unité ou packs de plusieurs séances :
+              choisissez la formule qui correspond le mieux à vos objectifs.
+            </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5 md:gap-6">
             {packs.map((p, i) => renderCard(p, i))}
           </div>
-
-        
         </div>
       </section>
 
@@ -287,12 +289,14 @@ const Pricing = () => {
             <span className="text-accent font-semibold uppercase tracking-widest text-xs sm:text-sm">
               Abonnements annuels
             </span>
+
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-black mt-3 leading-tight">
               Engagez-vous et économisez
             </h2>
+
             <p className="text-muted-foreground mt-3 max-w-2xl mx-auto text-sm md:text-base">
-              Choisissez votre rythme : 4, 8 ou 12 séances par mois. En solo ou à
-              deux pour encore plus de motivation.
+              Choisissez votre rythme : 4, 8 ou 12 séances par mois, en solo ou
+              en duo.
             </p>
           </div>
 
@@ -356,8 +360,6 @@ const Pricing = () => {
           ) : null}
         </DialogContent>
       </Dialog>
-
-   
     </Layout>
   );
 };
