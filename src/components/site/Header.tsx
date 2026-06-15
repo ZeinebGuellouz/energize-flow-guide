@@ -41,14 +41,14 @@ export const Header = () => {
       )}
     >
       <div className="container-px max-w-7xl mx-auto flex items-center justify-between gap-1 sm:gap-2 h-14 md:h-20">
-        <Link to="/" className="flex items-center gap-2 group shrink-0" aria-label="Accueil VitaFit Fréjus Plage">
+        <Link to="/" className="flex items-center gap-2.5 group shrink-0" aria-label="Accueil VitaFit Fréjus Plage">
           <img
             src={logo}
             alt="VitaFit Fréjus Plage — EMS, Nutrition, Coaching"
-            className="w-9 h-9 md:w-11 md:h-11 rounded-full bg-white object-contain p-0.5 shadow-glow group-hover:scale-105 transition-transform"
+            className="w-11 h-11 md:w-14 md:h-14 rounded-full bg-white object-contain p-0.5 shadow-glow group-hover:scale-105 transition-transform"
           />
           <div className="leading-tight hidden md:block">
-            <div className={cn("font-bold text-sm md:text-base", scrolled ? "text-foreground" : "text-foreground")}>
+            <div className={cn("font-extrabold text-base md:text-lg tracking-tight", scrolled ? "text-foreground" : "text-foreground")}>
               VitaFit
             </div>
             <div className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-widest">

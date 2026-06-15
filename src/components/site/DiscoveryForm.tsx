@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { toast } from "@/hooks/use-toast";
-import { CheckCircle2, Gift, Users } from "lucide-react";
+import { CheckCircle2, Gift } from "lucide-react";
 import { submitDiscoveryForm } from "@/lib/emailjs";
 import {
   Select,
@@ -38,9 +38,6 @@ const schema = z.object({
   dateSouhaitee: z.string().min(1, "Date requise"),
   creneau: z.string().min(1, "Créneau requis"),
   smsOk: z.literal(true, { message: "Acceptation requise" }),
-  amiNom: z.string().trim().min(2, "Nom de l'ami requis").max(60),
-  amiPrenom: z.string().trim().min(2, "Prénom de l'ami requis").max(60),
-  amiMobile: z.string().trim().regex(/^[0-9 +.\-()]{8,20}$/, "Téléphone invalide"),
 });
 
 type FormValues = z.infer<typeof schema>;
@@ -70,9 +67,6 @@ export const DiscoveryForm = () => {
       code_postal: data.codePostal,
       date: data.dateSouhaitee,
       creneau: data.creneau,
-      ami_nom: data.amiNom,
-      ami_prenom: data.amiPrenom,
-      ami_mobile: data.amiMobile,
       sms_accepte: "Oui",
     };
 
@@ -186,27 +180,9 @@ export const DiscoveryForm = () => {
           onCheckedChange={(v) => setValue("smsOk", v === true ? true : (false as never), { shouldValidate: true })}
         />
         <Label htmlFor="sms" className="text-sm leading-relaxed cursor-pointer">
-          J'accepte de recevoir des SMS d'information de la part d'VitaFit Fréjus Plage. *
+          J'accepte de recevoir des SMS d'information de la part de VitaFit Fréjus Plage. *
           {errors.smsOk && <span className="block text-destructive text-xs mt-1">{errors.smsOk.message}</span>}
         </Label>
-      </div>
-
-      <div className="border-t border-border pt-6 mb-5">
-        <div className="flex items-center gap-2 mb-4">
-          <Users className="w-5 h-5 text-accent" />
-          <h4 className="font-bold">Coordonnées de votre ami·e</h4>
-        </div>
-        <div className="grid sm:grid-cols-2 gap-4">
-          <Field label="Nom *" error={errors.amiNom?.message}>
-            <Input {...register("amiNom")} placeholder="Martin" />
-          </Field>
-          <Field label="Prénom *" error={errors.amiPrenom?.message}>
-            <Input {...register("amiPrenom")} placeholder="Julie" />
-          </Field>
-          <Field label="Mobile *" error={errors.amiMobile?.message} className="sm:col-span-2">
-            <Input type="tel" {...register("amiMobile")} placeholder="06 98 76 54 32" />
-          </Field>
-        </div>
       </div>
 
       <Button type="submit" variant="hero" size="xl" className="w-full" disabled={isSubmitting}>

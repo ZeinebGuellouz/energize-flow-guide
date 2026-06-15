@@ -15,15 +15,15 @@ export const Footer = () => {
   return (
     <footer className="bg-gradient-dark text-primary-foreground py-8 md:py-10">
       <div className="container-px max-w-6xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-6">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3.5">
           <img
             src={logo}
             alt="VitaFit Fréjus Plage"
-            className="w-10 h-10 rounded-full bg-white object-contain p-0.5 shadow-glow"
+            className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white object-contain p-0.5 shadow-glow"
           />
           <div className="leading-tight">
-            <div className="font-bold text-sm">VitaFit</div>
-            <div className="text-[10px] text-primary-foreground/60 uppercase tracking-widest">
+            <div className="font-extrabold text-base md:text-lg tracking-tight">VitaFit</div>
+            <div className="text-[10px] md:text-xs text-primary-foreground/60 uppercase tracking-widest">
               EMS · Nutrition · Coaching
             </div>
           </div>
