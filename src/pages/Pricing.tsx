@@ -257,7 +257,7 @@ const Pricing = () => {
             </span>
           </>
         }
-        subtitle="Choisissez l'option qui vous convient. Sans paiement en ligne : la souscription se fait directement au studio, sereinement, après votre bilan."
+        subtitle="Des formules flexibles pour répondre à vos objectifs, votre rythme et votre budget."
       />
 
       <section className="py-16 md:py-24 bg-background">
@@ -272,8 +272,7 @@ const Pricing = () => {
             </h2>
 
             <p className="text-muted-foreground mt-3 max-w-2xl mx-auto text-sm md:text-base">
-              Séance découverte, séance à l'unité ou packs de plusieurs séances :
-              choisissez la formule qui correspond le mieux à vos objectifs.
+              Profitez de la liberté d'avancer à votre rythme, sans engagement.
             </p>
           </div>
 
@@ -295,8 +294,7 @@ const Pricing = () => {
             </h2>
 
             <p className="text-muted-foreground mt-3 max-w-2xl mx-auto text-sm md:text-base">
-              Choisissez votre rythme : 4, 8 ou 12 séances par mois, en solo ou
-              en duo.
+              En solo ou en duo, choisissez la fréquence qui vous convient.
             </p>
           </div>
 
