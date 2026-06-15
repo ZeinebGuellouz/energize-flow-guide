@@ -95,16 +95,6 @@ const About = () => {
         </div>
       </section>
 
-      <section className="py-10 md:py-14 bg-gradient-soft">
-        <div className="container-px max-w-4xl mx-auto text-center">
-          <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-            VitaFit est votre studio EMS et nutrition à Fréjus Plage&nbsp;:
-            une équipe certifiée, un coaching personnalisé et une méthode qui combine
-            électrostimulation, Herbalife et suivi sur-mesure.
-          </p>
-        </div>
-      </section>
-
       <CTABand />
     </Layout>
   );
