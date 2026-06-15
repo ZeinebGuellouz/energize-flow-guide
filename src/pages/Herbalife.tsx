@@ -1,38 +1,32 @@
 import { useState } from "react";
 import { Layout } from "@/components/site/Layout";
 import { SEO } from "@/components/site/SEO";
-import { PageHero } from "@/components/site/PageHero";
 import { CTABand } from "@/components/site/CTABand";
 import { Button } from "@/components/ui/button";
-import { Apple, Battery, Leaf, Scale } from "lucide-react";
+import { Battery, Heart, Scale, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
-import herbal from "@/assets/herbalife-products.jpg";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
-const ranges = [
-  {
-    icon: Apple,
-    title: "Nutrition équilibrée",
-    text: "Substituts de repas riches en protéines, vitamines et minéraux. Le Formula 1 pour un petit-déjeuner ou repas équilibré en moins de 5 minutes.",
-    benefits: ["25 vitamines & minéraux", "Protéines végétales et lait", "Goûts variés"],
-  },
+const benefits = [
   {
     icon: Battery,
-    title: "Énergie & performance",
-    text: "Boissons et compléments pré-entraînement pour booster votre énergie, votre concentration et votre endurance.",
-    benefits: ["Caféine naturelle", "Zéro sucre ajouté option", "Effet immédiat"],
+    title: "Énergie durable",
+    text: "Des solutions nutritionnelles pour soutenir votre forme et votre vitalité au quotidien.",
   },
   {
-    icon: Leaf,
-    title: "Récupération",
-    text: "Protéines de haute qualité pour favoriser la récupération musculaire après vos séances EMS et accélérer la prise de masse maigre.",
-    benefits: ["Whey & végétale", "Acides aminés essentiels", "Digestion facile"],
+    icon: Sparkles,
+    title: "Récupération musculaire",
+    text: "Un accompagnement pensé pour prolonger les bénéfices de vos séances EMS.",
   },
   {
     icon: Scale,
-    title: "Gestion du poids",
-    text: "Programmes personnalisés perte ou prise de poids, encadrés par votre coach nutrition dans notre studio.",
-    benefits: ["Suivi personnalisé", "Bilan nutrition offert", "Résultats durables"],
+    title: "Contrôle du poids",
+    text: "Des conseils adaptés à vos objectifs : perte de poids, tonification ou maintien.",
+  },
+  {
+    icon: Heart,
+    title: "Bien-être quotidien",
+    text: "Une approche globale pour vous sentir plus léger·e, plus tonique et plus en forme.",
   },
 ];
 
@@ -42,64 +36,63 @@ const Herbalife = () => {
   return (
     <Layout>
       <SEO
-        title="Nutrition Fréjus — Perte de poids, énergie & prise de masse"
-        description="Nutrition à Fréjus Plage : programmes nutrition sportive pour perte de poids, prise de masse maigre et énergie. Bar à smoothies et bilan nutrition offert."
+        title="Nutrition Fréjus — EMS, récupération & bar à smoothies"
+        description="Nutrition à Fréjus Plage : accompagnement nutritionnel, récupération après séance EMS, contrôle du poids, énergie et bar à smoothies VitaFit."
         path="/herbalife"
       />
 
-      <PageHero
-        eyebrow="Nutrition"
-        title={
-          <>
-            Une nutrition{" "}
-            <span className="text-gradient-accent">
-              qui démultiplie vos résultats
-            </span>
-          </>
-        }
-        subtitle="Parce que sport et nutrition vont de pair, nous vous accompagnons avec des solutions adaptées à vos objectifs."
-      />
-
       <section className="py-20 md:py-28 bg-background">
-        <div className="container-px max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-          <div className="reveal-left">
-            <img
-              src={herbal}
-              loading="lazy"
-              alt="Produits nutritionnels"
-              className="rounded-3xl shadow-elevated"
-            />
-          </div>
-
-          <div className="reveal-right space-y-5">
+        <div className="container-px max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+          <div className="reveal-left space-y-6">
             <span className="text-accent font-semibold uppercase tracking-widest text-sm">
-              Notre approche
+              Nutrition & récupération
             </span>
 
-            <h2 className="text-3xl md:text-4xl font-black">
-              Nutrition + EMS ={" "}
-              <span className="text-gradient-accent">résultats accélérés</span>
-            </h2>
+            <h1 className="text-4xl md:text-6xl font-black leading-tight">
+              Nutrition & récupération pour{" "}
+              <span className="text-gradient-accent">
+                maximiser vos résultats
+              </span>
+            </h1>
 
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Nous vous conseillons des solutions nutritionnelles adaptées à vos
-              objectifs : silhouette, énergie, performance et récupération.
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              Chez VitaFit, l'entraînement ne s'arrête pas à la séance EMS. Nous
+              vous accompagnons avec des solutions nutritionnelles adaptées à vos
+              objectifs : perte de poids, énergie, récupération et bien-être.
             </p>
 
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Bénéficiez d'un{" "}
-              <strong className="text-foreground">bilan nutrition offert</strong>{" "}
-              lors de votre première séance EMS et repartez avec un plan personnalisé.
-            </p>
-
-            <div className="flex justify-center">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/contact">
                 <Button variant="hero" size="lg">
-                  Demander un conseil nutrition
+                  Réserver ma séance
+                </Button>
+              </Link>
+
+              <Link to="/tarifs">
+                <Button variant="outline" size="lg">
+                  Voir les tarifs
                 </Button>
               </Link>
             </div>
           </div>
+
+          <button
+            type="button"
+            onClick={() =>
+              setSelectedImage({
+                src: "/images/flyer-ems-revolution.jpg",
+                alt: "Affiche EMS Révolution — 1ère séance à -50%",
+              })
+            }
+            className="reveal-right group overflow-hidden rounded-3xl shadow-elevated hover:shadow-glow transition-all bg-card"
+          >
+            <img
+              src="/images/flyer-ems-revolution.jpg"
+              alt="Affiche EMS Révolution — 1ère séance à -50%"
+              loading="eager"
+              className="w-full h-auto object-contain group-hover:scale-[1.02] transition-transform duration-700"
+            />
+          </button>
         </div>
       </section>
 
@@ -107,109 +100,111 @@ const Herbalife = () => {
         <div className="container-px max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-14 reveal">
             <span className="text-accent font-semibold uppercase tracking-widest text-sm">
-              Gammes
+              EMS + Nutrition
             </span>
 
             <h2 className="text-3xl md:text-5xl font-black mt-3">
-              Nos univers nutrition
+              Pourquoi associer EMS et nutrition ?
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {ranges.map((r, i) => (
+            {benefits.map((b, i) => (
               <div
-                key={r.title}
+                key={b.title}
                 className="reveal h-full bg-card rounded-2xl p-8 shadow-soft hover:shadow-elevated transition-all hover:-translate-y-1 border border-border"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
                 <div className="w-14 h-14 rounded-2xl bg-gradient-accent grid place-items-center shadow-glow mb-5">
-                  <r.icon className="w-7 h-7 text-accent-foreground" />
+                  <b.icon className="w-7 h-7 text-accent-foreground" />
                 </div>
 
-                <h3 className="text-xl font-bold mb-3">{r.title}</h3>
+                <h3 className="text-xl font-bold mb-3">{b.title}</h3>
 
-                <p className="text-muted-foreground mb-4">{r.text}</p>
-
-                <ul className="space-y-1.5">
-                  {r.benefits.map((b) => (
-                    <li key={b} className="flex items-center gap-2 text-sm">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                      {b}
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-muted-foreground">{b.text}</p>
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="text-center mt-14 reveal">
+      <section className="py-20 md:py-28 bg-background">
+        <div className="container-px max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+          <button
+            type="button"
+            onClick={() =>
+              setSelectedImage({
+                src: "/images/flyer-vitafit-smoothies.jpg",
+                alt: "Affiche VitaFit Bar à Smoothies — frais, sain, gourmand",
+              })
+            }
+            className="reveal-left group overflow-hidden rounded-3xl shadow-elevated hover:shadow-glow transition-all bg-card order-2 lg:order-1"
+          >
+            <img
+              src="/images/flyer-vitafit-smoothies.jpg"
+              alt="Affiche VitaFit Bar à Smoothies — frais, sain, gourmand"
+              loading="lazy"
+              className="w-full h-auto object-contain group-hover:scale-[1.02] transition-transform duration-700"
+            />
+          </button>
+
+          <div className="reveal-right space-y-6 order-1 lg:order-2">
+            <span className="text-accent font-semibold uppercase tracking-widest text-sm">
+              Bar à smoothies VitaFit
+            </span>
+
+            <h2 className="text-3xl md:text-5xl font-black leading-tight">
+              Des smoothies sains, gourmands et{" "}
+              <span className="text-gradient-accent">riches en nutriments</span>
+            </h2>
+
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Préparés à partir d'ingrédients sélectionnés, nos smoothies
+              apportent protéines, vitamines et minéraux pour accompagner vos
+              objectifs sportifs et nutritionnels.
+            </p>
+
             <Link to="/contact">
-              <Button variant="hero" size="xl">
-                Être conseillé·e par un coach
+              <Button variant="hero" size="lg">
+                Découvrir le bar à smoothies
               </Button>
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-background">
-        <div className="container-px max-w-6xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-12 reveal">
-            <span className="text-accent font-semibold uppercase tracking-widest text-sm">
-              EMS & Nutrition
-            </span>
-            <h2 className="text-3xl md:text-5xl font-black mt-3">
-              Découvrez nos offres en un coup d'œil
-            </h2>
-          </div>
+      <section className="py-20 md:py-28 bg-gradient-soft">
+        <div className="container-px max-w-6xl mx-auto text-center">
+          <span className="text-accent font-semibold uppercase tracking-widest text-sm">
+            Votre formule complète
+          </span>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <button
-              type="button"
-              onClick={() =>
-                setSelectedImage({
-                  src: "/images/flyer-ems-revolution.jpg",
-                  alt: "Affiche EMS Révolution — 1ère séance à -50%",
-                })
-              }
-              className="reveal group overflow-hidden rounded-3xl shadow-elevated hover:shadow-glow transition-all bg-card"
-            >
-              <img
-                src="/images/flyer-ems-revolution.jpg"
-                alt="Affiche EMS Révolution — 1ère séance à -50%"
-                loading="lazy"
-                className="w-full h-auto object-contain group-hover:scale-[1.02] transition-transform duration-700"
-              />
-            </button>
+          <h2 className="text-3xl md:text-5xl font-black mt-3 mb-10">
+            EMS → Hydratation → Nutrition → Résultats
+          </h2>
 
-            <button
-              type="button"
-              onClick={() =>
-                setSelectedImage({
-                  src: "/images/flyer-vitafit-smoothies.jpg",
-                  alt: "Affiche VitaFit Bar à Smoothies — frais, sain, gourmand",
-                })
-              }
-              className="reveal group overflow-hidden rounded-3xl shadow-elevated hover:shadow-glow transition-all bg-card"
-            >
-              <img
-                src="/images/flyer-vitafit-smoothies.jpg"
-                alt="Affiche VitaFit Bar à Smoothies — frais, sain, gourmand"
-                loading="lazy"
-                className="w-full h-auto object-contain group-hover:scale-[1.02] transition-transform duration-700"
-              />
-            </button>
-          </div>
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+            Une approche globale pour améliorer votre silhouette, votre forme et
+            votre énergie au quotidien.
+          </p>
         </div>
       </section>
 
-      <section className="py-10 md:py-14 bg-background">
+      <section className="py-20 md:py-28 bg-background">
         <div className="container-px max-w-4xl mx-auto text-center">
-          <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-            Nutrition à Fréjus Plage&nbsp;: protéines, boissons énergie,
-            programme perte de poids personnalisé et bar à smoothies au studio
-            pour prolonger les bénéfices de votre séance EMS.
+          <h2 className="text-3xl md:text-5xl font-black">
+            Prêt(e) à découvrir l'expérience VitaFit ?
+          </h2>
+
+          <p className="text-lg md:text-xl text-muted-foreground mt-5 mb-8">
+            Profitez de -50 % sur votre première séance EMS.
           </p>
+
+          <Link to="/contact">
+            <Button variant="hero" size="xl">
+              Réserver ma séance
+            </Button>
+          </Link>
         </div>
       </section>
 
