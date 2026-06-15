@@ -171,7 +171,7 @@ const Herbalife = () => {
         </div>
       </section>
 
-      <section className="pt-0 pb-6 md:pt-0 md:pb-10 bg-gradient-soft -mt-8 md:-mt-12">
+      <section className="pt-0 pb-6 md:pt-0 md:pb-10 bg-gradient-soft -mt-8 md:-mt-6">
         <div className="container-px max-w-6xl mx-auto text-center">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 mb-4">
             {steps.map((step, i) => (
