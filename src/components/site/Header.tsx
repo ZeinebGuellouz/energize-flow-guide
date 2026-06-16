@@ -55,9 +55,7 @@ export const Header = () => {
             className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-white object-contain p-0.5 shadow-glow shrink-0"
           />
 
-          <span className="font-extrabold text-[12px] sm:text-sm md:text-lg tracking-tight text-foreground whitespace-nowrap">
-            VitaFit
-          </span>
+
         </Link>
 
         <nav
