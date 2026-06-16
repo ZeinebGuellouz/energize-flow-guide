@@ -73,26 +73,12 @@ const About = () => {
 
             <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
               <p>
-                Implanté au cœur de Fréjus Plage, VitaFit est né de la volonté
-                d'offrir une expérience fitness et bien-être réellement adaptée
-                à chacun.
-              </p>
+  Implanté à Fréjus Plage, VitaFit combine électrostimulation EMS, coaching personnalisé et accompagnement nutritionnel pour vous aider à atteindre vos objectifs efficacement.
+</p>
 
-              <p>
-                Notre méthode combine l'
-                <strong className="text-foreground">
-                  électrostimulation EMS dernière génération
-                </strong>
-                , un coaching personnalisé et un accompagnement nutritionnel
-                adapté à vos objectifs pour des résultats visibles, durables et
-                sans frustration.
-              </p>
-
-              <p>
-                Que vous soyez débutant·e, sportif·ve confirmé·e, en reprise
-                d'activité ou en quête de bien-être, nous vous accueillons dans
-                un cadre premium, pensé pour vous.
-              </p>
+<p>
+  Que votre objectif soit la perte de poids, la tonification, le renforcement musculaire ou le bien-être, notre équipe vous accompagne dans un cadre premium et motivant.
+</p>
             </div>
           </div>
         </div>
