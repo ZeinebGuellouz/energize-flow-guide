@@ -34,36 +34,38 @@ export const Header = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 inset-x-0 z-50 w-full max-w-full overflow-hidden transition-all duration-500",
+        "fixed top-0 inset-x-0 z-50 w-full max-w-full overflow-hidden transition-all duration-300",
         scrolled
           ? "bg-background/90 backdrop-blur-xl shadow-soft border-b border-border/60"
-          : "bg-background/85 backdrop-blur-md"
+          : "bg-background/90 backdrop-blur-md"
       )}
     >
-      <div className="container-px max-w-7xl mx-auto flex items-center gap-1 h-16 md:h-20 overflow-hidden">
+      <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 md:px-6 flex items-center gap-1 h-16 md:h-20 overflow-hidden">
         <Link
           to="/"
-          className="flex items-center gap-1.5 group shrink-0 max-w-[54px] sm:max-w-none"
+          className="flex items-center gap-1.5 shrink-0 min-w-0 max-w-[116px] sm:max-w-none"
           aria-label="Accueil VitaFit Fréjus Plage"
         >
           <img
             src={logo}
-            alt="VitaFit Fréjus Plage — EMS, Nutrition, Coaching"
-            className="w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-white object-contain p-0.5 shadow-glow group-hover:scale-105 transition-transform"
+            alt="VitaFit Fréjus Plage"
+            width={44}
+            height={44}
+            className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-white object-contain p-0.5 shadow-glow shrink-0"
           />
 
-          <div className="leading-tight hidden sm:block">
-            <div className="font-extrabold text-sm md:text-lg tracking-tight text-foreground">
+          <div className="leading-tight min-w-0 block">
+            <div className="font-extrabold text-[12px] sm:text-sm md:text-lg tracking-tight text-foreground truncate">
               VitaFit
             </div>
-            <div className="text-[9px] md:text-xs text-muted-foreground uppercase tracking-widest">
-              EMS · Nutrition
+            <div className="text-[7px] sm:text-[9px] md:text-xs text-muted-foreground uppercase tracking-[0.12em] sm:tracking-widest truncate">
+              EMS · Nutrition · Coaching
             </div>
           </div>
         </Link>
 
         <nav
-          className="min-w-0 flex-1 flex items-center justify-start sm:justify-center gap-0.5 overflow-x-auto no-scrollbar"
+          className="min-w-0 flex-1 flex items-center justify-start sm:justify-center gap-0 overflow-x-auto no-scrollbar"
           aria-label="Navigation principale"
         >
           {NAV.map((item) => (
@@ -72,7 +74,7 @@ export const Header = () => {
               to={item.to}
               onClick={() => handleNavClick(item)}
               className={cn(
-                "px-1.5 sm:px-3 md:px-4 py-1.5 md:py-2 rounded-full text-[10px] sm:text-xs md:text-sm font-semibold whitespace-nowrap transition-all duration-300",
+                "px-1 sm:px-2.5 md:px-4 py-1.5 md:py-2 rounded-full text-[8.5px] sm:text-xs md:text-sm font-semibold whitespace-nowrap transition-all duration-300",
                 pathname === item.to
                   ? "text-accent bg-secondary"
                   : "text-foreground/80 hover:text-accent hover:bg-secondary"
@@ -86,9 +88,9 @@ export const Header = () => {
         <a
           href={`tel:${SITE.phoneIntl}`}
           aria-label={`Appeler ${SITE.phone}`}
-          className="shrink-0 w-8 h-8 md:w-auto md:h-auto rounded-full md:rounded-none bg-secondary md:bg-transparent text-foreground/80 hover:text-accent grid md:flex place-items-center md:items-center md:gap-2 transition-colors"
+          className="shrink-0 w-7 h-7 sm:w-8 sm:h-8 md:w-auto md:h-auto rounded-full md:rounded-none bg-secondary md:bg-transparent text-foreground/80 hover:text-accent grid md:flex place-items-center md:items-center md:gap-2 transition-colors"
         >
-          <Phone className="w-4 h-4" />
+          <Phone className="w-3.5 h-3.5 md:w-4 md:h-4" />
           <span className="hidden lg:inline text-sm font-semibold">
             {SITE.phone}
           </span>
