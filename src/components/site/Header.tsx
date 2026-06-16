@@ -59,9 +59,7 @@ export const Header = () => {
               VitaFit
             </div>
 
-            <div className="text-[6px] sm:text-[9px] md:text-xs text-muted-foreground uppercase tracking-[0.02em] sm:tracking-widest whitespace-nowrap">
-              EMS · Nutrition · Coaching
-            </div>
+    
           </div>
         </Link>
 
