@@ -15,18 +15,24 @@ import emailjs from "emailjs-com";
  *    - VITE_EMAILJS_PUBLIC_KEY=xxxxx
  */
 
+const PUBLIC_KEY =
+  import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "A_saBge9m4guGhBzY";
+const SERVICE_ID =
+  import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_939q9nc";
+const TEMPLATE_DISCOVERY =
+  import.meta.env.VITE_EMAILJS_TEMPLATE_DISCOVERY || "template_m0a3u1u";
+const TEMPLATE_REQUEST =
+  import.meta.env.VITE_EMAILJS_TEMPLATE_REQUEST || "template_tl2582e";
+
 let initialized = false;
 
 export function initEmailJS() {
   if (initialized) return;
-  
-  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-  if (!publicKey) {
+  if (!PUBLIC_KEY) {
     console.warn("EmailJS public key not configured");
     return;
   }
-  
-  emailjs.init(publicKey);
+  emailjs.init(PUBLIC_KEY);
   initialized = true;
 }
 
@@ -34,16 +40,17 @@ export async function submitDiscoveryForm(
   data: Record<string, any>
 ): Promise<{ success: boolean; message: string }> {
   initEmailJS();
-  
-  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_DISCOVERY;
-  
+
+  const serviceId = SERVICE_ID;
+  const templateId = TEMPLATE_DISCOVERY;
+
   if (!serviceId || !templateId) {
     return {
       success: false,
-      message: "Configuration EmailJS manquante. Vérifiez les variables d'environnement.",
+      message: "Configuration EmailJS manquante.",
     };
   }
+
 
   try {
     const response = await emailjs.send(serviceId, templateId, {
@@ -73,15 +80,16 @@ export async function submitRequestForm(
 ): Promise<{ success: boolean; message: string }> {
   initEmailJS();
   
-  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_REQUEST;
-  
+  const serviceId = SERVICE_ID;
+  const templateId = TEMPLATE_REQUEST;
+
   if (!serviceId || !templateId) {
     return {
       success: false,
-      message: "Configuration EmailJS manquante. Vérifiez les variables d'environnement.",
+      message: "Configuration EmailJS manquante.",
     };
   }
+
 
   try {
     const response = await emailjs.send(serviceId, templateId, {
