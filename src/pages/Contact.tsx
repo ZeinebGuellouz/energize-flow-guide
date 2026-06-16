@@ -17,7 +17,7 @@ const Contact = () => {
         subtitle="Une question, une réservation ? Notre équipe vous répond rapidement."
       />
       <ContactInfo />
-      <Forms />
+
     </Layout>
   );
 };
