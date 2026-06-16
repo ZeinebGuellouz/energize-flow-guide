@@ -58,7 +58,7 @@ export const Header = () => {
         </Link>
 
         <nav
-          className="min-w-0 flex-1 flex items-center justify-start md:justify-center gap-1.5 overflow-x-auto no-scrollbar"
+          className="min-w-0 flex-1 flex items-center justify-start md:justify-center gap-0.5 overflow-x-hidden"
           aria-label="Navigation principale"
         >
           {NAV.map((item) => (
@@ -67,7 +67,7 @@ export const Header = () => {
               to={item.to}
               onClick={() => handleNavClick(item)}
               className={cn(
-                "px-3 py-2 md:px-4 md:py-2 rounded-full text-[10px] sm:text-xs md:text-sm font-semibold whitespace-nowrap transition-all duration-300",
+                "px-2 py-2 md:px-4 md:py-2 rounded-full text-[9px] sm:text-xs md:text-sm font-semibold whitespace-nowrap transition-all duration-300",
                 pathname === item.to
                   ? "text-accent bg-secondary"
                   : "text-foreground/80 hover:text-accent hover:bg-secondary"
