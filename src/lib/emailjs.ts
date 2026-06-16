@@ -80,15 +80,16 @@ export async function submitRequestForm(
 ): Promise<{ success: boolean; message: string }> {
   initEmailJS();
   
-  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_REQUEST;
-  
+  const serviceId = SERVICE_ID;
+  const templateId = TEMPLATE_REQUEST;
+
   if (!serviceId || !templateId) {
     return {
       success: false,
-      message: "Configuration EmailJS manquante. Vérifiez les variables d'environnement.",
+      message: "Configuration EmailJS manquante.",
     };
   }
+
 
   try {
     const response = await emailjs.send(serviceId, templateId, {
