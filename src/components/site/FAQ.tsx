@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     q: "Dois-je apporter quelque chose pour ma séance ?",
-    a: "Non. Nous fournissons la tenue EMS et l’équipement nécessaire. Pensez simplement à apporter une paire de baskets et à bien vous hydrater avant votre séance..",
+    a: "Vous n’avez besoin d’aucun équipement particulier. Venez simplement avec une tenue de sport confortable, une paire de baskets propres et pensez à bien vous hydrater avant votre séance.",
   },
 ];
 export const FAQ = () => {
