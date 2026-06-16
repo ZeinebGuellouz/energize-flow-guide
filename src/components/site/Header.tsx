@@ -34,22 +34,22 @@ export const Header = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 inset-x-0 z-50 transition-all duration-500",
+        "fixed top-0 inset-x-0 z-50 w-full max-w-full overflow-hidden transition-all duration-500",
         scrolled
           ? "bg-background/90 backdrop-blur-xl shadow-soft border-b border-border/60"
-          : "bg-background/80 backdrop-blur-md"
+          : "bg-background/85 backdrop-blur-md"
       )}
     >
-      <div className="container-px max-w-7xl mx-auto flex items-center gap-2 h-[68px] md:h-20">
+      <div className="container-px max-w-7xl mx-auto flex items-center gap-1 h-16 md:h-20 overflow-hidden">
         <Link
           to="/"
-          className="flex items-center gap-2 group shrink-0"
+          className="flex items-center gap-1.5 group shrink-0 max-w-[54px] sm:max-w-none"
           aria-label="Accueil VitaFit Fréjus Plage"
         >
           <img
             src={logo}
             alt="VitaFit Fréjus Plage — EMS, Nutrition, Coaching"
-            className="w-13 h-13 md:w-14 md:h-14 rounded-full bg-white object-contain p-0.5 shadow-glow group-hover:scale-105 transition-transform"
+            className="w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-white object-contain p-0.5 shadow-glow group-hover:scale-105 transition-transform"
           />
 
           <div className="leading-tight hidden sm:block">
@@ -63,7 +63,7 @@ export const Header = () => {
         </Link>
 
         <nav
-          className="flex-1 flex items-center justify-center gap-0.5 overflow-x-auto no-scrollbar"
+          className="min-w-0 flex-1 flex items-center justify-start sm:justify-center gap-0.5 overflow-x-auto no-scrollbar"
           aria-label="Navigation principale"
         >
           {NAV.map((item) => (
@@ -72,7 +72,7 @@ export const Header = () => {
               to={item.to}
               onClick={() => handleNavClick(item)}
               className={cn(
-                "px-2 sm:px-3 md:px-4 py-1.5 md:py-2 rounded-full text-[11px] sm:text-xs md:text-sm font-semibold whitespace-nowrap transition-all duration-300",
+                "px-1.5 sm:px-3 md:px-4 py-1.5 md:py-2 rounded-full text-[10px] sm:text-xs md:text-sm font-semibold whitespace-nowrap transition-all duration-300",
                 pathname === item.to
                   ? "text-accent bg-secondary"
                   : "text-foreground/80 hover:text-accent hover:bg-secondary"
@@ -86,7 +86,7 @@ export const Header = () => {
         <a
           href={`tel:${SITE.phoneIntl}`}
           aria-label={`Appeler ${SITE.phone}`}
-          className="shrink-0 w-9 h-9 md:w-auto md:h-auto md:px-0 rounded-full md:rounded-none bg-secondary md:bg-transparent text-foreground/80 hover:text-accent grid md:flex place-items-center md:items-center md:gap-2 transition-colors"
+          className="shrink-0 w-8 h-8 md:w-auto md:h-auto rounded-full md:rounded-none bg-secondary md:bg-transparent text-foreground/80 hover:text-accent grid md:flex place-items-center md:items-center md:gap-2 transition-colors"
         >
           <Phone className="w-4 h-4" />
           <span className="hidden lg:inline text-sm font-semibold">
