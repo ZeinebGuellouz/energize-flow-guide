@@ -127,7 +127,7 @@ All colors MUST be HSL.
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: transparent;
-    overscroll-behavior-y: none;
+  
     text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     position: relative;
@@ -265,18 +265,3 @@ All colors MUST be HSL.
   }
 }
 
-main,
-section,
-header,
-footer {
-  max-width: 100vw;
-}
-
-.container-px {
-  max-width: 100%;
-}
-
-
-[data-radix-popper-content-wrapper] {
-  max-width: 100vw !important;
-}
