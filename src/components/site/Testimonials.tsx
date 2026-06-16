@@ -65,23 +65,24 @@ const reviews = [
     text: "À 73 ans et sportive, j’ai fait un essai très concluant. C’est une excellente façon de se tonifier. L’accueil est chaleureux et la récupération est vraiment bienvenue.",
   },
 ];
+
 const repeatedReviews = [...reviews, ...reviews, ...reviews];
 
 export const Testimonials = () => {
   return (
     <section
       id="avis"
-      className="py-12 md:py-20 bg-gradient-dark text-primary-foreground relative overflow-hidden"
+      className="py-10 md:py-16 bg-gradient-dark text-primary-foreground relative overflow-hidden"
     >
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--accent))_0%,transparent_50%)]" />
 
       <div className="container-px max-w-7xl mx-auto relative">
-        <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12 reveal">
+        <div className="text-center max-w-3xl mx-auto mb-6 md:mb-10 reveal">
           <span className="text-accent font-semibold uppercase tracking-widest text-xs sm:text-sm">
             Avis Google
           </span>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black mt-3 mb-3 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black mt-2 mb-3 leading-tight">
             Ils ont{" "}
             <span className="text-gradient-accent">
               transformé leur quotidien
@@ -104,35 +105,35 @@ export const Testimonials = () => {
         </div>
 
         <div className="relative overflow-hidden">
-          <div className="flex gap-5 animate-testimonials-scroll hover:[animation-play-state:paused]">
+          <div className="flex gap-4 animate-testimonials-scroll hover:[animation-play-state:paused]">
             {repeatedReviews.map((r, i) => (
               <div
                 key={`${r.name}-${i}`}
-                className="min-w-[320px] max-w-[320px] sm:min-w-[360px] sm:max-w-[360px] md:min-w-[420px] md:max-w-[420px] min-h-[420px] bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 md:p-8 hover:bg-white/10 transition-all duration-500"
+                className="min-w-[260px] max-w-[260px] sm:min-w-[320px] sm:max-w-[320px] md:min-w-[380px] md:max-w-[380px] min-h-[320px] sm:min-h-[360px] bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 md:p-6 hover:bg-white/10 transition-all duration-500"
               >
                 <div className="flex flex-col h-full">
-                  <Quote className="w-8 h-8 md:w-10 md:h-10 text-accent mb-5 opacity-80" />
+                  <Quote className="w-6 h-6 md:w-8 md:h-8 text-accent mb-3 opacity-80" />
 
-                  <p className="text-primary-foreground/90 leading-loose text-base flex-1">
+                  <p className="text-primary-foreground/90 leading-relaxed text-sm md:text-base flex-1">
                     "{r.text}"
                   </p>
 
-                  <div className="flex items-center justify-between mt-6 pt-4 border-t border-white/10">
+                  <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/10">
                     <div>
-                      <div className="font-bold text-base md:text-lg">
+                      <div className="font-bold text-sm md:text-base">
                         {r.name}
                       </div>
 
-                      <div className="text-sm text-primary-foreground/60">
+                      <div className="text-xs md:text-sm text-primary-foreground/60">
                         {r.role}
                       </div>
                     </div>
 
-                    <div className="flex gap-1">
+                    <div className="flex gap-0.5">
                       {[...Array(5)].map((_, k) => (
                         <Star
                           key={k}
-                          className="w-4 h-4 fill-accent text-accent"
+                          className="w-3.5 h-3.5 md:w-4 md:h-4 fill-accent text-accent"
                         />
                       ))}
                     </div>
@@ -143,7 +144,7 @@ export const Testimonials = () => {
           </div>
         </div>
 
-        <div className="text-center mt-8">
+        <div className="text-center mt-6 md:mt-8">
           <a
             href={GOOGLE_REVIEWS_URL}
             target="_blank"
