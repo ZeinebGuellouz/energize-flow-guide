@@ -1,10 +1,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const faqs = [
-  {
-    q: "Combien de temps dure une séance EMS ?",
-    a: "Une séance dure environ 20 minutes. Grâce à l'électrostimulation, cela équivaut à plusieurs heures d'entraînement traditionnel tout en étant encadré par un coach.",
-  },
+  
   {
     q: "Quand vais-je voir les premiers résultats ?",
     a: "La plupart de nos clients ressentent une meilleure tonicité et plus d'énergie dès les premières séances. Les résultats visibles apparaissent généralement après 4 à 6 séances selon vos objectifs et votre régularité.",
@@ -17,10 +14,7 @@ const faqs = [
     q: "Combien de séances par semaine sont recommandées ?",
     a: "Une à deux séances par semaine sont généralement recommandées pour obtenir des résultats optimaux. Votre coach adaptera la fréquence en fonction de vos objectifs, de votre niveau et de votre disponibilité.",
   },
-  {
-    q: "Que comprend la séance découverte à 19,95 € ?",
-    a: "La séance découverte comprend un bilan personnalisé, la mise à disposition de la combinaison EMS, une séance encadrée de 20 minutes et des conseils adaptés à vos objectifs.",
-  },
+  
   {
     q: "Faut-il être en bonne condition physique pour commencer ?",
     a: "Non. L'EMS convient à différents profils et permet de travailler efficacement même si vous manquez de temps ou reprenez une activité sportive.",
@@ -31,7 +25,7 @@ const faqs = [
   },
   {
     q: "Dois-je apporter quelque chose pour ma séance ?",
-    a: "Non. Nous fournissons la combinaison EMS. Il vous suffit de venir avec votre motivation et une tenue confortable pour après la séance.",
+    a: "Non. Nous fournissons la tenue EMS et l’équipement nécessaire. Pensez simplement à apporter une paire de baskets et à bien vous hydrater avant votre séance..",
   },
 ];
 export const FAQ = () => {
