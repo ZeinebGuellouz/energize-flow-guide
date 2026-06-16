@@ -75,8 +75,7 @@ const faqJsonLd = {
       name: "Dois-je apporter quelque chose pour ma séance ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Vous n’avez besoin d’aucun équipement particulier. Venez simplement avec une tenue de sport confortable, une paire de baskets propres et pensez à bien vous hydrater avant votre séance.
-",
+        text: "Vous n’avez besoin d’aucun équipement particulier. Venez simplement avec une tenue de sport confortable, une paire de baskets propres et pensez à bien vous hydrater avant votre séance.",
       },
     },
   ],
