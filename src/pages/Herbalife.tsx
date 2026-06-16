@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Layout } from "@/components/site/Layout";
 import { SEO } from "@/components/site/SEO";
-import { CTABand } from "@/components/site/CTABand";
 import { Button } from "@/components/ui/button";
 import { Battery, Heart, Scale, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import nutritionCoaching from "@/assets/nutrition-coaching.png.asset.json";
+
+const nutritionCoachingImage =
+  "/images/ChatGPT Image 16 juin 2026, 12_08_25.png";
 
 const benefits = [
   {
@@ -34,7 +35,10 @@ const benefits = [
 const steps = ["EMS", "Hydratation", "Nutrition", "Résultats"];
 
 const Herbalife = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<{
+    src: string;
+    alt: string;
+  } | null>(null);
 
   return (
     <Layout>
@@ -50,14 +54,14 @@ const Herbalife = () => {
             type="button"
             onClick={() =>
               setSelectedImage({
-                src: nutritionCoaching.url,
+                src: nutritionCoachingImage,
                 alt: "Coaching nutritionnel personnalisé chez VitaFit",
               })
             }
             className="w-full overflow-hidden rounded-3xl shadow-elevated bg-card mb-6"
           >
             <img
-              src={nutritionCoaching.url}
+              src={nutritionCoachingImage}
               alt="Coaching nutritionnel personnalisé chez VitaFit"
               loading="eager"
               className="w-full h-auto object-contain"
@@ -194,8 +198,6 @@ const Herbalife = () => {
           </p>
         </div>
       </section>
-
-      {/* <CTABand /> */}
 
       <Dialog
         open={!!selectedImage}
