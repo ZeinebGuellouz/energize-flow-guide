@@ -75,7 +75,8 @@ const faqJsonLd = {
       name: "Dois-je apporter quelque chose pour ma séance ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Non. Nous fournissons la combinaison EMS. Il vous suffit de venir avec votre motivation et une tenue confortable pour après la séance.",
+        text: "Vous n’avez besoin d’aucun équipement particulier. Venez simplement avec une tenue de sport confortable, une paire de baskets propres et pensez à bien vous hydrater avant votre séance.
+",
       },
     },
   ],
@@ -99,7 +100,7 @@ const Index = () => {
       <Testimonials />
       <CTABand />
       <FAQ />
-      <ContactInfo />
+
     </Layout>
   );
 };
