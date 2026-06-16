@@ -34,7 +34,7 @@ export const Header = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 inset-x-0 z-50 w-full max-w-full overflow-hidden transition-all duration-300",
+        "fixed top-0 inset-x-0 z-50 w-full max-w-[100vw] overflow-hidden transition-all duration-300",
         scrolled
           ? "bg-background/90 backdrop-blur-xl shadow-soft border-b border-border/60"
           : "bg-background/90 backdrop-blur-md"
@@ -43,14 +43,14 @@ export const Header = () => {
       <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 md:px-6 flex items-center gap-1 h-16 md:h-20 overflow-hidden">
         <Link
           to="/"
-          className="flex items-center gap-1.5 shrink-0 min-w-0 max-w-[145px] sm:max-w-none"
+          className="flex items-center gap-1.5 shrink-0 min-w-0 max-w-[108px] sm:max-w-[160px] md:max-w-none"
           aria-label="Accueil VitaFit Fréjus Plage"
         >
           <img
             src={logo}
             alt="VitaFit Fréjus Plage"
-            width={44}
-            height={44}
+            width={40}
+            height={40}
             className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-white object-contain p-0.5 shadow-glow shrink-0"
           />
 
@@ -58,8 +58,12 @@ export const Header = () => {
             <div className="font-extrabold text-[12px] sm:text-sm md:text-lg tracking-tight text-foreground truncate">
               VitaFit
             </div>
-            <div className="text-[6.5px] sm:text-[9px] md:text-xs text-muted-foreground uppercase tracking-[0.08em] sm:tracking-widest truncate">
-              EMS · Nutrition · Coaching
+
+            <div className="text-[7px] sm:text-[9px] md:text-xs text-muted-foreground uppercase tracking-[0.08em] sm:tracking-widest truncate">
+              <span className="sm:hidden">EMS · Nutrition</span>
+              <span className="hidden sm:inline">
+                EMS · Nutrition · Coaching
+              </span>
             </div>
           </div>
         </Link>
