@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
 All colors MUST be HSL.
 */
 
@@ -102,8 +102,24 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  * {
+  *,
+  *::before,
+  *::after {
     @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
@@ -114,10 +130,24 @@ All colors MUST be HSL.
     overscroll-behavior-y: none;
     text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    position: relative;
   }
 
-  html {
-    scroll-behavior: smooth;
+  img,
+  video,
+  svg,
+  canvas {
+    max-width: 100%;
+  }
+
+  img,
+  video {
+    height: auto;
+  }
+
+  a,
+  button {
+    touch-action: manipulation;
   }
 
   h1,
@@ -147,7 +177,8 @@ All colors MUST be HSL.
       padding-bottom: env(safe-area-inset-bottom);
     }
   }
-      #lovable-badge,
+
+  #lovable-badge,
   [id*="lovable"],
   [class*="lovable"] {
     display: none !important;
