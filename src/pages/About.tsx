@@ -98,7 +98,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-gradient-soft">
+      <section className="py-12 md:py-20 bg-gradient-soft">
         <div className="container-px max-w-6xl mx-auto">
           <div className="text-center mb-14 reveal">
             <span className="text-accent font-semibold uppercase tracking-widest text-sm">
@@ -110,20 +110,25 @@ const About = () => {
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
             {values.map((v, i) => (
-              <div
-                key={v.t}
-                className="reveal bg-card rounded-2xl p-8 text-center shadow-soft hover:shadow-elevated transition-all hover:-translate-y-1 border border-border"
-                style={{ transitionDelay: `${i * 80}ms` }}
-              >
-                <div className="w-14 h-14 rounded-2xl bg-gradient-accent grid place-items-center mx-auto mb-4 shadow-glow">
-                  <v.icon className="w-7 h-7 text-accent-foreground" />
-                </div>
+             <div
+  key={v.t}
+  className="reveal bg-card rounded-xl p-5 md:p-6 text-center shadow-soft hover:shadow-elevated transition-all hover:-translate-y-1 border border-border"
+  style={{ transitionDelay: `${i * 80}ms` }}
+>
+  <div className="w-11 h-11 md:w-12 md:h-12 rounded-xl bg-gradient-accent grid place-items-center mx-auto mb-3 shadow-glow">
+    <v.icon className="w-5 h-5 md:w-6 md:h-6 text-accent-foreground" />
+  </div>
 
-                <h3 className="font-bold text-lg mb-2">{v.t}</h3>
-                <p className="text-muted-foreground text-sm">{v.d}</p>
-              </div>
+  <h3 className="font-bold text-base md:text-lg mb-1">
+    {v.t}
+  </h3>
+
+  <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">
+    {v.d}
+  </p>
+</div>
             ))}
           </div>
         </div>
