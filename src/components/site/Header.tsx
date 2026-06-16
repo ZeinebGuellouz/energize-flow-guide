@@ -43,7 +43,7 @@ export const Header = () => {
       <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 md:px-6 flex items-center gap-1 h-16 md:h-20 overflow-hidden">
         <Link
           to="/"
-          className="flex items-center gap-1.5 shrink-0 min-w-0 max-w-[116px] sm:max-w-none"
+          className="flex items-center gap-1.5 shrink-0 min-w-0 max-w-[145px] sm:max-w-none"
           aria-label="Accueil VitaFit Fréjus Plage"
         >
           <img
@@ -58,7 +58,7 @@ export const Header = () => {
             <div className="font-extrabold text-[12px] sm:text-sm md:text-lg tracking-tight text-foreground truncate">
               VitaFit
             </div>
-            <div className="text-[7px] sm:text-[9px] md:text-xs text-muted-foreground uppercase tracking-[0.12em] sm:tracking-widest truncate">
+            <div className="text-[6.5px] sm:text-[9px] md:text-xs text-muted-foreground uppercase tracking-[0.08em] sm:tracking-widest truncate">
               EMS · Nutrition · Coaching
             </div>
           </div>
