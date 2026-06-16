@@ -43,7 +43,7 @@ export const Header = () => {
       <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 md:px-6 flex items-center gap-1 h-16 md:h-20 overflow-hidden">
         <Link
           to="/"
-          className="flex items-center gap-1.5 shrink-0 min-w-0 max-w-[135px] sm:max-w-[180px] md:max-w-none"
+          className="flex items-center gap-1.5 shrink-0 w-[145px] sm:w-[185px] md:w-[245px]"
           aria-label="Accueil VitaFit Fréjus Plage"
         >
           <img
@@ -54,14 +54,14 @@ export const Header = () => {
             className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-white object-contain p-0.5 shadow-glow shrink-0"
           />
 
-          <div className="leading-tight min-w-0 block">
-            <div className="font-extrabold text-[12px] sm:text-sm md:text-lg tracking-tight text-foreground truncate">
+          <div className="leading-tight min-w-0">
+            <div className="font-extrabold text-[12px] sm:text-sm md:text-lg tracking-tight text-foreground">
               VitaFit
             </div>
 
-          <div className="text-[6px] sm:text-[9px] md:text-xs text-muted-foreground uppercase tracking-[0.04em] sm:tracking-widest whitespace-nowrap">
-  EMS · Nutrition · Coaching
-</div>
+            <div className="text-[6px] sm:text-[9px] md:text-xs text-muted-foreground uppercase tracking-[0.02em] sm:tracking-widest whitespace-nowrap">
+              EMS · Nutrition · Coaching
+            </div>
           </div>
         </Link>
 
@@ -75,7 +75,7 @@ export const Header = () => {
               to={item.to}
               onClick={() => handleNavClick(item)}
               className={cn(
-                "px-1 sm:px-2.5 md:px-4 py-1.5 md:py-2 rounded-full text-[8.5px] sm:text-xs md:text-sm font-semibold whitespace-nowrap transition-all duration-300",
+                "px-1 sm:px-2.5 md:px-4 py-1.5 md:py-2 rounded-full text-[8px] sm:text-xs md:text-sm font-semibold whitespace-nowrap transition-all duration-300",
                 pathname === item.to
                   ? "text-accent bg-secondary"
                   : "text-foreground/80 hover:text-accent hover:bg-secondary"
