@@ -4,7 +4,8 @@ import { Phone } from "lucide-react";
 import { SITE, scrollToId } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
-const logo = "/ChatGPT_Image_12_juin_2026__08_13_47-removebg-preview.png";
+const logo =
+  "/ChatGPT_Image_12_juin_2026__08_13_47-removebg-preview.png";
 
 const NAV = [
   { label: "Accueil", to: "/", hash: "top" },
@@ -54,12 +55,10 @@ export const Header = () => {
             height={40}
             className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-white object-contain p-0.5 shadow-glow shrink-0"
           />
-
-
         </Link>
 
         <nav
-          className="min-w-0 flex-1 flex items-center justify-start md:justify-center gap-0 overflow-x-auto no-scrollbar"
+          className="min-w-0 flex-1 flex items-center justify-start md:justify-center gap-1.5 overflow-x-auto no-scrollbar"
           aria-label="Navigation principale"
         >
           {NAV.map((item) => (
@@ -68,7 +67,7 @@ export const Header = () => {
               to={item.to}
               onClick={() => handleNavClick(item)}
               className={cn(
-                "px-1 sm:px-2.5 md:px-4 py-1.5 md:py-2 rounded-full text-[8px] sm:text-xs md:text-sm font-semibold whitespace-nowrap transition-all duration-300",
+                "px-3 py-2 md:px-4 md:py-2 rounded-full text-[10px] sm:text-xs md:text-sm font-semibold whitespace-nowrap transition-all duration-300",
                 pathname === item.to
                   ? "text-accent bg-secondary"
                   : "text-foreground/80 hover:text-accent hover:bg-secondary"
@@ -82,9 +81,10 @@ export const Header = () => {
         <a
           href={`tel:${SITE.phoneIntl}`}
           aria-label={`Appeler ${SITE.phone}`}
-          className="shrink-0 w-7 h-7 sm:w-8 sm:h-8 md:w-auto md:h-auto rounded-full md:rounded-none bg-secondary md:bg-transparent text-foreground/80 hover:text-accent grid md:flex place-items-center md:items-center md:gap-2 transition-colors"
+          className="shrink-0 w-8 h-8 sm:w-9 sm:h-9 md:w-auto md:h-auto rounded-full md:rounded-none bg-secondary md:bg-transparent text-foreground/80 hover:text-accent grid md:flex place-items-center md:items-center md:gap-2 transition-colors"
         >
-          <Phone className="w-3.5 h-3.5 md:w-4 md:h-4" />
+          <Phone className="w-4 h-4" />
+
           <span className="hidden lg:inline text-sm font-semibold">
             {SITE.phone}
           </span>
