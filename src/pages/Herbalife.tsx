@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Battery, Heart, Scale, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+import nutritionCoaching from "@/assets/nutrition-coaching.png.asset.json";
 
 const benefits = [
   {
