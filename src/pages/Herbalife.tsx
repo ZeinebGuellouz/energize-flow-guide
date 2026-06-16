@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Battery, Heart, Scale, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+import nutritionCoaching from "@/assets/nutrition-coaching.png.asset.json";
 
 const benefits = [
   {
@@ -49,15 +50,15 @@ const Herbalife = () => {
             type="button"
             onClick={() =>
               setSelectedImage({
-                src: "/images/flyer-ems-revolution.jpg",
-                alt: "Affiche EMS Révolution — 1ère séance à -50%",
+                src: nutritionCoaching.url,
+                alt: "Coaching nutritionnel personnalisé chez VitaFit",
               })
             }
             className="w-full overflow-hidden rounded-3xl shadow-elevated bg-card mb-6"
           >
             <img
-              src="/images/flyer-ems-revolution.jpg"
-              alt="Affiche EMS Révolution — 1ère séance à -50%"
+              src={nutritionCoaching.url}
+              alt="Coaching nutritionnel personnalisé chez VitaFit"
               loading="eager"
               className="w-full h-auto object-contain"
             />
