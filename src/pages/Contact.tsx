@@ -19,8 +19,7 @@ const Contact = () => {
         subtitle="Une question, une réservation, un projet bien-être ? Nous sommes là pour vous accompagner."
       />
       <ContactInfo />
-     
-      <Forms />
+    
      
     </Layout>
   );
