@@ -22,6 +22,7 @@ export const Header = () => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
+
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -40,7 +41,7 @@ export const Header = () => {
           : "bg-background/90 backdrop-blur-md"
       )}
     >
-      <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 md:px-6 flex items-center gap-1 h-16 md:h-20 overflow-hidden">
+      <div className="w-full max-w-7xl mx-auto px-1.5 sm:px-4 md:px-6 flex items-center gap-1 h-16 md:h-20 overflow-hidden">
         <Link
           to="/"
           className="flex items-center gap-1.5 shrink-0"
@@ -54,17 +55,13 @@ export const Header = () => {
             className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-white object-contain p-0.5 shadow-glow shrink-0"
           />
 
-          <div className="leading-tight min-w-0">
-            <div className="font-extrabold text-[12px] sm:text-sm md:text-lg tracking-tight text-foreground">
-              VitaFit
-            </div>
-
-    
-          </div>
+          <span className="font-extrabold text-[12px] sm:text-sm md:text-lg tracking-tight text-foreground whitespace-nowrap">
+            VitaFit
+          </span>
         </Link>
 
         <nav
-          className="flex-1 flex items-center gap-0 overflow-x-auto no-scrollbar"
+          className="min-w-0 flex-1 flex items-center justify-start md:justify-center gap-0 overflow-x-auto no-scrollbar"
           aria-label="Navigation principale"
         >
           {NAV.map((item) => (
@@ -98,3 +95,5 @@ export const Header = () => {
     </header>
   );
 };
+
+export default Header;
