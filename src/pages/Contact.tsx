@@ -2,7 +2,6 @@ import { Layout } from "@/components/site/Layout";
 import { SEO } from "@/components/site/SEO";
 import { PageHero } from "@/components/site/PageHero";
 import { ContactInfo } from "@/components/site/ContactInfo";
-import { Forms } from "@/components/site/Forms";
 
 const Contact = () => {
   return (
@@ -17,7 +16,6 @@ const Contact = () => {
         subtitle="Une question, une réservation ? Notre équipe vous répond rapidement."
       />
       <ContactInfo />
-      <Forms />
     </Layout>
   );
 };
