@@ -242,7 +242,7 @@ const Pricing = () => {
   return (
     <Layout>
       <SEO
-        title="Tarifs EMS Fréjus Plage | Séance découverte, packs & abonnements"
+        title="Tarifs EMS Fréjus Plage | Découverte, packs & abonnements"
         description="Tarifs EMS à Fréjus : séance découverte à -50%, packs 1 à 20 séances dès 28€, abonnements solo et duo pour perte de poids, tonification et remise en forme."
         path="/tarifs"
       />
