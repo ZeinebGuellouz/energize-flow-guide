@@ -82,8 +82,8 @@ const Services = () => {
   return (
     <Layout>
       <SEO
-        title="EMS Fréjus Plage | Électrostimulation, perte de poids & remise en forme"
-        description="Studio EMS à Fréjus Plage : 20 min d'électrostimulation = 4 h de sport. 350 muscles activés pour perte de poids, prise de masse et remise en forme. -50% sur la première séance."
+        title="EMS Fréjus Plage | Électrostimulation & perte de poids"
+        description="Studio EMS à Fréjus Plage : 20 min = 4 h de sport, 350 muscles activés. Perte de poids, prise de masse, remise en forme. -50% sur la 1ère séance."
         path="/services-ems"
         jsonLd={faqJsonLd}
       />
