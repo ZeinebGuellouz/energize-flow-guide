@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://vitafit-frejus.lovable.app/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://vitafit-frejus.lovable.app/a-propos</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://vitafit-frejus.lovable.app/services-ems</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://vitafit-frejus.lovable.app/nutrition</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://vitafit-frejus.lovable.app/tarifs</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://vitafit-frejus.lovable.app/contact</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.vitafit-frejus.fr/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.vitafit-frejus.fr/a-propos</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.vitafit-frejus.fr/services-ems</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.vitafit-frejus.fr/nutrition</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.vitafit-frejus.fr/tarifs</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.vitafit-frejus.fr/contact</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
