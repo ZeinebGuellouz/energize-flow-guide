@@ -31,24 +31,24 @@ const values = [
 const About = () => {
   return (
     <Layout>
-      <SEO
-        title="À propos VitaFit | Studio EMS & nutrition à Fréjus Plage"
-        description="Découvrez VitaFit Fréjus Plage : studio EMS premium, accompagnement nutritionnel et coaching personnalisé pour vous aider à atteindre vos objectifs durablement."
-        path="/a-propos"
-      />
+<SEO
+  title="VitaFit EMS Fréjus | Salle de sport EMS & nutrition"
+  description="Découvrez VitaFit EMS Fréjus : salle de sport EMS à Fréjus Plage, électrostimulation, coaching personnalisé, nutrition, perte de poids et tonification."
+  path="/a-propos"
+/>
 
-      <PageHero
-        eyebrow="À propos"
-        title={
-          <>
-            VitaFit,{" "}
-            <span className="text-gradient-accent">
-              votre studio EMS à Fréjus Plage
-            </span>
-          </>
-        }
-        subtitle="Un lieu dédié à l'électrostimulation, au coaching personnalisé et au bien-être, pour vous accompagner vers des résultats durables."
-      />
+<PageHero
+  eyebrow="À propos"
+  title={
+    <>
+      VitaFit EMS Fréjus,{" "}
+      <span className="text-gradient-accent">
+        salle de sport EMS à Fréjus Plage
+      </span>
+    </>
+  }
+  subtitle="Un lieu dédié à l’électrostimulation, au coaching personnalisé, à la nutrition et au bien-être, pour vous accompagner vers des résultats durables."
+/>
 
       <section className="py-20 md:py-28 bg-background">
         <div className="container-px max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
