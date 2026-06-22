@@ -26,12 +26,13 @@ export const Hero = () => {
             Studio EMS premium · Fréjus Plage
           </div>
 
-          <h1 className="text-[2rem] leading-[1.05] sm:text-5xl md:text-7xl font-black text-foreground mb-5 md:mb-6 animate-slide-up">
-            Stimule{" "}
-            <span className="text-gradient-accent">350 muscles</span>
-            <br />
-            en seulement <span className="text-gradient-accent">20 min</span>
-          </h1>
+        <h1 className="text-[2rem] leading-[1.05] sm:text-5xl md:text-7xl font-black text-foreground mb-5 md:mb-6 animate-slide-up">
+  VitaFit EMS Fréjus,
+  <br />
+  <span className="text-gradient-accent">
+    votre salle de sport à Fréjus Plage
+  </span>
+</h1>
 
          <p
   className="text-sm sm:text-lg md:text-2xl text-muted-foreground mb-6 md:mb-10 max-w-2xl animate-slide-up font-light"
