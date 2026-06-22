@@ -43,7 +43,7 @@ const About = () => {
     <>
       VitaFit EMS Fréjus,{" "}
       <span className="text-gradient-accent">
-        salle de sport EMS à Fréjus Plage
+        votre salle de sport EMS
       </span>
     </>
   }
