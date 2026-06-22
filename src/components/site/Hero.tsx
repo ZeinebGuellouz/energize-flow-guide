@@ -10,7 +10,7 @@ export const Hero = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={heroImg}
-          alt="Femme en séance EMS d'électrostimulation"
+          alt="Salle de sport EMS à Fréjus Plage avec séance d'électrostimulation"
           className="w-full h-full object-cover"
           width={1920}
           height={1280}
@@ -23,30 +23,33 @@ export const Hero = () => {
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-card/80 backdrop-blur-md border border-border text-foreground text-[11px] sm:text-xs md:text-sm font-medium mb-5 md:mb-6 animate-fade-in shadow-soft">
             <Sparkles className="w-4 h-4 text-accent" />
-            Studio EMS premium · Fréjus Plage
+            VitaFit EMS Fréjus · Salle de sport premium
           </div>
 
-        <h1 className="text-[2rem] leading-[1.05] sm:text-5xl md:text-7xl font-black text-foreground mb-5 md:mb-6 animate-slide-up">
-  VitaFit EMS Fréjus,
-  <br />
-  <span className="text-gradient-accent">
-    votre salle de sport à Fréjus Plage
-  </span>
-</h1>
+          <h1 className="text-[2rem] leading-[1.05] sm:text-5xl md:text-7xl font-black text-foreground mb-5 md:mb-6 animate-slide-up">
+            Votre salle de sport
+            <br />
+            <span className="text-gradient-accent">
+              EMS à Fréjus Plage
+            </span>
+          </h1>
 
-         <p
-  className="text-sm sm:text-lg md:text-2xl text-muted-foreground mb-6 md:mb-10 max-w-2xl animate-slide-up font-light"
-  style={{ animationDelay: "120ms" }}
->
-  Salle de sport spécialisée en
-  <strong className="font-semibold text-foreground">
-    {" "}électrostimulation EMS
-  </strong>,
-  coaching personnalisé et nutrition.
-  Perte de poids, tonification et bien-être dans une expérience premium.
-</p>
+          <p
+            className="text-sm sm:text-lg md:text-2xl text-muted-foreground mb-6 md:mb-10 max-w-2xl animate-slide-up font-light"
+            style={{ animationDelay: "120ms" }}
+          >
+            Salle de sport spécialisée en
+            <strong className="font-semibold text-foreground">
+              {" "}électrostimulation EMS
+            </strong>
+            , coaching personnalisé et nutrition. Perte de poids, tonification
+            et bien-être dans une expérience premium.
+          </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-slide-up" style={{ animationDelay: "240ms" }}>
+          <div
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-slide-up"
+            style={{ animationDelay: "240ms" }}
+          >
             <Button
               variant="hero"
               size="lg"
@@ -57,6 +60,7 @@ export const Hero = () => {
               -50% sur la première séance
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
+
             <Button
               variant="outlineHero"
               size="lg"
@@ -67,15 +71,22 @@ export const Hero = () => {
             </Button>
           </div>
 
-          <div className="grid grid-cols-3 gap-3 sm:gap-6 mt-10 md:mt-14 max-w-xl animate-fade-in" style={{ animationDelay: "400ms" }}>
+          <div
+            className="grid grid-cols-3 gap-3 sm:gap-6 mt-10 md:mt-14 max-w-xl animate-fade-in"
+            style={{ animationDelay: "400ms" }}
+          >
             {[
               { v: "20", l: "minutes" },
               { v: "350", l: "muscles" },
               { v: "1×", l: "/ semaine" },
             ].map((s) => (
               <div key={s.l} className="border-l-2 border-accent pl-3 sm:pl-4">
-                <div className="text-xl sm:text-2xl md:text-4xl font-black text-foreground">{s.v}</div>
-                <div className="text-[10px] sm:text-xs md:text-sm text-muted-foreground uppercase tracking-wider">{s.l}</div>
+                <div className="text-xl sm:text-2xl md:text-4xl font-black text-foreground">
+                  {s.v}
+                </div>
+                <div className="text-[10px] sm:text-xs md:text-sm text-muted-foreground uppercase tracking-wider">
+                  {s.l}
+                </div>
               </div>
             ))}
           </div>
