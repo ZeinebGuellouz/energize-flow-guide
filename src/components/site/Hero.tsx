@@ -33,10 +33,17 @@ export const Hero = () => {
             en seulement <span className="text-gradient-accent">20 min</span>
           </h1>
 
-          <p className="text-sm sm:text-lg md:text-2xl text-muted-foreground mb-6 md:mb-10 max-w-2xl animate-slide-up font-light" style={{ animationDelay: "120ms" }}>
-            Nouvelle génération d'<strong className="font-semibold text-foreground">électrostimulation</strong>.
-            Performance, silhouette et bien-être réunis dans une expérience unique.
-          </p>
+         <p
+  className="text-sm sm:text-lg md:text-2xl text-muted-foreground mb-6 md:mb-10 max-w-2xl animate-slide-up font-light"
+  style={{ animationDelay: "120ms" }}
+>
+  Salle de sport spécialisée en
+  <strong className="font-semibold text-foreground">
+    {" "}électrostimulation EMS
+  </strong>,
+  coaching personnalisé et nutrition.
+  Perte de poids, tonification et bien-être dans une expérience premium.
+</p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-slide-up" style={{ animationDelay: "240ms" }}>
             <Button
