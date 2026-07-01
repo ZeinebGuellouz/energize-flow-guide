@@ -2,6 +2,24 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      (function () {
+        try {
+          var h = window.location.hostname;
+          if (h.endsWith("lovable.app")) {
+            var m = document.createElement("meta");
+            m.name = "robots";
+            m.content = "noindex, nofollow";
+            document.head.appendChild(m);
+            if (h === "vitafit-frejus.lovable.app") {
+              window.location.replace(
+                "https://www.vitafit-frejus.fr" + window.location.pathname + window.location.search + window.location.hash
+              );
+            }
+          }
+        } catch (e) {}
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#0ea5e9" />
     <meta name="mobile-web-app-capable" content="yes" />
