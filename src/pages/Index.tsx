@@ -85,8 +85,8 @@ const Index = () => {
   return (
     <Layout>
       <SEO
-        title="VitaFit EMS Fréjus | Salle de sport EMS & coaching à Fréjus Plage"
-        description="VitaFit EMS Fréjus est une salle de sport EMS à Fréjus Plage spécialisée dans l'électrostimulation, le coaching personnalisé, la perte de poids, la tonification et l'accompagnement nutritionnel."
+        title="Salle de sport Fréjus | VitaFit Fréjus Plage — Coaching & EMS"
+        description="Salle de sport à Fréjus Plage : coaching personnalisé, musculation, remise en forme, électrostimulation EMS et nutrition. Perte de poids, tonification et bien-être. Séance découverte -50%."
         path="/"
         jsonLd={faqJsonLd}
       />
