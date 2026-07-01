@@ -13,7 +13,7 @@ export const Hero = () => {
           alt="Salle de sport EMS à Fréjus Plage avec séance d'électrostimulation"
           className="w-full h-full object-cover"
           width={1920}
-          height={1280
+          height={1280}
           fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/30 md:via-background/85 md:to-background/20" />
@@ -28,10 +28,10 @@ export const Hero = () => {
           </div>
 
           <h1 className="text-[2rem] leading-[1.05] sm:text-5xl md:text-7xl font-black text-foreground mb-5 md:mb-6 animate-slide-up">
-            Votre salle de sport
+            Salle de sport
             <br />
             <span className="text-gradient-accent">
-              EMS à Fréjus Plage
+              à Fréjus Plage
             </span>
           </h1>
 
