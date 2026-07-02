@@ -18,6 +18,12 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+declare global {
+  interface Window {
+    dataLayer?: unknown[];
+  }
+}
+
 const TIME_SLOTS = [
   "09:00","09:15","09:30","09:45","10:00","10:15","10:30","10:45",
   "11:00","11:15","11:30","11:45","12:00","12:15","12:30","12:45",
@@ -73,10 +79,16 @@ export const DiscoveryForm = () => {
     const result = await submitDiscoveryForm(formData);
 
     if (result.success) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "reservation_success",
+      });
+
       toast({
         title: "Demande envoyée ✅",
         description: "Nous recevrons votre demande et vous répondrons dans les 24h.",
       });
+
       setDone(true);
     } else {
       toast({
@@ -117,7 +129,6 @@ export const DiscoveryForm = () => {
         </div>
       </div>
 
-      {/* Civilité */}
       <div className="mb-6">
         <Label className="mb-3 block text-sm">Civilité *</Label>
         <RadioGroup
@@ -155,11 +166,7 @@ export const DiscoveryForm = () => {
 
       <div className="grid sm:grid-cols-2 gap-4 mb-5 p-4 rounded-xl bg-secondary/40 border border-border">
         <Field label="Date souhaitée *" error={errors.dateSouhaitee?.message}>
-          <Input
-            type="date"
-            min={todayISO()}
-            {...register("dateSouhaitee")}
-          />
+          <Input type="date" min={todayISO()} {...register("dateSouhaitee")} />
         </Field>
         <Field label="Créneau souhaité *" error={errors.creneau?.message}>
           <Select
@@ -188,6 +195,7 @@ export const DiscoveryForm = () => {
       <Button type="submit" variant="hero" size="xl" className="w-full" disabled={isSubmitting}>
         {isSubmitting ? "Envoi en cours..." : "Réserver avec -50%"}
       </Button>
+
       <p className="text-xs text-muted-foreground text-center mt-3">
         Sans engagement · Réponse sous 24h ouvrées
       </p>
