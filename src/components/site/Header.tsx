@@ -80,16 +80,22 @@ export const Header = () => {
         </nav>
 
         <a
-          href={`tel:${SITE.phoneIntl}`}
-          aria-label={`Appeler ${SITE.phone}`}
-          className="shrink-0 w-8 h-8 sm:w-9 sm:h-9 md:w-auto md:h-auto rounded-full md:rounded-none bg-secondary md:bg-transparent text-foreground/80 hover:text-accent grid md:flex place-items-center md:items-center md:gap-2 transition-colors"
-        >
-          <Phone className="w-4 h-4" />
+  href={`tel:${SITE.phoneIntl}`}
+  aria-label={`Appeler ${SITE.phone}`}
+  onClick={() => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "click_phone",
+    });
+  }}
+  className="shrink-0 w-8 h-8 sm:w-9 sm:h-9 md:w-auto md:h-auto rounded-full md:rounded-none bg-secondary md:bg-transparent text-foreground/80 hover:text-accent grid md:flex place-items-center md:items-center md:gap-2 transition-colors"
+>
+  <Phone className="w-4 h-4" />
 
-          <span className="hidden lg:inline text-sm font-semibold">
-            {SITE.phone}
-          </span>
-        </a>
+  <span className="hidden lg:inline text-sm font-semibold">
+    {SITE.phone}
+  </span>
+</a>
       </div>
     </header>
   );
