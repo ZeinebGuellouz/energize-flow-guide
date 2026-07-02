@@ -12,6 +12,8 @@ import About from "./pages/About.tsx";
 import Herbalife from "./pages/Herbalife.tsx";
 import Pricing from "./pages/Pricing.tsx";
 import Contact from "./pages/Contact.tsx";
+import Blog from "./pages/Blog.tsx";
+import BlogArticle from "./pages/BlogArticle.tsx";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +30,8 @@ const App = () => (
           <Route path="/nutrition" element={<Herbalife />} />
           <Route path="/tarifs" element={<Pricing />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogArticle />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

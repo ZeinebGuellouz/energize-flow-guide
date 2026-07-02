@@ -7,6 +7,7 @@ const NAV = [
   { l: "À propos", to: "/a-propos" },
   { l: "Nutrition", to: "/nutrition" },
   { l: "Tarifs", to: "/tarifs" },
+  { l: "Blog", to: "/blog" },
   { l: "Contact", to: "/contact" },
 ];
 
