@@ -9,6 +9,7 @@ import { Forms } from "@/components/site/Forms";
 import { FAQ } from "@/components/site/FAQ";
 import { CTABand } from "@/components/site/CTABand";
 import { ContactInfo } from "@/components/site/ContactInfo";
+import { BlogPreview } from "@/components/site/BlogPreview";
 
 const faqJsonLd = {
   "@context": "https://schema.org",
@@ -98,6 +99,7 @@ const Index = () => {
       <Gallery />
       <Testimonials />
       <CTABand />
+      <BlogPreview />
       <FAQ />
 
     </Layout>

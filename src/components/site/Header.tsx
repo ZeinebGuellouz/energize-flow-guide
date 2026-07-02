@@ -12,6 +12,7 @@ const NAV = [
   { label: "À propos", to: "/a-propos" },
   { label: "Nutrition", to: "/nutrition" },
   { label: "Tarifs", to: "/tarifs" },
+  { label: "Blog", to: "/blog" },
   { label: "Contact", to: "/contact" },
 ];
 
