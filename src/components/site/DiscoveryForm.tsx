@@ -219,7 +219,7 @@ const Field = ({
   children,
   className,
 }: {
-  label: string;
+  label: React.ReactNode;
   error?: string;
   children: React.ReactNode;
   className?: string;
