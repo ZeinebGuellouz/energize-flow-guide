@@ -30,6 +30,13 @@ const TIME_SLOTS = [
 ];
 const todayISO = () => new Date().toISOString().split("T")[0];
 
+const isSunday = (dateStr: string) => {
+  const [y, m, d] = dateStr.split("-").map(Number);
+  if (!y || !m || !d) return false;
+  const date = new Date(y, m - 1, d);
+  return date.getDay() === 0;
+};
+
 const schema = z.object({
   civilite: z.enum(["mme", "mr"] as const, { message: "Sélectionnez une civilité" }),
   nom: z.string().trim().min(2, "Nom requis").max(60),
@@ -38,7 +45,10 @@ const schema = z.object({
   telephone: z.string().trim().regex(/^[0-9 +.\-()]{8,20}$/, "Téléphone invalide"),
   objectif: z.string().min(1, "Choisissez un objectif"),
   formule: z.string().min(1, "Choisissez une formule"),
-  dateSouhaitee: z.string().min(1, "Date requise"),
+  dateSouhaitee: z.string().min(1, "Date requise").refine(
+    (v) => !isSunday(v),
+    "Le dimanche est fermé, choisissez du lundi au samedi"
+  ),
   creneau: z.string().min(1, "Créneau requis"),
   message: z.string().trim().max(1000).optional(),
 });
@@ -188,7 +198,7 @@ export const EmsRequestForm = ({
       </div>
 
       <div className="grid sm:grid-cols-2 gap-4 mb-5 p-4 rounded-xl bg-secondary/40 border border-border">
-        <Field label="Date souhaitée *" error={errors.dateSouhaitee?.message}>
+        <Field label={<>Date souhaitée * <span className="block text-muted-foreground text-xs font-normal">Du lundi au samedi (dimanche fermé)</span></>} error={errors.dateSouhaitee?.message}>
           <Input type="date" min={todayISO()} {...register("dateSouhaitee")} />
         </Field>
         <Field label="Créneau souhaité *" error={errors.creneau?.message}>
@@ -225,7 +235,7 @@ const Field = ({
   children,
   className,
 }: {
-  label: string;
+  label: React.ReactNode;
   error?: string;
   children: React.ReactNode;
   className?: string;
