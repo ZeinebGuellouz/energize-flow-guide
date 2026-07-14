@@ -175,7 +175,7 @@ export const DiscoveryForm = () => {
       </div>
 
       <div className="grid sm:grid-cols-2 gap-4 mb-5 p-4 rounded-xl bg-secondary/40 border border-border">
-        <Field label="Date souhaitée *" error={errors.dateSouhaitee?.message}>
+        <Field label={<>Date souhaitée * <span className="block text-muted-foreground text-xs font-normal">Du lundi au samedi (dimanche fermé)</span></>} error={errors.dateSouhaitee?.message}>
           <Input type="date" min={todayISO()} {...register("dateSouhaitee")} />
         </Field>
         <Field label="Créneau souhaité *" error={errors.creneau?.message}>
