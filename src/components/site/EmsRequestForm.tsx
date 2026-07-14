@@ -30,6 +30,13 @@ const TIME_SLOTS = [
 ];
 const todayISO = () => new Date().toISOString().split("T")[0];
 
+const isSunday = (dateStr: string) => {
+  const [y, m, d] = dateStr.split("-").map(Number);
+  if (!y || !m || !d) return false;
+  const date = new Date(y, m - 1, d);
+  return date.getDay() === 0;
+};
+
 const schema = z.object({
   civilite: z.enum(["mme", "mr"] as const, { message: "Sélectionnez une civilité" }),
   nom: z.string().trim().min(2, "Nom requis").max(60),
@@ -38,7 +45,10 @@ const schema = z.object({
   telephone: z.string().trim().regex(/^[0-9 +.\-()]{8,20}$/, "Téléphone invalide"),
   objectif: z.string().min(1, "Choisissez un objectif"),
   formule: z.string().min(1, "Choisissez une formule"),
-  dateSouhaitee: z.string().min(1, "Date requise"),
+  dateSouhaitee: z.string().min(1, "Date requise").refine(
+    (v) => !isSunday(v),
+    "Le dimanche est fermé, choisissez du lundi au samedi"
+  ),
   creneau: z.string().min(1, "Créneau requis"),
   message: z.string().trim().max(1000).optional(),
 });
