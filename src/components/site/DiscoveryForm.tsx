@@ -25,14 +25,21 @@ declare global {
 }
 
 const TIME_SLOTS = [
-  "09:00","09:15","09:30","09:45","10:00","10:15","10:30","10:45",
-  "11:00","11:15","11:30","11:45","12:00","12:15","12:30","12:45",
-  "14:00","14:15","14:30","14:45","15:00","15:15","15:30","15:45",
-  "16:00","16:15","16:30","16:45","17:00","17:15","17:30","17:45",
-  "18:00","18:15","18:30","18:45","19:00","19:15","19:30","19:45",
+  "08:00","08:15","08:30","08:45","09:00","09:15","09:30","09:45",
+  "10:00","10:15","10:30","10:45","11:00","11:15","11:30","11:45",
+  "12:00","12:15","12:30","12:45","14:00","14:15","14:30","14:45",
+  "15:00","15:15","15:30","15:45","16:00","16:15","16:30","16:45",
+  "17:00","17:15","17:30",
 ];
 
 const todayISO = () => new Date().toISOString().split("T")[0];
+
+const isSunday = (dateStr: string) => {
+  const [y, m, d] = dateStr.split("-").map(Number);
+  if (!y || !m || !d) return false;
+  const date = new Date(y, m - 1, d);
+  return date.getDay() === 0;
+};
 
 const schema = z.object({
   civilite: z.enum(["mme", "mr"] as const, { message: "Sélectionnez une civilité" }),
@@ -41,7 +48,10 @@ const schema = z.object({
   email: z.string().trim().email("Email invalide").max(150),
   mobile: z.string().trim().regex(/^[0-9 +.\-()]{8,20}$/, "Téléphone invalide"),
   codePostal: z.string().trim().regex(/^[0-9]{5}$/, "Code postal à 5 chiffres"),
-  dateSouhaitee: z.string().min(1, "Date requise"),
+  dateSouhaitee: z.string().min(1, "Date requise").refine(
+    (v) => !isSunday(v),
+    "Le dimanche est fermé, choisissez du lundi au samedi"
+  ),
   creneau: z.string().min(1, "Créneau requis"),
   smsOk: z.literal(true, { message: "Acceptation requise" }),
 });
@@ -165,7 +175,7 @@ export const DiscoveryForm = () => {
       </div>
 
       <div className="grid sm:grid-cols-2 gap-4 mb-5 p-4 rounded-xl bg-secondary/40 border border-border">
-        <Field label="Date souhaitée *" error={errors.dateSouhaitee?.message}>
+        <Field label={<>Date souhaitée * <span className="block text-muted-foreground text-xs font-normal">Du lundi au samedi (dimanche fermé)</span></>} error={errors.dateSouhaitee?.message}>
           <Input type="date" min={todayISO()} {...register("dateSouhaitee")} />
         </Field>
         <Field label="Créneau souhaité *" error={errors.creneau?.message}>
@@ -209,7 +219,7 @@ const Field = ({
   children,
   className,
 }: {
-  label: string;
+  label: React.ReactNode;
   error?: string;
   children: React.ReactNode;
   className?: string;
