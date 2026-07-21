@@ -2,7 +2,6 @@ import { ReactNode } from "react";
 import benefitWeightloss from "@/assets/benefit-weightloss.jpg";
 import benefitMuscle from "@/assets/benefit-muscle.jpg";
 import benefitRecovery from "@/assets/benefit-recovery.jpg";
-import nutritionCoaching from "@/assets/nutrition-coaching.png";
 
 export type Article = {
   slug: string;
@@ -362,128 +361,6 @@ export const ARTICLES: Article[] = [
           page <a href="/tarifs">tarifs</a>, contactez-nous via la
           {" "}<a href="/contact">page contact</a>, ou revenez sur la
           {" "}<a href="/">page d'accueil</a> pour tout savoir sur le studio.
-        </p>
-      </>
-    ),
-  },
-  {
-    slug: "ems-apres-40-ans",
-    title: "EMS après 40 ans : pourquoi cette méthode est idéale",
-    seoTitle: "EMS après 40 ans à Fréjus : sport, remise en forme & seniors",
-    description:
-      "Sport après 40 ans à Fréjus : pourquoi l'EMS est idéale pour la remise en forme, la tonification et les seniors. Bienfaits, sécurité, protocole.",
-    keyword: "sport après 40 ans",
-    excerpt:
-      "Passé 40 ans, le corps change : moins de temps, plus de fragilités articulaires, métabolisme qui ralentit. Voici pourquoi l'EMS est particulièrement adaptée.",
-    cover: nutritionCoaching,
-    coverAlt: "Coach EMS accompagnant une personne de plus de 40 ans à Fréjus Plage",
-    date: "2026-07-06",
-    author: AUTHOR,
-    readingMinutes: 7,
-    related: ["ems-ou-salle-de-sport", "perte-de-poids-ems-frejus"],
-    body: (
-      <>
-        <p>
-          Après 40 ans, faire du <strong>sport</strong> n'a plus tout à fait la même
-          signification qu'à 25 ans. Le corps change&nbsp;: la masse musculaire diminue
-          naturellement (environ 1&nbsp;% par an dès la quarantaine), les articulations
-          deviennent plus sensibles, le métabolisme ralentit et le temps disponible se
-          réduit entre travail, famille et vie sociale. Résultat&nbsp;: beaucoup de
-          quadragénaires, quinquas et seniors abandonnent la salle de sport classique
-          après quelques semaines. C'est précisément là que l'<strong>EMS
-          (électrostimulation musculaire)</strong> prend tout son sens, et pourquoi de
-          plus en plus de personnes viennent la découvrir à VitaFit Fréjus Plage.
-        </p>
-
-        <h2>1. Un format court, compatible avec un agenda chargé</h2>
-        <p>
-          À 40, 50 ou 60 ans, on n'a plus forcément 3 soirées par semaine à consacrer à
-          la musculation. Une séance d'EMS dure <strong>20 minutes</strong>, une à deux
-          fois par semaine. C'est le format le plus réaliste pour tenir dans la durée
-          &mdash; et la régularité reste, à tout âge, le facteur numéro un des résultats.
-        </p>
-
-        <h2>2. Zéro impact articulaire : un vrai atout après 40 ans</h2>
-        <p>
-          C'est probablement le plus grand avantage de l'EMS pour un public 40+&nbsp;:
-          les impulsions électriques recrutent les muscles en profondeur <strong>sans
-          charges lourdes ni impact articulaire</strong>. Genoux sensibles, dos fragile,
-          épaules qui craquent, ancienne blessure&nbsp;: la méthode est particulièrement
-          adaptée aux personnes qui ne peuvent plus &mdash; ou ne veulent plus &mdash;
-          courir, sauter ou soulever lourd.
-        </p>
-        <p>
-          C'est aussi ce qui en fait une excellente option pour la <strong>remise en
-          forme à Fréjus</strong> après une longue pause sportive, une grossesse, une
-          opération ou simplement des années sédentaires.
-        </p>
-
-        <h2>3. Lutter contre la fonte musculaire (sarcopénie)</h2>
-        <p>
-          Passé 40 ans, si l'on ne stimule pas activement les muscles, le corps en
-          perd chaque année. Moins de muscle, c'est&nbsp;: un métabolisme qui ralentit,
-          une prise de gras plus facile, moins de force au quotidien et, plus tard,
-          un risque de chutes. L'EMS active <strong>jusqu'à 350 muscles simultanément
-          en 20 minutes</strong>, y compris des groupes profonds difficiles à solliciter
-          en salle classique. C'est un outil précieux contre la <strong>sarcopénie</strong>
-          et un moyen simple d'entretenir sa masse musculaire année après année.
-        </p>
-
-        <h2>4. Perte de poids et silhouette : ce qui change après 40 ans</h2>
-        <p>
-          À cet âge, le métabolisme est plus lent&nbsp;: les régimes seuls fonctionnent
-          moins bien qu'à 20 ans et vident souvent le muscle avant le gras. L'EMS agit
-          exactement là où il faut&nbsp;:
-        </p>
-        <ul>
-          <li>dépense énergétique élevée sur une séance courte&nbsp;;</li>
-          <li>effet «&nbsp;afterburn&nbsp;» pendant plusieurs heures après la séance&nbsp;;</li>
-          <li>maintien du muscle, donc pas d'effet yoyo&nbsp;;</li>
-          <li>tonification visible du ventre, des bras et des cuisses en 6 à 10 séances.</li>
-        </ul>
-        <p>
-          Nous détaillons cette approche dans notre article sur la
-          {" "}<a href="/blog/perte-de-poids-ems-frejus">perte de poids avec l'EMS à Fréjus</a>,
-          et l'accompagnement nutrition est présenté sur la page
-          {" "}<a href="/nutrition">nutrition</a>.
-        </p>
-
-        <h2>5. EMS seniors : est-ce vraiment adapté ?</h2>
-        <p>
-          Oui, avec un cadre professionnel. L'<strong>EMS pour les seniors</strong> est
-          pratiquée depuis des années en Europe pour la rééducation, la prévention des
-          chutes et le maintien de l'autonomie. Chez VitaFit Fréjus Plage, chaque séance
-          est encadrée par un coach qui règle l'intensité muscle par muscle, adapte les
-          exercices à votre niveau et surveille les sensations. Une visite médicale
-          préalable est recommandée en cas de pathologie cardiaque, d'implant électronique
-          (pacemaker) ou de grossesse.
-        </p>
-
-        <h2>6. Le mental : rester actif, se sentir bien</h2>
-        <p>
-          Après 40 ans, faire du sport ne sert pas seulement à sculpter la silhouette.
-          C'est aussi&nbsp;: mieux dormir, réduire le stress, garder l'énergie pour son
-          travail et ses enfants, se sentir bien dans ses vêtements et dans son corps.
-          Le rendez-vous hebdomadaire avec votre coach devient un moment pour soi &mdash;
-          court, efficace, motivant.
-        </p>
-
-        <h2>Protocole recommandé à Fréjus Plage</h2>
-        <ol>
-          <li>Un bilan initial (objectifs, antécédents, mensurations).</li>
-          <li>1 à 2 séances EMS de 20 minutes par semaine.</li>
-          <li>Un accompagnement nutrition simple, sans frustration.</li>
-          <li>Un suivi régulier pour ajuster l'intensité et voir les progrès.</li>
-        </ol>
-
-        <h2>Prêt(e) à tester ?</h2>
-        <p>
-          Si vous avez plus de 40 ans et que vous cherchez une méthode <strong>efficace,
-          courte et sûre pour vos articulations</strong>, la <strong>première séance
-          est à -50&nbsp;%</strong>. Retrouvez toutes les formules sur la page
-          {" "}<a href="/tarifs">tarifs</a>, contactez-nous via la
-          {" "}<a href="/contact">page contact</a>, ou revenez sur la
-          {" "}<a href="/">page d'accueil</a> pour tout savoir sur VitaFit Fréjus Plage.
         </p>
       </>
     ),
