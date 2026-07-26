@@ -49,7 +49,7 @@ const faqJsonLd = {
     },
     {
       "@type": "Question",
-      name: "Que comprend la séance découverte à 19,95 € ?",
+      name: "Que comprend la séance découverte à 19,5 € ?",
       acceptedAnswer: {
         "@type": "Answer",
         text: "La séance découverte comprend un bilan personnalisé, la mise à disposition de la combinaison EMS, une séance encadrée de 20 minutes et des conseils adaptés à vos objectifs.",
