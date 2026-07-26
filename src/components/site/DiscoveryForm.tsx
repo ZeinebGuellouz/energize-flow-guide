@@ -204,7 +204,7 @@ export const DiscoveryForm = () => {
       </div>
 
       <Button type="submit" variant="hero" size="xl" className="w-full" disabled={isSubmitting}>
-        {isSubmitting ? "Envoi en cours..." : "Réserver ma séance à 19 €"}
+        {isSubmitting ? "Envoi en cours..." : "Réserver ma première séance à -50 %"}
       </Button>
 
       <p className="text-xs text-muted-foreground text-center mt-2.5">
