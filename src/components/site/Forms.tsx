@@ -16,7 +16,7 @@ export const Forms = () => {
             <span className="text-gradient-accent">Réservez à 19,5 €</span>
           </h2>
           <p className="text-sm md:text-base text-muted-foreground">
-            -50 % sur votre première séance EMS. Sans engagement.
+            -50 % sur votre première séance EMS.
           </p>
         </div>
 
