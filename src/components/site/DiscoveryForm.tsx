@@ -135,7 +135,7 @@ export const DiscoveryForm = () => {
           <Gift className="w-5 h-5 text-accent-foreground" />
         </div>
         <div className="min-w-0">
-          <h3 className="text-base sm:text-lg md:text-xl font-black leading-tight">Ma séance à 19,5 €</h3>
+          <h3 className="text-base sm:text-lg md:text-xl font-black leading-tight">Ma séance à 19,50 €</h3>
           <p className="text-xs sm:text-sm text-muted-foreground">-50 % sur la première séance</p>
         </div>
       </div>
