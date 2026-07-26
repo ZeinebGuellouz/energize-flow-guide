@@ -34,48 +34,46 @@ export const Hero = () => {
           </h1>
 
           <p className="mb-5 max-w-xl text-sm leading-relaxed text-muted-foreground sm:mb-7 sm:text-lg md:mb-8 md:text-xl">
-            20 minutes, 350 muscles, un coach pour vous. Perte de poids,
-            tonification et remise en forme.
+            20 minutes. 350 muscles activés. Votre coach personnel.
           </p>
 
           {/* Both buttons remain visible on mobile and desktop */}
-          <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:gap-4">
-            <Button
-              variant="hero"
-              size="lg"
-              className="
-                group
-                flex h-auto min-h-14 w-full items-center justify-between
-                gap-3 px-4 py-3
-                text-sm font-bold leading-tight
-                whitespace-normal
-                sm:h-14 sm:w-auto sm:min-w-[340px] sm:justify-center
-                sm:px-7 sm:py-0 sm:text-base sm:whitespace-nowrap
-              "
-              onClick={() => scrollToId("decouverte")}
-            >
-              <Zap className="h-5 w-5 shrink-0" />
+         <div className="grid grid-cols-2 gap-3 mt-2 max-w-xl">
+  <Button
+    variant="hero"
+    size="lg"
+    className="
+      group
+      h-12 md:h-14
+      w-full
+      px-4
+      text-sm md:text-base
+      font-semibold
+      whitespace-nowrap
+    "
+    onClick={() => scrollToId("decouverte")}
+  >
+    <Zap className="w-4 h-4 mr-2 shrink-0" />
+    <span>Profiter de -50 %</span>
+    <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+  </Button>
 
-              <span className="min-w-0 flex-1 text-center">
-                Réserver ma première séance à -50 %
-              </span>
-
-              <ArrowRight className="h-5 w-5 shrink-0 transition-transform group-hover:translate-x-1" />
-            </Button>
-
-            <Button
-              variant="outlineHero"
-              size="lg"
-              className="
-                h-12 w-full
-                text-sm font-semibold
-                sm:h-14 sm:w-auto sm:px-8 sm:text-base
-              "
-              onClick={() => scrollToId("benefices")}
-            >
-              Découvrir l&apos;EMS
-            </Button>
-          </div>
+  <Button
+    variant="outlineHero"
+    size="lg"
+    className="
+      h-12 md:h-14
+      w-full
+      px-4
+      text-sm md:text-base
+      font-semibold
+      whitespace-nowrap
+    "
+    onClick={() => scrollToId("benefices")}
+  >
+    Découvrir l'EMS
+  </Button>
+</div>
 
           {/* Compact trust badges */}
           <ul className="mt-4 flex flex-wrap items-center gap-2 sm:mt-6 sm:flex-nowrap">
