@@ -93,9 +93,10 @@ const Index = () => {
       />
 
       <Hero />
+      <Forms />
       <Benefits />
       <HowItWorks />
-      <Forms />
+
       <Gallery />
       <Testimonials />
       <CTABand />

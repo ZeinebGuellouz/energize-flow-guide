@@ -1,11 +1,17 @@
-import { ArrowRight, Sparkles, Zap } from "lucide-react";
+import { ArrowRight, Star, ShieldCheck, Percent, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { scrollToId } from "@/lib/site";
 import heroImg from "@/assets/hero-ems.jpg";
 
+const TRUST = [
+  { icon: Star, label: "5,0 Google" },
+  { icon: ShieldCheck, label: "Coach certifié" },
+  { icon: Percent, label: "-50 % 1ère séance" },
+];
+
 export const Hero = () => {
   return (
-    <section className="relative min-h-[100svh] flex items-center overflow-hidden -mt-14 md:-mt-20 pt-16 md:pt-20">
+    <section className="relative flex items-center overflow-hidden -mt-14 md:-mt-20 pt-14 md:pt-20 md:min-h-[92svh]">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <img
@@ -16,88 +22,55 @@ export const Hero = () => {
           height={1280}
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/30 md:via-background/85 md:to-background/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/10 md:via-transparent md:to-background/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/40 md:via-background/85 md:to-background/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/10 md:via-transparent md:to-background/30" />
       </div>
 
-      <div className="container-px max-w-7xl mx-auto relative z-10 py-14 md:py-28">
+      <div className="container-px max-w-7xl mx-auto relative z-10 py-6 md:py-24">
         <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-card/80 backdrop-blur-md border border-border text-foreground text-[11px] sm:text-xs md:text-sm font-medium mb-5 md:mb-6 animate-fade-in shadow-soft">
-            <Sparkles className="w-4 h-4 text-accent" />
-            VitaFit EMS Fréjus · Salle de sport premium
-          </div>
-
-          <h1 className="text-[2rem] leading-[1.05] sm:text-5xl md:text-7xl font-black text-foreground mb-5 md:mb-6 animate-slide-up">
-            Salle de sport
-            <br />
-            <span className="text-gradient-accent">
-              à Fréjus Plage
-            </span>
+          <h1 className="text-[1.75rem] leading-[1.1] sm:text-5xl md:text-6xl font-black text-foreground mb-3 md:mb-5">
+            Salle de sport EMS <span className="text-gradient-accent">à Fréjus Plage</span>
           </h1>
 
-          <p
-            className="text-sm sm:text-lg md:text-2xl text-muted-foreground mb-6 md:mb-10 max-w-2xl animate-slide-up font-light"
-            style={{ animationDelay: "120ms" }}
-          >
-            Salle de sport spécialisée en
-            <strong className="font-semibold text-foreground">
-              {" "}électrostimulation EMS
-            </strong>
-            , coaching personnalisé et nutrition. Perte de poids, tonification
-            et bien-être dans une expérience premium.
+          <p className="text-sm sm:text-lg md:text-xl text-muted-foreground mb-4 md:mb-8 max-w-xl">
+            20 minutes, 350 muscles, un coach pour vous. Perte de poids, tonification et remise en forme.
           </p>
 
-          <div
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-slide-up"
-            style={{ animationDelay: "240ms" }}
-          >
+          <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-4">
             <Button
               variant="hero"
               size="lg"
-              className="sm:h-14 sm:text-base sm:px-8"
+              className="w-full sm:w-auto h-auto py-3 text-sm leading-snug sm:h-14 sm:py-0 sm:text-base sm:px-8 whitespace-normal"
               onClick={() => scrollToId("decouverte")}
             >
-              <Zap className="w-5 h-5" />
-              -50% sur la première séance
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <Zap className="w-5 h-5 flex-shrink-0" />
+              <span>Réserver ma séance à 19 € (-50 % sur la première séance)</span>
+              <ArrowRight className="w-5 h-5 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
             </Button>
 
             <Button
               variant="outlineHero"
               size="lg"
-              className="sm:h-14 sm:text-base sm:px-8"
+              className="hidden sm:inline-flex sm:h-14 sm:text-base sm:px-8"
               onClick={() => scrollToId("benefices")}
             >
               Découvrir l'EMS
             </Button>
           </div>
 
-          <div
-            className="grid grid-cols-3 gap-3 sm:gap-6 mt-10 md:mt-14 max-w-xl animate-fade-in"
-            style={{ animationDelay: "400ms" }}
-          >
-            {[
-              { v: "20", l: "minutes" },
-              { v: "350", l: "muscles" },
-              { v: "1×", l: "/ semaine" },
-            ].map((s) => (
-              <div key={s.l} className="border-l-2 border-accent pl-3 sm:pl-4">
-                <div className="text-xl sm:text-2xl md:text-4xl font-black text-foreground">
-                  {s.v}
-                </div>
-                <div className="text-[10px] sm:text-xs md:text-sm text-muted-foreground uppercase tracking-wider">
-                  {s.l}
-                </div>
-              </div>
+          {/* Trust signals directly below the CTA */}
+          <ul className="flex flex-wrap items-center gap-x-3 gap-y-2 mt-4 md:mt-6">
+            {TRUST.map((t) => (
+              <li
+                key={t.label}
+                className="inline-flex items-center gap-1.5 rounded-full bg-card/80 backdrop-blur-md border border-border px-3 py-1.5 text-[11px] sm:text-sm font-semibold text-foreground shadow-soft"
+              >
+                <t.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent" />
+                {t.label}
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
-      </div>
-
-      {/* Scroll cue */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 hidden md:flex flex-col items-center gap-2 text-muted-foreground animate-float">
-        <span className="text-xs uppercase tracking-widest">Scroll</span>
-        <div className="w-px h-10 bg-accent/60" />
       </div>
     </section>
   );

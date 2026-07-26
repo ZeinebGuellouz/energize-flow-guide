@@ -128,20 +128,20 @@ export const DiscoveryForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="bg-card rounded-3xl shadow-elevated p-5 sm:p-6 md:p-10 border border-border"
+      className="bg-card rounded-2xl md:rounded-3xl shadow-elevated p-4 sm:p-6 md:p-8 border border-border"
     >
-      <div className="flex items-center gap-3 mb-8">
-        <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-gradient-accent grid place-items-center shadow-glow flex-shrink-0">
-          <Gift className="w-6 h-6 text-accent-foreground" />
+      <div className="flex items-center gap-3 mb-4 md:mb-6">
+        <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-accent grid place-items-center shadow-glow flex-shrink-0">
+          <Gift className="w-5 h-5 text-accent-foreground" />
         </div>
         <div className="min-w-0">
-          <h3 className="text-base sm:text-lg md:text-2xl font-black leading-tight">-50% sur la première séance</h3>
-          <p className="text-xs sm:text-sm text-muted-foreground">Offre découverte</p>
+          <h3 className="text-base sm:text-lg md:text-xl font-black leading-tight">Ma séance à 19 €</h3>
+          <p className="text-xs sm:text-sm text-muted-foreground">-50 % sur la première séance</p>
         </div>
       </div>
 
-      <div className="mb-6">
-        <Label className="mb-3 block text-sm">Civilité *</Label>
+      <div className="mb-4">
+        <Label className="mb-2 block text-sm">Civilité *</Label>
         <RadioGroup
           value={civ}
           onValueChange={(v) => setValue("civilite", v as "mme" | "mr", { shouldValidate: true })}
@@ -157,7 +157,7 @@ export const DiscoveryForm = () => {
         {errors.civilite && <p className="text-destructive text-xs mt-1">{errors.civilite.message}</p>}
       </div>
 
-      <div className="grid sm:grid-cols-2 gap-4 mb-6">
+      <div className="grid sm:grid-cols-2 gap-3 sm:gap-4 mb-4">
         <Field label="Nom *" error={errors.nom?.message}>
           <Input {...register("nom")} placeholder="Dupont" />
         </Field>
@@ -175,8 +175,8 @@ export const DiscoveryForm = () => {
         </Field>
       </div>
 
-      <div className="grid sm:grid-cols-2 gap-4 mb-5 p-4 rounded-xl bg-secondary/40 border border-border">
-        <Field label={<>Date souhaitée * <span className="block text-muted-foreground text-xs font-normal">Du lundi au samedi (dimanche fermé)</span></>} error={errors.dateSouhaitee?.message}>
+      <div className="grid sm:grid-cols-2 gap-3 sm:gap-4 mb-4 p-3 sm:p-4 rounded-xl bg-secondary/40 border border-border">
+        <Field label={<>Date souhaitée * <span className="block text-muted-foreground text-xs font-normal">Lundi au samedi</span></>} error={errors.dateSouhaitee?.message}>
           <Input type="date" min={todayISO()} {...register("dateSouhaitee")} />
         </Field>
         <Field label="Créneau souhaité *" error={errors.creneau?.message}>
@@ -192,24 +192,25 @@ export const DiscoveryForm = () => {
         </Field>
       </div>
 
-      <div className="flex items-start gap-3 mb-8 p-4 rounded-xl bg-secondary/50">
+      <div className="flex items-start gap-3 mb-4 p-3 rounded-xl bg-secondary/50">
         <Checkbox
           id="sms"
           onCheckedChange={(v) => setValue("smsOk", v === true ? true : (false as never), { shouldValidate: true })}
         />
-        <Label htmlFor="sms" className="text-sm leading-relaxed cursor-pointer">
+        <Label htmlFor="sms" className="text-xs sm:text-sm leading-snug cursor-pointer">
           J'accepte de recevoir des SMS d'information de la part de VitaFit Fréjus Plage. *
           {errors.smsOk && <span className="block text-destructive text-xs mt-1">{errors.smsOk.message}</span>}
         </Label>
       </div>
 
       <Button type="submit" variant="hero" size="xl" className="w-full" disabled={isSubmitting}>
-        {isSubmitting ? "Envoi en cours..." : "Réserver avec -50%"}
+        {isSubmitting ? "Envoi en cours..." : "Réserver ma séance à 19 €"}
       </Button>
 
-      <p className="text-xs text-muted-foreground text-center mt-3">
+      <p className="text-xs text-muted-foreground text-center mt-2.5">
         Sans engagement · Réponse sous 24h ouvrées
       </p>
+
     </form>
   );
 };
