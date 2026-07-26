@@ -9,7 +9,7 @@ const TRUST = [
 
 export const Forms = () => {
   return (
-    <section id="decouverte" className="py-8 md:py-16 bg-background relative scroll-mt-16">
+    <section id="decouverte" className="pt-4 pb-8 md:py-16 bg-background relative scroll-mt-16">
       <div className="container-px max-w-3xl mx-auto">
         <div className="text-center mb-5 md:mb-8">
           <h2 className="text-2xl sm:text-4xl font-black mb-2 leading-tight">
