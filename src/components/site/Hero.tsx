@@ -59,13 +59,13 @@ export const Hero = () => {
           </div>
 
           {/* Trust signals directly below the CTA */}
-          <ul className="flex flex-wrap items-center gap-x-3 gap-y-2 mt-4 md:mt-6">
+          <ul className="flex flex-nowrap items-center justify-start gap-2 mt-4 md:mt-6">
             {TRUST.map((t) => (
               <li
                 key={t.label}
-                className="inline-flex items-center gap-1.5 rounded-full bg-card/80 backdrop-blur-md border border-border px-3 py-1.5 text-[11px] sm:text-sm font-semibold text-foreground shadow-soft"
+                className="inline-flex items-center gap-1 rounded-full bg-card/80 backdrop-blur-md border border-border px-2 py-1 text-[10px] sm:text-sm font-semibold text-foreground shadow-soft whitespace-nowrap"
               >
-                <t.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent" />
+                <t.icon className="w-3 h-3 sm:w-4 sm:h-4 text-accent flex-shrink-0" />
                 {t.label}
               </li>
             ))}
