@@ -6,7 +6,6 @@ import heroImg from "@/assets/hero-ems.jpg";
 const TRUST = [
   { icon: Star, label: "5,0 Google" },
   { icon: ShieldCheck, label: "Coach certifié" },
-  { icon: Percent, label: "-50 % 1ère séance" },
 ];
 
 export const Hero = () => {
@@ -44,7 +43,7 @@ export const Hero = () => {
               onClick={() => scrollToId("decouverte")}
             >
               <Zap className="w-5 h-5 flex-shrink-0" />
-              <span>Réserver ma séance à 19 € (-50 % sur la première séance)</span>
+              <span>Réserver ma première séance à -50 %</span>
               <ArrowRight className="w-5 h-5 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
             </Button>
 
