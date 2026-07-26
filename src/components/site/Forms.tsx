@@ -13,7 +13,7 @@ export const Forms = () => {
       <div className="container-px max-w-3xl mx-auto">
         <div className="text-center mb-5 md:mb-8">
           <h2 className="text-2xl sm:text-4xl font-black mb-2 leading-tight">
-            <span className="text-gradient-accent">Réservez à 19 €</span>
+            <span className="text-gradient-accent">Réservez à 19,5 €</span>
           </h2>
           <p className="text-sm md:text-base text-muted-foreground">
             -50 % sur votre première séance EMS. Sans engagement.
