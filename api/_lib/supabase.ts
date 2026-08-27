@@ -1,0 +1,13 @@
+import { createClient, type SupabaseClient } from "@supabase/supabase-js";
+import { requireEnv } from "./env";
+
+/**
+ * Server-side Supabase client (service role).
+ * Works with ANY Supabase project: only SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY are needed.
+ * No dependency on any hosting platform.
+ */
+export function getAdminDb(): SupabaseClient {
+  const url = process.env.SUPABASE_URL || requireEnv("VITE_SUPABASE_URL");
+  const key = requireEnv("SUPABASE_SERVICE_ROLE_KEY");
+  return createClient(url, key, { auth: { persistSession: false, autoRefreshToken: false } });
+}
