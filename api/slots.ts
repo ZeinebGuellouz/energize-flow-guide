@@ -54,7 +54,7 @@ export default async function handler(req: Request): Promise<Response> {
 
   const minStart = Date.now() + 60 * 60 * 1000; // pas de réservation dans l'heure qui vient
 
-  const slots: Slot[] = dayTimes().map((time) => {
+  const slots: Slot[] = dayTimes(date).map((time) => {
     const start = parisToUtc(date, time);
     const end = new Date(start.getTime() + SESSION_MINUTES * 60 * 1000);
     const conflict = busy.some(([s, e]) => overlaps(start.getTime(), end.getTime(), s, e));
