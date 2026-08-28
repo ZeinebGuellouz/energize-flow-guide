@@ -3,10 +3,10 @@ import { errorJson, json } from "./_lib/env";
 import {
   SESSION_MINUTES,
   dayTimes,
+  isClosedOn,
   isValidDateStr,
   overlaps,
   parisToUtc,
-  weekdayOf,
   type Slot,
 } from "./_lib/slots";
 
@@ -17,11 +17,12 @@ export default async function handler(req: Request): Promise<Response> {
   const date = url.searchParams.get("date") || "";
   if (!isValidDateStr(date)) return errorJson("Paramètre 'date' invalide (YYYY-MM-DD)", 400);
 
-  // Dimanche fermé
-  if (weekdayOf(date) === 0) return json({ date, closed: true, slots: [] as Slot[] });
+  // Jour de fermeture (dimanche)
+  if (isClosedOn(date)) return json({ date, closed: true, slots: [] as Slot[] });
 
   const dayStart = parisToUtc(date, "00:00");
   const dayEnd = new Date(dayStart.getTime() + 36 * 60 * 60 * 1000);
+
 
   const db = getAdminDb();
   const nowIso = new Date().toISOString();
