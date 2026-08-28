@@ -1,11 +1,26 @@
-/** Configuration des créneaux VitaFit — lundi au samedi, 08:00 → 18:00, pas de 15 min. */
+/**
+ * Configuration des créneaux VitaFit.
+ * Lundi → Vendredi : 08h00 – 20h00
+ * Samedi          : 08h00 – 13h00
+ * Dimanche        : fermé
+ * Séances de 30 min, créneaux toutes les 15 min.
+ */
 export const TIMEZONE = "Europe/Paris";
-export const OPEN_HOUR = 8;
-export const CLOSE_HOUR = 18;
 export const STEP_MINUTES = 15;
 export const SESSION_MINUTES = 30;
 /** Durée de blocage d'un créneau pendant le paiement (minutes). */
 export const HOLD_MINUTES = 20;
+
+/** Heures d'ouverture par jour de la semaine (0 = dimanche). null = fermé. */
+export const OPENING_HOURS: Record<number, { open: number; close: number } | null> = {
+  0: null,
+  1: { open: 8, close: 20 },
+  2: { open: 8, close: 20 },
+  3: { open: 8, close: 20 },
+  4: { open: 8, close: 20 },
+  5: { open: 8, close: 20 },
+  6: { open: 8, close: 13 },
+};
 
 function tzOffsetMs(date: Date, timeZone: string): number {
   const dtf = new Intl.DateTimeFormat("en-US", {
@@ -42,7 +57,7 @@ export function parisToUtc(dateStr: string, timeStr: string): Date {
   return result;
 }
 
-/** Jour de la semaine (0 = dimanche) d'une date "YYYY-MM-DD" à Paris. */
+/** Jour de la semaine (0 = dimanche) d'une date "YYYY-MM-DD". */
 export function weekdayOf(dateStr: string): number {
   const [y, m, d] = dateStr.split("-").map(Number);
   return new Date(Date.UTC(y, m - 1, d)).getUTCDay();
@@ -52,11 +67,17 @@ export function isValidDateStr(dateStr: string): boolean {
   return /^\d{4}-\d{2}-\d{2}$/.test(dateStr) && !Number.isNaN(Date.parse(`${dateStr}T00:00:00Z`));
 }
 
-/** Liste des heures théoriques d'une journée ouvrée. */
-export function dayTimes(): string[] {
+export function isClosedOn(dateStr: string): boolean {
+  return OPENING_HOURS[weekdayOf(dateStr)] == null;
+}
+
+/** Liste des heures théoriques pour une date donnée. */
+export function dayTimes(dateStr: string): string[] {
+  const hours = OPENING_HOURS[weekdayOf(dateStr)];
+  if (!hours) return [];
   const times: string[] = [];
-  const lastStart = CLOSE_HOUR * 60 - SESSION_MINUTES;
-  for (let m = OPEN_HOUR * 60; m <= lastStart; m += STEP_MINUTES) {
+  const lastStart = hours.close * 60 - SESSION_MINUTES;
+  for (let m = hours.open * 60; m <= lastStart; m += STEP_MINUTES) {
     times.push(`${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`);
   }
   return times;

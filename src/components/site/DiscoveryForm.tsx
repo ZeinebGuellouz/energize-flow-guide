@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { toast } from "@/hooks/use-toast";
+import { OPENING_LABEL, isClosedDay, timeSlotsFor } from "@/lib/hours";
 import { CheckCircle2, Gift } from "lucide-react";
 import { submitDiscoveryForm } from "@/lib/emailjs";
 import {
@@ -24,23 +25,9 @@ declare global {
   }
 }
 
-const TIME_SLOTS = [
-  "08:00","08:15","08:30","08:45","09:00","09:15","09:30","09:45",
-  "10:00","10:15","10:30","10:45","11:00","11:15","11:30","11:45",
-  "12:00","12:15","12:30","12:45","13:00","13:15","13:30","13:45",
-  "14:00","14:15","14:30","14:45","15:00","15:15","15:30","15:45",
-  "16:00","16:15","16:30","16:45","17:00","17:15","17:30","17:45",
-  "18:00",
-];
 
 const todayISO = () => new Date().toISOString().split("T")[0];
 
-const isSunday = (dateStr: string) => {
-  const [y, m, d] = dateStr.split("-").map(Number);
-  if (!y || !m || !d) return false;
-  const date = new Date(y, m - 1, d);
-  return date.getDay() === 0;
-};
 
 const schema = z.object({
   civilite: z.enum(["mme", "mr"] as const, { message: "Sélectionnez une civilité" }),
@@ -50,8 +37,8 @@ const schema = z.object({
   mobile: z.string().trim().regex(/^[0-9 +.\-()]{8,20}$/, "Téléphone invalide"),
   codePostal: z.string().trim().regex(/^[0-9]{5}$/, "Code postal à 5 chiffres"),
   dateSouhaitee: z.string().min(1, "Date requise").refine(
-    (v) => !isSunday(v),
-    "Le dimanche est fermé, choisissez du lundi au samedi"
+    (v) => !isClosedDay(v),
+    "Fermé ce jour-là (Lun–Ven 8h–20h, Sam 8h–13h, dimanche fermé)"
   ),
   creneau: z.string().min(1, "Créneau requis"),
   smsOk: z.literal(true, { message: "Acceptation requise" }),
@@ -124,6 +111,8 @@ export const DiscoveryForm = () => {
 
   const civ = watch("civilite");
   const creneau = watch("creneau");
+  const dateSouhaitee = watch("dateSouhaitee");
+  const timeSlots = timeSlotsFor(dateSouhaitee || "");
 
   return (
     <form
@@ -176,7 +165,7 @@ export const DiscoveryForm = () => {
       </div>
 
       <div className="grid sm:grid-cols-2 gap-3 sm:gap-4 mb-4 p-3 sm:p-4 rounded-xl bg-secondary/40 border border-border">
-        <Field label={<>Date souhaitée * <span className="block text-muted-foreground text-xs font-normal">Lundi au samedi</span></>} error={errors.dateSouhaitee?.message}>
+        <Field label={<>Date souhaitée * <span className="block text-muted-foreground text-xs font-normal">{OPENING_LABEL}</span></>} error={errors.dateSouhaitee?.message}>
           <Input type="date" min={todayISO()} {...register("dateSouhaitee")} />
         </Field>
         <Field label="Créneau souhaité *" error={errors.creneau?.message}>
@@ -186,7 +175,9 @@ export const DiscoveryForm = () => {
           >
             <SelectTrigger><SelectValue placeholder="Choisir une heure" /></SelectTrigger>
             <SelectContent className="max-h-64">
-              {TIME_SLOTS.map((t) => <SelectItem key={t} value={t}>{t}</SelectItem>)}
+              {timeSlots.length === 0 ? (
+                <div className="px-3 py-2 text-sm text-muted-foreground">Choisissez d'abord une date ouvrée</div>
+              ) : timeSlots.map((t) => <SelectItem key={t} value={t}>{t}</SelectItem>)}
             </SelectContent>
           </Select>
         </Field>
