@@ -1,6 +1,6 @@
 /**
  * Configuration des créneaux VitaFit.
- * Lundi → Vendredi : 08h00 – 20h00
+ * Lundi → Vendredi : 08h00 – 18h00
  * Samedi          : 08h00 – 13h00
  * Dimanche        : fermé
  * Séances de 30 min, créneaux toutes les 15 min.
@@ -14,11 +14,11 @@ export const HOLD_MINUTES = 20;
 /** Heures d'ouverture par jour de la semaine (0 = dimanche). null = fermé. */
 export const OPENING_HOURS: Record<number, { open: number; close: number } | null> = {
   0: null,
-  1: { open: 8, close: 20 },
-  2: { open: 8, close: 20 },
-  3: { open: 8, close: 20 },
-  4: { open: 8, close: 20 },
-  5: { open: 8, close: 20 },
+  1: { open: 8, close: 18 },
+  2: { open: 8, close: 18 },
+  3: { open: 8, close: 18 },
+  4: { open: 8, close: 18 },
+  5: { open: 8, close: 18 },
   6: { open: 8, close: 13 },
 };
 

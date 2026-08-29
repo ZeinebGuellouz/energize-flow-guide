@@ -54,5 +54,5 @@ service_role ne vivent que dans les fonctions `api/`.
 5. `/admin` → connexion avec le compte admin → la réservation est visible,
    et vous pouvez bloquer/libérer des créneaux.
 
-Horaires appliqués partout : lun–ven 8h–20h, sam 8h–13h, dimanche fermé,
+Horaires appliqués partout : lun–ven 8h–18h, sam 8h–13h, dimanche fermé,
 séances de 30 min avec créneaux toutes les 15 min.

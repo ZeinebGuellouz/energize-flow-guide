@@ -38,7 +38,7 @@ const schema = z.object({
   codePostal: z.string().trim().regex(/^[0-9]{5}$/, "Code postal à 5 chiffres"),
   dateSouhaitee: z.string().min(1, "Date requise").refine(
     (v) => !isClosedDay(v),
-    "Fermé ce jour-là (Lun–Ven 8h–20h, Sam 8h–13h, dimanche fermé)"
+    "Fermé ce jour-là (Lun–Ven 8h–18h, Sam 8h–13h, dimanche fermé)"
   ),
   creneau: z.string().min(1, "Créneau requis"),
   smsOk: z.literal(true, { message: "Acceptation requise" }),
