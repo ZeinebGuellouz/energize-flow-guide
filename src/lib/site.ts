@@ -11,8 +11,8 @@ export const SITE = {
   postalCode: "83600",
   city: "Fréjus Plage",
   hours: [
-    { day: "Lundi - Vendredi", time: "8h00 - 18h00" },
-    { day: "Samedi", time: "8h00 - 13h00" },
+    { day: "Lundi - Vendredi", time: "9h00 - 20h00" },
+    { day: "Samedi", time: "9h00 - 13h00" },
     { day: "Dimanche", time: "Fermé" },
   ],
   mapsEmbed:

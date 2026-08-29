@@ -6,12 +6,11 @@ import {
   HOLD_MINUTES,
   SESSION_MINUTES,
   dayTimes,
-  isClosedOn,
   isValidDateStr,
   overlaps,
   parisToUtc,
+  weekdayOf,
 } from "./_lib/slots";
-
 
 const BodySchema = z.object({
   date: z.string().refine(isValidDateStr, "Date invalide"),
@@ -41,9 +40,8 @@ export default async function handler(req: Request): Promise<Response> {
   }
   const data = parsed.data;
 
-  if (isClosedOn(data.date)) return errorJson("Le studio est fermé ce jour-là", 400);
-  if (!dayTimes(data.date).includes(data.time)) return errorJson("Créneau hors horaires d'ouverture", 400);
-
+  if (weekdayOf(data.date) === 0) return errorJson("Le studio est fermé le dimanche", 400);
+  if (!dayTimes().includes(data.time)) return errorJson("Créneau hors horaires d'ouverture", 400);
 
   const start = parisToUtc(data.date, data.time);
   const end = new Date(start.getTime() + SESSION_MINUTES * 60 * 1000);

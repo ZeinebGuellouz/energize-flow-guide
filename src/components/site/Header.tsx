@@ -79,13 +79,6 @@ export const Header = () => {
           ))}
         </nav>
 
-        <Link
-          to="/reservation"
-          className="shrink-0 hidden sm:inline-flex items-center rounded-full bg-accent text-accent-foreground px-3 md:px-4 py-2 text-[11px] md:text-sm font-bold hover:opacity-90 transition-opacity"
-        >
-          Réserver
-        </Link>
-
         <a
   href={`tel:${SITE.phoneIntl}`}
   aria-label={`Appeler ${SITE.phone}`}
