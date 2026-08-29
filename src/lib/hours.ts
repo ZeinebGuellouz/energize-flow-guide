@@ -1,6 +1,6 @@
 /**
  * Horaires d'ouverture VitaFit (partagés par tous les formulaires du site).
- * Lundi → Vendredi : 08h00 – 20h00
+ * Lundi → Vendredi : 08h00 – 18h00
  * Samedi          : 08h00 – 13h00
  * Dimanche        : fermé
  * Séances de 30 min, créneaux toutes les 15 min.
@@ -10,15 +10,15 @@ export const STEP_MINUTES = 15;
 
 export const OPENING_HOURS: Record<number, { open: number; close: number } | null> = {
   0: null,
-  1: { open: 8, close: 20 },
-  2: { open: 8, close: 20 },
-  3: { open: 8, close: 20 },
-  4: { open: 8, close: 20 },
-  5: { open: 8, close: 20 },
+  1: { open: 8, close: 18 },
+  2: { open: 8, close: 18 },
+  3: { open: 8, close: 18 },
+  4: { open: 8, close: 18 },
+  5: { open: 8, close: 18 },
   6: { open: 8, close: 13 },
 };
 
-export const OPENING_LABEL = "Lun–Ven 8h–20h · Sam 8h–13h · Dimanche fermé";
+export const OPENING_LABEL = "Lun–Ven 8h–18h · Sam 8h–13h · Dimanche fermé";
 
 export const weekdayOfDateStr = (dateStr: string): number => {
   const [y, m, d] = dateStr.split("-").map(Number);

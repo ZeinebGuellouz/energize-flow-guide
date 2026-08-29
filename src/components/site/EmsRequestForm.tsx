@@ -34,7 +34,7 @@ const schema = z.object({
   formule: z.string().min(1, "Choisissez une formule"),
   dateSouhaitee: z.string().min(1, "Date requise").refine(
     (v) => !isClosedDay(v),
-    "Fermé ce jour-là (Lun–Ven 8h–20h, Sam 8h–13h, dimanche fermé)"
+    "Fermé ce jour-là (Lun–Ven 8h–18h, Sam 8h–13h, dimanche fermé)"
   ),
   creneau: z.string().min(1, "Créneau requis"),
   message: z.string().trim().max(1000).optional(),
