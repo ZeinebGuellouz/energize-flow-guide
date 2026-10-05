@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import coachingPhoto from "@/assets/real-media/accompagnement.webp";
-import coachingVideo from "@/assets/real-media/seance-coaching.mp4";
+import coachingVideo from "@/assets/real-media/seance-coaching.webm";
 import coachingPoster from "@/assets/real-media/coaching-poster.webp";
-import movementVideo from "@/assets/real-media/seance-mouvements.mp4";
+import movementVideo from "@/assets/real-media/seance-mouvements.webm";
 import movementPoster from "@/assets/real-media/mouvements-poster.webp";
 
 const clips = [
