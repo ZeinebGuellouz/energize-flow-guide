@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react";
-import coachingPhoto from "@/assets/accompagnement.webp.asset.json";
-import coachingVideo from "@/assets/seance-coaching.mp4.asset.json";
-import coachingPoster from "@/assets/coaching-poster.webp.asset.json";
-import movementVideo from "@/assets/seance-mouvements.mp4.asset.json";
-import movementPoster from "@/assets/mouvements-poster.webp.asset.json";
+import coachingPhoto from "@/assets/real-media/accompagnement.webp";
+import coachingVideo from "@/assets/real-media/seance-coaching.mp4";
+import coachingPoster from "@/assets/real-media/coaching-poster.webp";
+import movementVideo from "@/assets/real-media/seance-mouvements.mp4";
+import movementPoster from "@/assets/real-media/mouvements-poster.webp";
 
 const clips = [
-  { src: coachingVideo.url, poster: coachingPoster.url, title: "Coaching en studio" },
-  { src: movementVideo.url, poster: movementPoster.url, title: "Mouvements en EMS" },
+  { src: coachingVideo, poster: coachingPoster, title: "Coaching en studio" },
+  { src: movementVideo, poster: movementPoster, title: "Mouvements en EMS" },
 ];
 
 function SessionClip({ src, poster, title }: (typeof clips)[number]) {
@@ -53,7 +53,7 @@ export const RealSession = () => (
     <div className="container-px mx-auto max-w-7xl">
       <div className="grid items-center gap-6 md:grid-cols-2 md:gap-12">
         <img
-          src={coachingPhoto.url}
+          src={coachingPhoto}
           alt="Une coach VitaFit accompagne une participante pendant une séance EMS à Fréjus"
           loading="lazy"
           width={480}

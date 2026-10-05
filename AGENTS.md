@@ -1,1 +1,1 @@
-- Keep user-supplied homepage media behind imported Lovable Assets pointers and lazy-load below-the-fold videos; this keeps the initial page small while retaining responsive media delivery.
+- Store optimized user-supplied homepage media as local imports and lazy-load below-the-fold videos; this keeps Vercel exports portable and the initial page small.
