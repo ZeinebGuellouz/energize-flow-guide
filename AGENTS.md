@@ -1,0 +1,1 @@
+- Store optimized user-supplied homepage media as local imports and lazy-load below-the-fold videos; this keeps Vercel exports portable and the initial page small.

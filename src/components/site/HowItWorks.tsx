@@ -1,4 +1,4 @@
-import emsImg from "@/assets/ems-suit.jpg";
+import emsPhoto from "@/assets/real-media/femme-seance-ems.webp";
 import coachImg from "@/assets/coach-session.jpg";
 import { Button } from "@/components/ui/button";
 import { scrollToId } from "@/lib/site";
@@ -18,9 +18,11 @@ export const HowItWorks = () => {
           <div className="reveal-left order-2 lg:order-1">
             <div className="relative">
               <img
-                src={emsImg}
-                alt="Combinaison EMS électrostimulation"
+                src={emsPhoto}
+                alt="Une cliente VitaFit s'entraîne en combinaison EMS dans le studio de Fréjus Plage"
                 loading="lazy"
+                width={850}
+                height={1133}
                 className="rounded-3xl shadow-elevated w-full aspect-[4/5] object-cover"
               />
               <div className="absolute -bottom-6 -right-6 hidden md:block w-48 h-48 rounded-3xl overflow-hidden shadow-glow border-4 border-background">
