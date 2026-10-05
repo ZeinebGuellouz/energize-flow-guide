@@ -1,0 +1,3 @@
+- [x] Ajouter la photo réelle de séance EMS à la présentation de la séance.
+- [x] Ajouter une image d'accompagnement réel à l'accueil.
+- [x] Intégrer deux courts extraits EMS muets, légers et adaptés au mobile.
