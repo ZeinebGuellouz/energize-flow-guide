@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import equipePhoto from "@/assets/real-media/equipe-vitafit.webp";
-import affichePhoto from "@/assets/real-media/affiche-transpire.webp";
 import seanceVideo from "@/assets/real-media/seance-coaching.webm";
 import seancePoster from "@/assets/real-media/seance-poster.webp";
 
