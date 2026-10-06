@@ -24,7 +24,7 @@ declare global {
   }
 }
 
-const TIME_SLOTS = [
+const WEEKDAY_TIME_SLOTS = [
   "08:00",
   "08:15",
   "08:30",
@@ -64,18 +64,46 @@ const TIME_SLOTS = [
   "17:00",
   "17:15",
   "17:30",
-  "17:45",
-  "18:00",
+];
+
+const SATURDAY_TIME_SLOTS = [
+  "08:00",
+  "08:15",
+  "08:30",
+  "08:45",
+  "09:00",
+  "09:15",
+  "09:30",
+  "09:45",
+  "10:00",
+  "10:15",
+  "10:30",
+  "10:45",
+  "11:00",
+  "11:15",
+  "11:30",
+  "11:45",
+  "12:00",
+  "12:15",
+  "12:30",
 ];
 
 const todayISO = () => new Date().toISOString().split("T")[0];
 
-const isSunday = (dateStr: string) => {
+const getDayFromDateString = (dateStr: string) => {
   const [y, m, d] = dateStr.split("-").map(Number);
-  if (!y || !m || !d) return false;
 
-  const date = new Date(y, m - 1, d);
-  return date.getDay() === 0;
+  if (!y || !m || !d) return null;
+
+  return new Date(y, m - 1, d).getDay();
+};
+
+const isSunday = (dateStr: string) => {
+  return getDayFromDateString(dateStr) === 0;
+};
+
+const isSaturday = (dateStr: string) => {
+  return getDayFromDateString(dateStr) === 6;
 };
 
 const schema = z.object({
@@ -119,6 +147,14 @@ export const DiscoveryForm = () => {
   } = useForm<FormValues>({
     resolver: zodResolver(schema),
   });
+
+  const civ = watch("civilite");
+  const creneau = watch("creneau");
+  const dateSouhaitee = watch("dateSouhaitee");
+
+  const availableTimeSlots = isSaturday(dateSouhaitee)
+    ? SATURDAY_TIME_SLOTS
+    : WEEKDAY_TIME_SLOTS;
 
   const onSubmit = async (data: FormValues) => {
     const civText = data.civilite === "mme" ? "Madame" : "Monsieur";
@@ -181,9 +217,6 @@ export const DiscoveryForm = () => {
       </div>
     );
   }
-
-  const civ = watch("civilite");
-  const creneau = watch("creneau");
 
   return (
     <form
@@ -292,12 +325,25 @@ export const DiscoveryForm = () => {
           <Input
             type="date"
             min={todayISO()}
-            {...register("dateSouhaitee")}
+            {...register("dateSouhaitee", {
+              onChange: () => {
+                setValue("creneau", "", {
+                  shouldValidate: false,
+                });
+              },
+            })}
           />
         </Field>
 
         <Field
-          label="Créneau souhaité *"
+          label={
+            <>
+              Créneau souhaité *
+              <span className="block text-muted-foreground text-xs font-normal">
+                Lun–Ven : dernier créneau 17h30 · Sam : 12h30
+              </span>
+            </>
+          }
           error={errors.creneau?.message}
         >
           <Select
@@ -307,13 +353,20 @@ export const DiscoveryForm = () => {
                 shouldValidate: true,
               })
             }
+            disabled={!dateSouhaitee || isSunday(dateSouhaitee)}
           >
             <SelectTrigger>
-              <SelectValue placeholder="Choisir une heure" />
+              <SelectValue
+                placeholder={
+                  !dateSouhaitee
+                    ? "Choisissez d'abord une date"
+                    : "Choisir une heure"
+                }
+              />
             </SelectTrigger>
 
             <SelectContent className="max-h-64">
-              {TIME_SLOTS.map((t) => (
+              {availableTimeSlots.map((t) => (
                 <SelectItem key={t} value={t}>
                   {t}
                 </SelectItem>
