@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import equipePhoto from "@/assets/real-media/equipe-vitafit.webp";
-import affichePhoto from "@/assets/real-media/affiche-transpire.webp";
 import seanceVideo from "@/assets/real-media/seance-coaching.webm";
 import seancePoster from "@/assets/real-media/seance-poster.webp";
 
@@ -60,24 +59,9 @@ export const RealSession = () => (
         </div>
       </div>
 
-      <div className="mx-auto mt-12 max-w-3xl md:mt-20">
+      <div className="mx-auto mt-12 max-w-md md:mt-20">
         <h2 className="mb-6 text-center text-2xl font-black text-foreground sm:text-4xl">Découvrez une séance en vrai</h2>
-        <div className="grid gap-4 sm:grid-cols-5 sm:items-center sm:gap-6">
-          <div className="sm:col-span-3">
-            <StudioVideo />
-          </div>
-          <figure className="sm:col-span-2">
-            <img
-              src={affichePhoto}
-              alt="Affiche VitaFit : séance EMS 25 min + drainage, studio Fréjus Plage"
-              loading="lazy"
-              width={760}
-              height={1350}
-              className="aspect-[9/16] w-full rounded-2xl object-cover sm:rounded-3xl"
-            />
-            <figcaption className="mt-2 text-center text-sm font-semibold text-foreground">L'ambiance du studio, en images</figcaption>
-          </figure>
-        </div>
+        <StudioVideo />
       </div>
     </div>
   </section>
