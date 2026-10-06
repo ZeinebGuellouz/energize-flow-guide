@@ -90,7 +90,9 @@ const SATURDAY_TIME_SLOTS = [
 
 const todayISO = () => new Date().toISOString().split("T")[0];
 
-const getDayFromDateString = (dateStr: string) => {
+const getDayFromDateString = (dateStr?: string) => {
+  if (!dateStr) return null;
+
   const [y, m, d] = dateStr.split("-").map(Number);
 
   if (!y || !m || !d) return null;
@@ -98,11 +100,11 @@ const getDayFromDateString = (dateStr: string) => {
   return new Date(y, m - 1, d).getDay();
 };
 
-const isSunday = (dateStr: string) => {
+const isSunday = (dateStr?: string) => {
   return getDayFromDateString(dateStr) === 0;
 };
 
-const isSaturday = (dateStr: string) => {
+const isSaturday = (dateStr?: string) => {
   return getDayFromDateString(dateStr) === 6;
 };
 
@@ -110,18 +112,25 @@ const schema = z.object({
   civilite: z.enum(["mme", "mr"] as const, {
     message: "Sélectionnez une civilité",
   }),
+
   nom: z.string().trim().min(2, "Nom requis").max(60),
+
   prenom: z.string().trim().min(2, "Prénom requis").max(60),
+
   email: z.string().trim().email("Email invalide").max(150),
+
   mobile: z
     .string()
     .trim()
     .regex(/^[0-9 +.\-()]{8,20}$/, "Téléphone invalide"),
+
   codePostal: z
     .string()
     .trim()
     .regex(/^[0-9]{5}$/, "Code postal à 5 chiffres"),
+
   invitePar: z.string().trim().max(100).optional(),
+
   dateSouhaitee: z
     .string()
     .min(1, "Date requise")
@@ -129,8 +138,12 @@ const schema = z.object({
       (v) => !isSunday(v),
       "Le dimanche est fermé, choisissez du lundi au samedi"
     ),
+
   creneau: z.string().min(1, "Créneau requis"),
-  smsOk: z.literal(true, { message: "Acceptation requise" }),
+
+  smsOk: z.literal(true, {
+    message: "Acceptation requise",
+  }),
 });
 
 type FormValues = z.infer<typeof schema>;
@@ -146,32 +159,52 @@ export const DiscoveryForm = () => {
     formState: { errors, isSubmitting },
   } = useForm<FormValues>({
     resolver: zodResolver(schema),
+    defaultValues: {
+      civilite: undefined,
+      nom: "",
+      prenom: "",
+      email: "",
+      mobile: "",
+      codePostal: "",
+      invitePar: "",
+      dateSouhaitee: "",
+      creneau: "",
+    },
   });
 
   const civ = watch("civilite");
   const creneau = watch("creneau");
   const dateSouhaitee = watch("dateSouhaitee");
 
-  const availableTimeSlots = isSaturday(dateSouhaitee)
-    ? SATURDAY_TIME_SLOTS
-    : WEEKDAY_TIME_SLOTS;
+  const availableTimeSlots =
+    dateSouhaitee && isSaturday(dateSouhaitee)
+      ? SATURDAY_TIME_SLOTS
+      : WEEKDAY_TIME_SLOTS;
 
   const onSubmit = async (data: FormValues) => {
-    const civText = data.civilite === "mme" ? "Madame" : "Monsieur";
+    const civText =
+      data.civilite === "mme" ? "Madame" : "Monsieur";
 
     const formData = {
       from_name: `${data.prenom} ${data.nom}`,
       from_email: data.email,
+
       subject: `Réservation première séance EMS -50% — ${data.prenom} ${data.nom}`,
+
       civilite: civText,
       nom: data.nom,
       prenom: data.prenom,
       email: data.email,
       mobile: data.mobile,
+
       code_postal: data.codePostal,
-      invite_par: data.invitePar || "Non renseigné",
+
+      invite_par:
+        data.invitePar?.trim() || "Non renseigné",
+
       date: data.dateSouhaitee,
       creneau: data.creneau,
+
       sms_accepte: "Oui",
     };
 
@@ -240,25 +273,41 @@ export const DiscoveryForm = () => {
       </div>
 
       <div className="mb-4">
-        <Label className="mb-2 block text-sm">Civilité *</Label>
+        <Label className="mb-2 block text-sm">
+          Civilité *
+        </Label>
 
         <RadioGroup
           value={civ}
           onValueChange={(v) =>
-            setValue("civilite", v as "mme" | "mr", {
-              shouldValidate: true,
-            })
+            setValue(
+              "civilite",
+              v as "mme" | "mr",
+              {
+                shouldValidate: true,
+              }
+            )
           }
           className="flex gap-4 sm:gap-6"
         >
           <label className="flex items-center gap-2 cursor-pointer">
-            <RadioGroupItem value="mme" id="civ-mme" />
-            <span className="text-sm sm:text-base">Madame</span>
+            <RadioGroupItem
+              value="mme"
+              id="civ-mme"
+            />
+            <span className="text-sm sm:text-base">
+              Madame
+            </span>
           </label>
 
           <label className="flex items-center gap-2 cursor-pointer">
-            <RadioGroupItem value="mr" id="civ-mr" />
-            <span className="text-sm sm:text-base">Monsieur</span>
+            <RadioGroupItem
+              value="mr"
+              id="civ-mr"
+            />
+            <span className="text-sm sm:text-base">
+              Monsieur
+            </span>
           </label>
         </RadioGroup>
 
@@ -270,15 +319,30 @@ export const DiscoveryForm = () => {
       </div>
 
       <div className="grid sm:grid-cols-2 gap-3 sm:gap-4 mb-4">
-        <Field label="Nom *" error={errors.nom?.message}>
-          <Input {...register("nom")} placeholder="Dupont" />
+        <Field
+          label="Nom *"
+          error={errors.nom?.message}
+        >
+          <Input
+            {...register("nom")}
+            placeholder="Dupont"
+          />
         </Field>
 
-        <Field label="Prénom *" error={errors.prenom?.message}>
-          <Input {...register("prenom")} placeholder="Marie" />
+        <Field
+          label="Prénom *"
+          error={errors.prenom?.message}
+        >
+          <Input
+            {...register("prenom")}
+            placeholder="Marie"
+          />
         </Field>
 
-        <Field label="Email *" error={errors.email?.message}>
+        <Field
+          label="Email *"
+          error={errors.email?.message}
+        >
           <Input
             type="email"
             {...register("email")}
@@ -286,7 +350,10 @@ export const DiscoveryForm = () => {
           />
         </Field>
 
-        <Field label="Mobile *" error={errors.mobile?.message}>
+        <Field
+          label="Mobile *"
+          error={errors.mobile?.message}
+        >
           <Input
             type="tel"
             {...register("mobile")}
@@ -294,7 +361,10 @@ export const DiscoveryForm = () => {
           />
         </Field>
 
-        <Field label="Code postal *" error={errors.codePostal?.message}>
+        <Field
+          label="Code postal *"
+          error={errors.codePostal?.message}
+        >
           <Input
             {...register("codePostal")}
             placeholder="83600"
@@ -302,7 +372,10 @@ export const DiscoveryForm = () => {
           />
         </Field>
 
-        <Field label="Invité par" error={errors.invitePar?.message}>
+        <Field
+          label="Invité par"
+          error={errors.invitePar?.message}
+        >
           <Input
             {...register("invitePar")}
             placeholder="Nom de la personne"
@@ -347,13 +420,16 @@ export const DiscoveryForm = () => {
           error={errors.creneau?.message}
         >
           <Select
-            value={creneau}
+            value={creneau || ""}
             onValueChange={(v) =>
               setValue("creneau", v, {
                 shouldValidate: true,
               })
             }
-            disabled={!dateSouhaitee || isSunday(dateSouhaitee)}
+            disabled={
+              !dateSouhaitee ||
+              isSunday(dateSouhaitee)
+            }
           >
             <SelectTrigger>
               <SelectValue
@@ -367,7 +443,10 @@ export const DiscoveryForm = () => {
 
             <SelectContent className="max-h-64">
               {availableTimeSlots.map((t) => (
-                <SelectItem key={t} value={t}>
+                <SelectItem
+                  key={t}
+                  value={t}
+                >
                   {t}
                 </SelectItem>
               ))}
@@ -382,8 +461,12 @@ export const DiscoveryForm = () => {
           onCheckedChange={(v) =>
             setValue(
               "smsOk",
-              v === true ? true : (false as never),
-              { shouldValidate: true }
+              v === true
+                ? true
+                : (false as never),
+              {
+                shouldValidate: true,
+              }
             )
           }
         />
@@ -434,7 +517,9 @@ const Field = ({
   className?: string;
 }) => (
   <div className={className}>
-    <Label className="mb-2 block text-sm">{label}</Label>
+    <Label className="mb-2 block text-sm">
+      {label}
+    </Label>
 
     {children}
 
