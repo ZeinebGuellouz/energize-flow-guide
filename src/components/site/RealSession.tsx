@@ -1,50 +1,43 @@
 import { useEffect, useRef, useState } from "react";
-import coachingPhoto from "@/assets/real-media/accompagnement.webp";
-import coachingVideo from "@/assets/real-media/seance-coaching.webm";
-import coachingPoster from "@/assets/real-media/coaching-poster.webp";
-import movementVideo from "@/assets/real-media/seance-mouvements.webm";
-import movementPoster from "@/assets/real-media/mouvements-poster.webp";
+import equipePhoto from "@/assets/real-media/equipe-vitafit.webp";
+import affichePhoto from "@/assets/real-media/affiche-transpire.webp";
+import seanceVideo from "@/assets/real-media/seance-coaching.webm";
+import seancePoster from "@/assets/real-media/seance-poster.webp";
 
-const clips = [
-  { src: coachingVideo, poster: coachingPoster, title: "Coaching en studio" },
-  { src: movementVideo, poster: movementPoster, title: "Mouvements en EMS" },
-];
-
-function SessionClip({ src, poster, title }: (typeof clips)[number]) {
+function StudioVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [active, setActive] = useState(false);
+  const [started, setStarted] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        setActive(true);
-        video.play().catch(() => {});
-      } else {
-        video.pause();
-      }
-    }, { threshold: 0.3 });
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStarted(true);
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.3 }
+    );
     observer.observe(video);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <figure className="min-w-0">
-      <video
-        ref={videoRef}
-        className="aspect-[9/13] w-full rounded-2xl bg-muted object-cover"
-        poster={poster}
-        src={active ? src : undefined}
-        muted
-        loop
-        playsInline
-        controls
-        preload="none"
-        aria-label={title}
-      />
-      <figcaption className="mt-2 text-sm font-semibold text-foreground">{title}</figcaption>
-    </figure>
+    <video
+      ref={videoRef}
+      className="aspect-[9/16] w-full rounded-2xl bg-muted object-cover sm:rounded-3xl"
+      poster={seancePoster}
+      src={started ? seanceVideo : undefined}
+      muted
+      loop
+      playsInline
+      preload="metadata"
+      aria-label="Séance EMS filmée au studio VitaFit de Fréjus Plage"
+    />
   );
 }
 
@@ -53,11 +46,11 @@ export const RealSession = () => (
     <div className="container-px mx-auto max-w-7xl">
       <div className="grid items-center gap-6 md:grid-cols-2 md:gap-12">
         <img
-          src={coachingPhoto}
-          alt="Une coach VitaFit accompagne une participante pendant une séance EMS à Fréjus"
+          src={equipePhoto}
+          alt="L'équipe VitaFit vous accueille dans son studio de Fréjus Plage"
           loading="lazy"
-          width={480}
-          height={832}
+          width={900}
+          height={1200}
           className="h-64 w-full rounded-2xl object-cover object-center sm:h-80 md:h-96"
         />
         <div>
@@ -69,8 +62,21 @@ export const RealSession = () => (
 
       <div className="mx-auto mt-12 max-w-3xl md:mt-20">
         <h2 className="mb-6 text-center text-2xl font-black text-foreground sm:text-4xl">Découvrez une séance en vrai</h2>
-        <div className="grid grid-cols-2 gap-3 sm:gap-6">
-          {clips.map((clip) => <SessionClip key={clip.src} {...clip} />)}
+        <div className="grid gap-4 sm:grid-cols-5 sm:items-center sm:gap-6">
+          <div className="sm:col-span-3">
+            <StudioVideo />
+          </div>
+          <figure className="sm:col-span-2">
+            <img
+              src={affichePhoto}
+              alt="Affiche VitaFit : séance EMS 25 min + drainage, studio Fréjus Plage"
+              loading="lazy"
+              width={760}
+              height={1350}
+              className="aspect-[9/16] w-full rounded-2xl object-cover sm:rounded-3xl"
+            />
+            <figcaption className="mt-2 text-center text-sm font-semibold text-foreground">L'ambiance du studio, en images</figcaption>
+          </figure>
         </div>
       </div>
     </div>
