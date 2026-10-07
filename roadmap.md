@@ -5,3 +5,4 @@
 - [x] Afficher le texte avant la photo dans la section Accompagnement / Équipe.
 - [x] Corriger le cadrage des images du blog sans couper les visages.
 - [x] Passer la durée des séances à 25 minutes sur tout le site et dans la réservation.
+- [ ] Garder uniquement les photos réelles uniques dans la galerie, sans recadrage, et permettre leur ouverture en grand.

@@ -1,1 +1,2 @@
 - Store optimized user-supplied website media as local imports and prioritize authentic VitaFit photos; this keeps Vercel exports portable and the presentation credible.
+- Render gallery thumbnails in equal-aspect frames with object-contain and open their local source in the shared Dialog; this preserves entire photos and accessible full-image viewing.
