@@ -54,12 +54,12 @@ const Blog = () => {
               className="reveal group bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-elevated transition-all border border-border"
             >
               <Link to={`/blog/${a.slug}`} className="block">
-                <div className="aspect-[16/10] overflow-hidden">
+                <div className="aspect-[16/10] overflow-hidden bg-muted">
                   <img
                     src={a.cover}
                     alt={a.coverAlt}
                     loading="lazy"
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-500"
                   />
                 </div>
               </Link>

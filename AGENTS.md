@@ -1,1 +1,1 @@
-- Store optimized user-supplied homepage media as local imports and lazy-load below-the-fold videos; this keeps Vercel exports portable and the initial page small.
+- Store optimized user-supplied website media as local imports and prioritize authentic VitaFit photos; this keeps Vercel exports portable and the presentation credible.

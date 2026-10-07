@@ -95,7 +95,7 @@ const BlogArticle = () => {
           <img
             src={article.cover}
             alt={article.coverAlt}
-            className="w-full aspect-[16/9] object-cover rounded-2xl shadow-elevated mb-10"
+            className="w-full aspect-[16/9] object-contain rounded-2xl bg-muted shadow-elevated mb-10"
             width={1600}
             height={900}
           />
@@ -153,12 +153,12 @@ const BlogArticle = () => {
                   to={`/blog/${a.slug}`}
                   className="group bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-elevated transition-all border border-border flex"
                 >
-                  <div className="w-32 sm:w-40 shrink-0 overflow-hidden">
+                  <div className="w-32 sm:w-40 shrink-0 overflow-hidden bg-muted">
                     <img
                       src={a.cover}
                       alt={a.coverAlt}
                       loading="lazy"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-500"
                     />
                   </div>
                   <div className="p-4 flex-1">

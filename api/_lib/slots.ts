@@ -3,7 +3,7 @@ export const TIMEZONE = "Europe/Paris";
 export const OPEN_HOUR = 8;
 export const CLOSE_HOUR = 18;
 export const STEP_MINUTES = 15;
-export const SESSION_MINUTES = 30;
+export const SESSION_MINUTES = 25;
 /** Durée de blocage d'un créneau pendant le paiement (minutes). */
 export const HOLD_MINUTES = 20;
 

@@ -21,7 +21,7 @@ const packs = [
     note: "Au lieu de 39€",
     features: [
       "Bilan personnalisé",
-      "1 séance EMS de 20 min",
+      "1 séance EMS de 25 min",
       "Combinaison fournie",
       "Sans engagement",
     ],
@@ -34,7 +34,7 @@ const packs = [
     price: "39€",
     note: "Séance unique",
     features: [
-      "1 séance EMS de 20 min",
+      "1 séance EMS de 25 min",
       "Coach personnel",
       "Accès au bar à smoothies",
       "Sans engagement",
@@ -49,7 +49,7 @@ const packs = [
     price: "185€",
     note: "Soit 37€ / séance",
     features: [
-      "5 séances EMS de 20 min",
+      "5 séances EMS de 25 min",
       "Coach personnel à chaque séance",
       "Suivi de progression",
     ],
@@ -63,7 +63,7 @@ const packs = [
     price: "315€",
     note: "Soit 31,50€ / séance",
     features: [
-      "10 séances EMS de 20 min",
+      "10 séances EMS de 25 min",
       "Bilan complet + suivi",
       "Réductions partenaires",
     ],
@@ -77,7 +77,7 @@ const packs = [
     price: "560€",
     note: "Soit 28€ / séance",
     features: [
-      "20 séances EMS de 20 min",
+      "20 séances EMS de 25 min",
       "Bilan complet + suivi avancé",
       "Réductions partenaires",
     ],

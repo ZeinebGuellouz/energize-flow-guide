@@ -1,3 +1,7 @@
 - [x] Ajouter la photo réelle de séance EMS à la présentation de la séance.
 - [x] Ajouter une image d'accompagnement réel à l'accueil.
-- [x] Intégrer deux courts extraits EMS muets, légers et adaptés au mobile.
+- [x] Retirer la section vidéo de la page d'accueil.
+- [x] Privilégier les vraies photos VitaFit dans la galerie et la présentation de l'équipe.
+- [x] Afficher le texte avant la photo dans la section Accompagnement / Équipe.
+- [x] Corriger le cadrage des images du blog sans couper les visages.
+- [x] Passer la durée des séances à 25 minutes sur tout le site et dans la réservation.
