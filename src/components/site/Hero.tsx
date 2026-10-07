@@ -4,7 +4,7 @@ import { scrollToId } from "@/lib/site";
 import heroImg from "@/assets/hero-ems.jpg";
 
 const STATS = [
-  { value: "20", label: "minutes" },
+  { value: "25", label: "minutes" },
   { value: "350", label: "muscles" },
   { value: "1×", label: "/ semaine" },
 ];

@@ -1,20 +1,14 @@
 import studio from "@/assets/studio-interior.jpg";
-import coach from "@/assets/coach-session.jpg";
-import ems from "@/assets/ems-suit.jpg";
-import wl from "@/assets/benefit-weightloss.jpg";
-import muscle from "@/assets/benefit-muscle.jpg";
-import recov from "@/assets/benefit-recovery.jpg";
+import equipe from "@/assets/real-media/equipe-vitafit.webp";
+import seance from "@/assets/real-media/femme-seance-ems.webp";
 import smoothie from "@/assets/real-media/smoothie.webp";
 import emsPoster from "@/assets/real-media/ems-poster.webp";
 import affiche from "@/assets/real-media/affiche-transpire.webp";
 
 const imgs = [
   { src: studio, alt: "Studio EMS Fréjus Plage", h: "lg:row-span-2" },
-  { src: coach, alt: "Coach personnel EMS" },
-  { src: ems, alt: "Combinaison EMS" },
-  { src: wl, alt: "Perte de poids EMS" },
-  { src: muscle, alt: "Gain musculaire EMS", h: "lg:row-span-2" },
-  { src: recov, alt: "Récupération musculaire" },
+  { src: equipe, alt: "L'équipe VitaFit dans le studio de Fréjus Plage" },
+  { src: seance, alt: "Séance EMS réelle chez VitaFit Fréjus Plage", h: "lg:row-span-2" },
   { src: smoothie, alt: "Bar à smoothies VitaFit Fréjus Plage — un smoothie, un sourire, un moment à partager", h: "lg:row-span-2" },
   { src: affiche, alt: "Affiche VitaFit : séance EMS 25 min + drainage, studio Fréjus Plage" },
   { src: emsPoster, alt: "Séance EMS 25 minutes pour vous — électrostimulation et coaching à Fréjus Plage" },

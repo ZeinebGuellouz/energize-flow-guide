@@ -1,12 +1,11 @@
 import emsPhoto from "@/assets/real-media/femme-seance-ems.webp";
-import coachImg from "@/assets/coach-session.jpg";
 import { Button } from "@/components/ui/button";
 import { scrollToId } from "@/lib/site";
 
 const steps = [
   { n: "01", title: "Accueil & bilan", text: "Votre coach analyse vos objectifs, votre forme et personnalise votre programme." },
   { n: "02", title: "Mise en tenue EMS", text: "Vous enfilez la combinaison connectée, confort optimal, électrodes humidifiées." },
-  { n: "03", title: "20 min d'entraînement", text: "Mouvements simples guidés par votre coach, intensité ajustée en temps réel." },
+  { n: "03", title: "25 min d'entraînement", text: "Mouvements simples guidés par votre coach, intensité ajustée en temps réel." },
   { n: "04", title: "Étirements & conseils", text: "Récupération active et conseils nutrition pour prolonger les bénéfices." },
 ];
 
@@ -25,11 +24,8 @@ export const HowItWorks = () => {
                 height={1133}
                 className="rounded-3xl shadow-elevated w-full aspect-[4/5] object-cover"
               />
-              <div className="absolute -bottom-6 -right-6 hidden md:block w-48 h-48 rounded-3xl overflow-hidden shadow-glow border-4 border-background">
-                <img src={coachImg} alt="Coach EMS Fréjus" loading="lazy" className="w-full h-full object-cover" />
-              </div>
               <div className="absolute -top-3 -left-3 sm:-top-4 sm:-left-4 bg-accent text-accent-foreground px-3 py-2 sm:px-5 sm:py-3 rounded-2xl shadow-glow font-bold text-sm sm:text-base">
-                20 min · 350 muscles
+                25 min · 350 muscles
               </div>
             </div>
           </div>
@@ -40,7 +36,7 @@ export const HowItWorks = () => {
               Une séance <span className="text-gradient-accent">simple, intense, encadrée</span>
             </h2>
             <p className="text-base md:text-lg text-muted-foreground mb-8 md:mb-10">
-              Une séance EMS chez VitaFit dure 20 minutes effectives, toujours encadrée par un coach
+              Une séance EMS chez VitaFit dure 25 minutes effectives, toujours encadrée par un coach
               certifié. Pas besoin d'expérience sportive : la technologie s'adapte à vous.
             </p>
 

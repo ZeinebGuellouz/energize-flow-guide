@@ -33,7 +33,7 @@ export const ARTICLES: Article[] = [
       "EMS ou salle de sport classique à Fréjus ? Comparatif honnête : temps, résultats, encadrement, prix. Comment choisir selon votre objectif.",
     keyword: "ems ou salle de sport",
     excerpt:
-      "20 minutes d'EMS ou 1h30 de musculation ? On compare honnêtement les deux approches à Fréjus, avec les résultats, les prix et pour qui c'est fait.",
+      "25 minutes d'EMS ou 1h30 de musculation ? On compare honnêtement les deux approches à Fréjus, avec les résultats, les prix et pour qui c'est fait.",
     cover: benefitMuscle,
     coverAlt: "Séance d'électrostimulation EMS dans une salle de sport à Fréjus Plage",
     date: "2026-06-15",
@@ -46,7 +46,7 @@ export const ARTICLES: Article[] = [
           Si vous cherchez une <strong>salle de sport à Fréjus</strong>, vous avez sans doute
           remarqué que l'offre a beaucoup évolué. À côté des grandes enseignes de musculation,
           des studios d'<strong>électrostimulation musculaire (EMS)</strong> comme VitaFit Fréjus
-          Plage proposent désormais un format radicalement différent : 20 minutes de séance,
+          Plage proposent désormais un format radicalement différent : 25 minutes de séance,
           encadrées par un coach, avec une combinaison qui active jusqu'à 350 muscles en même temps.
           Alors, EMS ou salle de sport classique&nbsp;? La réponse dépend surtout de votre objectif,
           du temps dont vous disposez et du type d'accompagnement que vous recherchez.
@@ -60,7 +60,7 @@ export const ARTICLES: Article[] = [
           vous voilà à 4 à 6 heures d'activité, sans compter les trajets.
         </p>
         <p>
-          En EMS, une séance dure <strong>20 minutes</strong>, une à deux fois par semaine.
+          En EMS, une séance dure <strong>25 minutes</strong>, une à deux fois par semaine.
           Les impulsions électriques recrutent en profondeur les fibres musculaires que vous
           activeriez naturellement en salle, mais de manière plus dense. Pour un actif de Fréjus,
           un parent, ou toute personne dont l'agenda est saturé, c'est souvent le format le plus
@@ -78,7 +78,7 @@ export const ARTICLES: Article[] = [
           <li>Recrutement musculaire plus complet (profond + superficiel).</li>
           <li>Sollicitation intense sans impact articulaire &mdash; utile après une blessure,
           en surpoids ou en reprise du sport.</li>
-          <li>Dépense énergétique élevée sur 20 min, prolongée par l'afterburn les heures suivantes.</li>
+          <li>Dépense énergétique élevée sur 25 min, prolongée par l'afterburn les heures suivantes.</li>
         </ul>
         <p>
           Chez VitaFit, nous voyons régulièrement des personnes perdre du volume au niveau de la
@@ -170,7 +170,7 @@ export const ARTICLES: Article[] = [
         </p>
         <ul>
           <li>
-            <strong>Dépense énergétique élevée&nbsp;:</strong> 20 minutes d'EMS activent jusqu'à
+            <strong>Dépense énergétique élevée&nbsp;:</strong> 25 minutes d'EMS activent jusqu'à
             350 muscles simultanément. La séance sollicite le corps de manière très dense.
           </li>
           <li>
@@ -290,7 +290,7 @@ export const ARTICLES: Article[] = [
 
         <h2>Pendant la séance : l'hydratation avant tout</h2>
         <p>
-          Une séance EMS dure 20 minutes, vous n'avez donc pas besoin de manger pendant. En
+          Une séance EMS dure 25 minutes, vous n'avez donc pas besoin de manger pendant. En
           revanche, l'hydratation est cruciale&nbsp;: les impulsions passent mieux, les muscles
           répondent mieux, la récupération est plus rapide. Buvez de l'eau régulièrement dans
           la journée, pas seulement pendant la séance. À Fréjus Plage, avec la chaleur, comptez

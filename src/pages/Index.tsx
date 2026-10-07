@@ -21,7 +21,7 @@ const faqJsonLd = {
       name: "Combien de temps dure une séance EMS ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Une séance dure environ 20 minutes. Grâce à l'électrostimulation, cela équivaut à plusieurs heures d'entraînement traditionnel tout en étant encadré par un coach.",
+        text: "Une séance dure environ 25 minutes. Grâce à l'électrostimulation, cela équivaut à plusieurs heures d'entraînement traditionnel tout en étant encadré par un coach.",
       },
     },
     {
@@ -53,7 +53,7 @@ const faqJsonLd = {
       name: "Que comprend la séance découverte à 19,5 € ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "La séance découverte comprend un bilan personnalisé, la mise à disposition de la combinaison EMS, une séance encadrée de 20 minutes et des conseils adaptés à vos objectifs.",
+        text: "La séance découverte comprend un bilan personnalisé, la mise à disposition de la combinaison EMS, une séance encadrée de 25 minutes et des conseils adaptés à vos objectifs.",
       },
     },
     {
