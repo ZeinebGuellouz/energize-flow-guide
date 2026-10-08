@@ -1,4 +1,5 @@
 import emailjs from "emailjs-com";
+import { saveInscription } from "./inscriptions";
 
 /**
  * EmailJS integration for form submissions
@@ -40,6 +41,7 @@ export async function submitDiscoveryForm(
   data: Record<string, any>
 ): Promise<{ success: boolean; message: string }> {
   initEmailJS();
+  void saveInscription("decouverte", data);
 
   const serviceId = SERVICE_ID;
   const templateId = TEMPLATE_DISCOVERY;
@@ -79,6 +81,7 @@ export async function submitRequestForm(
   data: Record<string, any>
 ): Promise<{ success: boolean; message: string }> {
   initEmailJS();
+  void saveInscription("demande_ems", data);
   
   const serviceId = SERVICE_ID;
   const templateId = TEMPLATE_REQUEST;
