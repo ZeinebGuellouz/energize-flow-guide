@@ -14,16 +14,108 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      inscriptions: {
+        Row: {
+          civilite: string | null
+          code_postal: string | null
+          created_at: string
+          creneau: string | null
+          date_rdv: string | null
+          email: string | null
+          emailjs_id: string | null
+          formule: string | null
+          id: string
+          imported: boolean
+          invite_par: string | null
+          message: string | null
+          nom: string | null
+          objectif: string | null
+          prenom: string | null
+          sms_accepte: string | null
+          source: string
+          status: string
+          telephone: string | null
+          updated_at: string
+        }
+        Insert: {
+          civilite?: string | null
+          code_postal?: string | null
+          created_at?: string
+          creneau?: string | null
+          date_rdv?: string | null
+          email?: string | null
+          emailjs_id?: string | null
+          formule?: string | null
+          id?: string
+          imported?: boolean
+          invite_par?: string | null
+          message?: string | null
+          nom?: string | null
+          objectif?: string | null
+          prenom?: string | null
+          sms_accepte?: string | null
+          source?: string
+          status?: string
+          telephone?: string | null
+          updated_at?: string
+        }
+        Update: {
+          civilite?: string | null
+          code_postal?: string | null
+          created_at?: string
+          creneau?: string | null
+          date_rdv?: string | null
+          email?: string | null
+          emailjs_id?: string | null
+          formule?: string | null
+          id?: string
+          imported?: boolean
+          invite_par?: string | null
+          message?: string | null
+          nom?: string | null
+          objectif?: string | null
+          prenom?: string | null
+          sms_accepte?: string | null
+          source?: string
+          status?: string
+          telephone?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +242,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin"],
+    },
   },
 } as const
