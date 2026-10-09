@@ -53,6 +53,11 @@ const Admin = () => {
   const [status, setStatus] = useState("all");
   const [source, setSource] = useState("all");
   const [flag, setFlag] = useState("all");
+  const [from, setFrom] = useState("");
+  const [to, setTo] = useState("");
+  const [sort, setSort] = useState("created_desc");
+  const [editing, setEditing] = useState<Row | null>(null);
+  const [deleting, setDeleting] = useState<Row | null>(null);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -77,22 +82,63 @@ const Admin = () => {
   const dups = useMemo(() => duplicateIds(rows), [rows]);
   const filtered = useMemo(() => {
     const s = q.trim().toLowerCase();
-    return rows.filter((r) => {
+    const list = rows.filter((r) => {
       if (status !== "all" && r.status !== status) return false;
       if (source !== "all" && r.source !== source) return false;
       if (flag === "missing" && missingFields(r).length === 0) return false;
       if (flag === "dup" && !dups.has(r.id)) return false;
+      if (from && (!r.date_rdv || r.date_rdv < from)) return false;
+      if (to && (!r.date_rdv || r.date_rdv > to)) return false;
       if (!s) return true;
-      return [r.nom, r.prenom, r.email, r.telephone, r.code_postal, r.invite_par, r.date_rdv]
+      return [r.nom, r.prenom, r.email, r.telephone, r.code_postal, r.invite_par, r.date_rdv, r.notes]
         .some((v) => (v ?? "").toLowerCase().includes(s));
     });
-  }, [rows, q, status, source, flag, dups]);
+    const rdvKey = (r: Row) => `${r.date_rdv ?? "9999"} ${r.creneau ?? ""}`;
+    if (sort === "created_asc") list.sort((a, b) => a.created_at.localeCompare(b.created_at));
+    if (sort === "rdv_asc") list.sort((a, b) => rdvKey(a).localeCompare(rdvKey(b)));
+    if (sort === "rdv_desc") list.sort((a, b) => (b.date_rdv ?? "").localeCompare(a.date_rdv ?? "") || (b.creneau ?? "").localeCompare(a.creneau ?? ""));
+    return list;
+  }, [rows, q, status, source, flag, dups, from, to, sort]);
+
+  const stats = useMemo(() => {
+    const by = (k: string) => rows.filter((r) => r.status === k).length;
+    const months = new Map<string, number>();
+    rows.forEach((r) => { const m = r.created_at.slice(0, 7); months.set(m, (months.get(m) ?? 0) + 1); });
+    const today = new Date().toISOString().slice(0, 10);
+    return {
+      pending: by("pending"), confirmed: by("confirmed"), cancelled: by("cancelled"),
+      decouverte: rows.filter((r) => r.source === "decouverte").length,
+      ems: rows.filter((r) => r.source === "demande_ems").length,
+      upcoming: rows.filter((r) => r.date_rdv && r.date_rdv >= today && r.status !== "cancelled").length,
+      months: [...months.entries()].sort().slice(-6),
+    };
+  }, [rows]);
 
   const setRowStatus = async (id: string, value: InscriptionStatus) => {
     const { error } = await supabase.from("inscriptions").update({ status: value }).eq("id", id);
     if (error) return toast({ title: "Échec", description: error.message, variant: "destructive" });
     setRows((rs) => rs.map((r) => (r.id === id ? { ...r, status: value } : r)));
     toast({ title: `Statut : ${STATUS_LABELS[value]}` });
+  };
+
+  const saveEdit = async () => {
+    if (!editing) return;
+    const { id, civilite, nom, prenom, email, telephone, code_postal, date_rdv, creneau, formule, invite_par, notes } = editing;
+    const patch = { civilite, nom, prenom, email, telephone, code_postal, date_rdv, creneau, formule, invite_par, notes };
+    const { error } = await supabase.from("inscriptions").update(patch).eq("id", id);
+    if (error) return toast({ title: "Échec", description: error.message, variant: "destructive" });
+    setRows((rs) => rs.map((r) => (r.id === id ? { ...r, ...patch } : r)));
+    setEditing(null);
+    toast({ title: "Fiche enregistrée" });
+  };
+
+  const confirmDelete = async () => {
+    if (!deleting) return;
+    const { error } = await supabase.from("inscriptions").delete().eq("id", deleting.id);
+    if (error) return toast({ title: "Échec", description: error.message, variant: "destructive" });
+    setRows((rs) => rs.filter((r) => r.id !== deleting.id));
+    setDeleting(null);
+    toast({ title: "Fiche supprimée" });
   };
 
   const exportFile = (type: "xlsx" | "csv") => {
