@@ -24,6 +24,28 @@ const TEMPLATE_DISCOVERY =
   import.meta.env.VITE_EMAILJS_TEMPLATE_DISCOVERY || "template_m0a3u1u";
 const TEMPLATE_REQUEST =
   import.meta.env.VITE_EMAILJS_TEMPLATE_REQUEST || "template_tl2582e";
+const TEMPLATE_CONFIRMATION =
+  import.meta.env.VITE_EMAILJS_TEMPLATE_CONFIRMATION || "";
+
+/**
+ * Sends an automatic confirmation email to the client after their request.
+ * Uses the EmailJS template VITE_EMAILJS_TEMPLATE_CONFIRMATION with variables:
+ * {{prenom}}, {{date}}, {{creneau}}, {{to_email}}.
+ * Never blocks or fails the main submission: errors are only logged.
+ */
+async function sendClientConfirmation(data: Record<string, any>) {
+  if (!TEMPLATE_CONFIRMATION || !data?.email) return;
+  try {
+    await emailjs.send(SERVICE_ID, TEMPLATE_CONFIRMATION, {
+      to_email: data.email,
+      prenom: data.prenom || "",
+      date: data.date || data.dateSouhaitee || "",
+      creneau: data.creneau || "",
+    });
+  } catch (error) {
+    console.error("Client confirmation email error:", error);
+  }
+}
 
 let initialized = false;
 
