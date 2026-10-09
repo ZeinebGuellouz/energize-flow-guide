@@ -29,6 +29,7 @@ export type Database = {
           invite_par: string | null
           message: string | null
           nom: string | null
+          notes: string | null
           objectif: string | null
           prenom: string | null
           sms_accepte: string | null
@@ -51,6 +52,7 @@ export type Database = {
           invite_par?: string | null
           message?: string | null
           nom?: string | null
+          notes?: string | null
           objectif?: string | null
           prenom?: string | null
           sms_accepte?: string | null
@@ -73,6 +75,7 @@ export type Database = {
           invite_par?: string | null
           message?: string | null
           nom?: string | null
+          notes?: string | null
           objectif?: string | null
           prenom?: string | null
           sms_accepte?: string | null
