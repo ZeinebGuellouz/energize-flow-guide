@@ -8,10 +8,19 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Textarea } from "@/components/ui/textarea";
+import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog";
 import { useToast } from "@/hooks/use-toast";
 import { STATUS_LABELS, duplicateIds, missingFields, type InscriptionStatus } from "@/lib/inscriptions";
 
 type Row = Tables<"inscriptions">;
+
+const EDIT_FIELDS: [keyof Row, string, string?][] = [
+  ["civilite", "Civilité"], ["prenom", "Prénom"], ["nom", "Nom"], ["email", "Email", "email"],
+  ["telephone", "Téléphone", "tel"], ["code_postal", "Code postal"], ["date_rdv", "Date RDV", "date"],
+  ["creneau", "Créneau"], ["formule", "Formule"], ["invite_par", "Invité par"],
+];
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -148,7 +157,7 @@ const Admin = () => {
       Civilité: r.civilite ?? "", Nom: r.nom ?? "", Prénom: r.prenom ?? "", Email: r.email ?? "",
       Téléphone: r.telephone ?? "", "Code postal": r.code_postal ?? "", "Invité par": r.invite_par ?? "",
       "Date RDV": r.date_rdv ?? "", Créneau: r.creneau ?? "", Objectif: r.objectif ?? "", Formule: r.formule ?? "",
-      Message: r.message ?? "", Statut: STATUS_LABELS[r.status as InscriptionStatus],
+      Message: r.message ?? "", Statut: STATUS_LABELS[r.status as InscriptionStatus], Notes: r.notes ?? "",
       "Données manquantes": missingFields(r).join(", "), "Doublon potentiel": dups.has(r.id) ? "Oui" : "",
     }));
     const wb = XLSX.utils.book_new();
