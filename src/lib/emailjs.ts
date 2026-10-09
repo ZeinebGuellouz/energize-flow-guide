@@ -128,6 +128,8 @@ export async function submitRequestForm(
       throw new Error("Failed to send email");
     }
 
+    await sendClientConfirmation(data);
+
     return {
       success: true,
       message: "Votre demande a été envoyée avec succès!",
