@@ -185,6 +185,37 @@ const Admin = () => {
         </div>
       </div>
 
+      <div className="mb-6 grid grid-cols-2 gap-3 md:grid-cols-6">
+        {[
+          ["En attente", stats.pending], ["Confirmées", stats.confirmed], ["Annulées", stats.cancelled],
+          ["RDV à venir", stats.upcoming], ["Séances découverte", stats.decouverte], ["Demandes EMS", stats.ems],
+        ].map(([l, v]) => (
+          <div key={l as string} className="rounded-xl border bg-card p-4">
+            <p className="text-xs text-muted-foreground">{l}</p>
+            <p className="text-2xl font-semibold">{v}</p>
+          </div>
+        ))}
+      </div>
+      {stats.months.length > 0 && (
+        <div className="mb-6 rounded-xl border bg-card p-4">
+          <p className="mb-3 text-xs text-muted-foreground">Inscriptions par mois</p>
+          <div className="flex items-end gap-3">
+            {stats.months.map(([m, n]) => {
+              const max = Math.max(...stats.months.map(([, c]) => c));
+              return (
+                <div key={m} className="flex flex-1 flex-col items-center gap-1">
+                  <span className="text-xs font-medium">{n}</span>
+                  <div className="w-full rounded-t bg-primary" style={{ height: `${Math.max(6, (n / max) * 80)}px` }} />
+                  <span className="text-[10px] text-muted-foreground">{m}</span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+
+
       <div className="mb-4 grid gap-2 md:grid-cols-4">
         <Input placeholder="Rechercher (nom, email, téléphone…)" value={q} onChange={(e) => setQ(e.target.value)} />
         <Select value={status} onValueChange={setStatus}>
@@ -211,13 +242,37 @@ const Admin = () => {
           </SelectContent>
         </Select>
       </div>
+      <div className="mb-4 grid gap-2 md:grid-cols-4">
+        <label className="text-xs text-muted-foreground">RDV du
+          <Input type="date" value={from} onChange={(e) => setFrom(e.target.value)} />
+        </label>
+        <label className="text-xs text-muted-foreground">au
+          <Input type="date" value={to} onChange={(e) => setTo(e.target.value)} />
+        </label>
+        <label className="text-xs text-muted-foreground">Trier par
+          <Select value={sort} onValueChange={setSort}>
+            <SelectTrigger><SelectValue /></SelectTrigger>
+            <SelectContent>
+              <SelectItem value="created_desc">Envoi le plus récent</SelectItem>
+              <SelectItem value="created_asc">Envoi le plus ancien</SelectItem>
+              <SelectItem value="rdv_asc">RDV le plus proche</SelectItem>
+              <SelectItem value="rdv_desc">RDV le plus lointain</SelectItem>
+            </SelectContent>
+          </Select>
+        </label>
+        <div className="flex items-end">
+          <Button variant="ghost" onClick={() => { setQ(""); setStatus("all"); setSource("all"); setFlag("all"); setFrom(""); setTo(""); setSort("created_desc"); }}>
+            Réinitialiser les filtres
+          </Button>
+        </div>
+      </div>
 
       <div className="overflow-x-auto rounded-xl border bg-card">
         <Table>
           <TableHeader>
             <TableRow>
               <TableHead>Envoyé le</TableHead><TableHead>Client</TableHead><TableHead>Contact</TableHead>
-              <TableHead>RDV</TableHead><TableHead>Invité par / formule</TableHead><TableHead>Alertes</TableHead><TableHead>Statut</TableHead>
+              <TableHead>RDV</TableHead><TableHead>Invité par / formule</TableHead><TableHead>Notes</TableHead><TableHead>Alertes</TableHead><TableHead>Statut</TableHead><TableHead>Actions</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -230,6 +285,7 @@ const Admin = () => {
                   <TableCell className="text-xs">{r.email ?? "—"}<br />{r.telephone ?? ""} {r.code_postal ? `· ${r.code_postal}` : ""}</TableCell>
                   <TableCell className="whitespace-nowrap">{r.date_rdv ?? "—"} {r.creneau ?? ""}</TableCell>
                   <TableCell className="max-w-[220px] text-xs">{r.formule ?? r.invite_par ?? "—"}</TableCell>
+                  <TableCell className="max-w-[200px] truncate text-xs" title={r.notes ?? ""}>{r.notes || "—"}</TableCell>
                   <TableCell className="space-y-1">
                     {miss.length > 0 && <Badge variant="destructive" title={miss.join(", ")}>Manquant : {miss.join(", ")}</Badge>}
                     {dups.has(r.id) && <Badge variant="secondary">Doublon potentiel</Badge>}
@@ -242,15 +298,57 @@ const Admin = () => {
                       </SelectContent>
                     </Select>
                   </TableCell>
+                  <TableCell className="whitespace-nowrap">
+                    <Button size="sm" variant="outline" onClick={() => setEditing({ ...r })}>Modifier</Button>{" "}
+                    <Button size="sm" variant="ghost" className="text-destructive" onClick={() => setDeleting(r)}>Supprimer</Button>
+                  </TableCell>
                 </TableRow>
               );
             })}
             {filtered.length === 0 && (
-              <TableRow><TableCell colSpan={7} className="py-8 text-center text-muted-foreground">Aucune inscription</TableCell></TableRow>
+              <TableRow><TableCell colSpan={9} className="py-8 text-center text-muted-foreground">Aucune inscription</TableCell></TableRow>
             )}
           </TableBody>
         </Table>
       </div>
+
+      <Dialog open={!!editing} onOpenChange={(o) => !o && setEditing(null)}>
+        <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-lg">
+          <DialogHeader><DialogTitle>Modifier la fiche</DialogTitle></DialogHeader>
+          {editing && (
+            <div className="grid gap-3 sm:grid-cols-2">
+              {EDIT_FIELDS.map(([k, label, type]) => (
+                <label key={k} className="text-xs text-muted-foreground">{label}
+                  <Input type={type ?? "text"} value={(editing[k] as string) ?? ""}
+                    onChange={(e) => setEditing({ ...editing, [k]: e.target.value || null })} />
+                </label>
+              ))}
+              <label className="text-xs text-muted-foreground sm:col-span-2">Notes internes
+                <Textarea rows={4} value={editing.notes ?? ""} onChange={(e) => setEditing({ ...editing, notes: e.target.value || null })} />
+              </label>
+            </div>
+          )}
+          <DialogFooter>
+            <Button variant="ghost" onClick={() => setEditing(null)}>Annuler</Button>
+            <Button onClick={saveEdit}>Enregistrer</Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      <AlertDialog open={!!deleting} onOpenChange={(o) => !o && setDeleting(null)}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Supprimer cette fiche ?</AlertDialogTitle>
+            <AlertDialogDescription>
+              {deleting && `${deleting.prenom ?? ""} ${deleting.nom ?? ""}`} — cette action est définitive.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Annuler</AlertDialogCancel>
+            <AlertDialogAction onClick={confirmDelete} className="bg-destructive text-destructive-foreground hover:bg-destructive/90">Supprimer</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   );
 };
