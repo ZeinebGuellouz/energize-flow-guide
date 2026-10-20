@@ -19,7 +19,7 @@ import seanceEMS from "@/assets/Snapchat-934075019.jpg";
 import smoothies from "@/assets/Snapchat-1100153276.jpg";
 import petitDejeuner from "@/assets/Snapchat-1523835540.jpg";
 import offres from "@/assets/Snapchat-1812147201.jpg";
-import renforcementDos from "@/assets/Snapchat-2024363812.jpg";
+
 
 type GalleryMedia = {
   src: string;
@@ -60,11 +60,7 @@ const imgs: GalleryMedia[] = [
     alt: "Bar à smoothies VitaFit Fréjus Plage",
     type: "image",
   },
-  {
-    src: renforcementDos,
-    alt: "Coaching personnalisé et renforcement du dos",
-    type: "image",
-  },
+ 
   {
     src: affiche,
     alt: "Affiche VitaFit - séance EMS et drainage",
