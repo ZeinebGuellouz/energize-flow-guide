@@ -2,8 +2,8 @@ import { Layout } from "@/components/site/Layout";
 import { SEO } from "@/components/site/SEO";
 import { PageHero } from "@/components/site/PageHero";
 import { Heart, Target, Users, Award } from "lucide-react";
-import studio from "@/assets/real-media/Snapchat-1933399201.jpg";
-import coach from "@/assets/real-media/Snapchat-2024363812.jpg";
+import studio from "@/assets/Snapchat-1933399201.jpg";
+import coach from "@/assets/Snapchat-2024363812.jpg";
 
 const values = [
   {
