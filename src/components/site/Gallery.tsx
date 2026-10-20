@@ -6,17 +6,17 @@ import smoothie from "@/assets/real-media/smoothie.webp";
 import emsPoster from "@/assets/real-media/ems-poster.webp";
 import affiche from "@/assets/real-media/affiche-transpire.webp";
 
-import bienfaits from "@/assets/real-media/Snapchat-53536279.jpg";
-import video1 from "@/assets/real-media/Snapchat-181987095.mp4";
-import partage from "@/assets/real-media/Snapchat-437614151.jpg";
-import pauseSmoothie from "@/assets/real-media/Snapchat-700469716.jpg";
-import seanceEMS from "@/assets/real-media/Snapchat-934075019.jpg";
-import smoothies from "@/assets/real-media/Snapchat-1100153276.jpg";
-import petitDejeuner from "@/assets/real-media/Snapchat-1523835540.jpg";
-import offres from "@/assets/real-media/Snapchat-1812147201.jpg";
-import sportSourires from "@/assets/real-media/Snapchat-1933399201.jpg";
-import video2 from "@/assets/real-media/Snapchat-1980604965.mp4";
-import renforcementDos from "@/assets/real-media/Snapchat-2024363812.jpg";
+import bienfaits from "@/assets/Snapchat-53536279.jpg";
+import video1 from "@/assets/Snapchat-181987095.mp4";
+import partage from "@/assets/Snapchat-437614151.jpg";
+import pauseSmoothie from "@/assets/Snapchat-700469716.jpg";
+import seanceEMS from "@/assets/Snapchat-934075019.jpg";
+import smoothies from "@/assets/Snapchat-1100153276.jpg";
+import petitDejeuner from "@/assets/Snapchat-1523835540.jpg";
+import offres from "@/assets/Snapchat-1812147201.jpg";
+import sportSourires from "@/assets/Snapchat-1933399201.jpg";
+import video2 from "@/assets/Snapchat-1980604965.mp4";
+import renforcementDos from "@/assets/Snapchat-2024363812.jpg";
 
 type GalleryMedia = {
   src: string;
