@@ -1,38 +1,63 @@
 
 import { useState } from "react";
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Play } from "lucide-react";
 
 import smoothie from "@/assets/real-media/smoothie.webp";
 import emsPoster from "@/assets/real-media/ems-poster.webp";
 import affiche from "@/assets/real-media/affiche-transpire.webp";
 
 import bienfaits from "@/assets/Snapchat-53536279.jpg";
-import video1 from "@/assets/Snapchat-181987095.mp4";
+import videoStudio from "@/assets/Snapchat-181987095.mp4";
 import partage from "@/assets/Snapchat-437614151.jpg";
 import pauseSmoothie from "@/assets/Snapchat-700469716.jpg";
 import seanceEMS from "@/assets/Snapchat-934075019.jpg";
 import smoothies from "@/assets/Snapchat-1100153276.jpg";
 import petitDejeuner from "@/assets/Snapchat-1523835540.jpg";
 import offres from "@/assets/Snapchat-1812147201.jpg";
-import sportSourires from "@/assets/Snapchat-1933399201.jpg";
-import video2 from "@/assets/Snapchat-1980604965.mp4";
 import renforcementDos from "@/assets/Snapchat-2024363812.jpg";
 
 type GalleryMedia = {
   src: string;
   alt: string;
   type: "image" | "video";
+  poster?: string;
 };
 
 const imgs: GalleryMedia[] = [
+  // 1. VRAIS CLIENTS ET MOMENTS AU STUDIO
   {
-    src: sportSourires,
-    alt: "VitaFit Fréjus - Sport et sourires",
+    src: partage,
+    alt: "Moments de convivialité chez VitaFit Fréjus",
     type: "image",
   },
   {
+    src: pauseSmoothie,
+    alt: "Pause smoothie et bonne humeur chez VitaFit",
+    type: "image",
+  },
+  {
+    src: smoothies,
+    alt: "Des sourires et des smoothies chez VitaFit",
+    type: "image",
+  },
+
+  // 2. VIDÉO DU STUDIO - 20 SECONDES
+  {
+    src: videoStudio,
+    alt: "Découvrez l'univers VitaFit Fréjus en vidéo",
+    type: "video",
+    poster: partage,
+  },
+
+  // 3. EMS ET ACCOMPAGNEMENT
+  {
     src: renforcementDos,
-    alt: "Renforcement du dos et coaching EMS VitaFit",
+    alt: "Coaching personnalisé et renforcement du dos",
     type: "image",
   },
   {
@@ -42,27 +67,14 @@ const imgs: GalleryMedia[] = [
   },
   {
     src: seanceEMS,
-    alt: "Séance EMS de 25 minutes - VitaFit Fréjus",
+    alt: "Séance EMS de 25 minutes chez VitaFit",
     type: "image",
   },
-  {
-    src: partage,
-    alt: "Le bonheur se partage - VitaFit",
-    type: "image",
-  },
-  {
-    src: pauseSmoothie,
-    alt: "Pause smoothie VitaFit Fréjus",
-    type: "image",
-  },
-  {
-    src: smoothies,
-    alt: "Smoothies fruits rouges et banane VitaFit",
-    type: "image",
-  },
+
+  // 4. NUTRITION ET OFFRES
   {
     src: petitDejeuner,
-    alt: "Petit-déjeuner Vitalité VitaFit",
+    alt: "Petit-déjeuner Vitalité VitaFit Fréjus",
     type: "image",
   },
   {
@@ -70,6 +82,8 @@ const imgs: GalleryMedia[] = [
     alt: "Séances EMS et smoothies protéinés VitaFit",
     type: "image",
   },
+
+  // 5. ANCIENS VISUELS GÉNÉRIQUES
   {
     src: smoothie,
     alt: "Bar à smoothies VitaFit Fréjus Plage",
@@ -77,23 +91,13 @@ const imgs: GalleryMedia[] = [
   },
   {
     src: affiche,
-    alt: "Affiche VitaFit - séance EMS et drainage",
+    alt: "Affiche VitaFit - EMS et drainage",
     type: "image",
   },
   {
     src: emsPoster,
     alt: "Séance EMS 25 minutes VitaFit",
     type: "image",
-  },
-  {
-    src: video1,
-    alt: "Vidéo VitaFit - découverte du studio",
-    type: "video",
-  },
-  {
-    src: video2,
-    alt: "Vidéo VitaFit - activités du studio",
-    type: "video",
   },
 ];
 
@@ -102,7 +106,10 @@ export const Gallery = () => {
     useState<GalleryMedia | null>(null);
 
   return (
-    <section id="galerie" className="py-12 md:py-20 bg-background">
+    <section
+      id="galerie"
+      className="py-12 md:py-20 bg-background"
+    >
       <div className="container-px max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14 reveal">
           <span className="text-accent font-semibold uppercase tracking-widest text-xs sm:text-sm">
@@ -122,6 +129,7 @@ export const Gallery = () => {
           </p>
         </div>
 
+        {/* Galerie en colonnes - aucun recadrage */}
         <div className="columns-2 lg:columns-3 gap-3 md:gap-5">
           {imgs.map((im) => (
             <button
@@ -140,20 +148,33 @@ export const Gallery = () => {
                   className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.02]"
                 />
               ) : (
-                <div className="relative bg-black">
-                  <video
-                    src={im.src}
-                    muted
-                    playsInline
-                    preload="metadata"
-                    className="w-full h-auto block"
-                    aria-label={im.alt}
+                // Miniature personnalisée de la vidéo
+                <div className="relative aspect-[9/16] w-full overflow-hidden bg-muted">
+                  <img
+                    src={im.poster}
+                    alt=""
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
 
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-                    <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 text-xl text-black shadow-lg">
-                      ▶
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <span className="flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-full bg-white/90 text-primary shadow-xl transition-transform group-hover:scale-110">
+                      <Play
+                        className="h-7 w-7 ml-1"
+                        fill="currentColor"
+                      />
                     </span>
+                  </div>
+
+                  <div className="absolute bottom-0 left-0 right-0 p-3 md:p-5 text-left">
+                    <span className="text-white text-sm md:text-lg font-bold">
+                      Découvrez VitaFit en vidéo
+                    </span>
+                    <p className="text-white/80 text-xs mt-1">
+                      Appuyez pour regarder
+                    </p>
                   </div>
                 </div>
               )}
@@ -162,6 +183,7 @@ export const Gallery = () => {
         </div>
       </div>
 
+      {/* Agrandissement des images et vidéos */}
       <Dialog
         open={selectedImage !== null}
         onOpenChange={(open) => {
@@ -176,24 +198,27 @@ export const Gallery = () => {
             {selectedImage?.alt ?? "Média VitaFit"}
           </DialogTitle>
 
-          {selectedImage && (
-            selectedImage.type === "video" ? (
+          {selectedImage &&
+            (selectedImage.type === "video" ? (
               <video
                 key={selectedImage.src}
                 src={selectedImage.src}
+                poster={selectedImage.poster}
                 controls
                 autoPlay
                 playsInline
-                className="w-full max-h-[calc(100dvh-8rem)] object-contain rounded-lg"
-              />
+                className="w-full max-h-[calc(100dvh-8rem)] object-contain rounded-lg bg-black"
+              >
+                Votre navigateur ne prend pas en charge
+                la lecture de cette vidéo.
+              </video>
             ) : (
               <img
                 src={selectedImage.src}
                 alt={selectedImage.alt}
                 className="w-full h-auto max-h-[calc(100dvh-8rem)] object-contain rounded-lg"
               />
-            )
-          )}
+            ))}
         </DialogContent>
       </Dialog>
     </section>
