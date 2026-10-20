@@ -29,7 +29,7 @@ type GalleryMedia = {
 };
 
 const imgs: GalleryMedia[] = [
-  // 1. VRAIS CLIENTS ET MOMENTS AU STUDIO
+  // PHOTOS REELLES ET MOMENTS AVEC LES CLIENTS
   {
     src: partage,
     alt: "Moments de convivialité chez VitaFit Fréjus",
@@ -46,7 +46,7 @@ const imgs: GalleryMedia[] = [
     type: "image",
   },
 
-  // 2. VIDÉO DU STUDIO - 20 SECONDES
+  // VIDEO DU STUDIO
   {
     src: videoStudio,
     alt: "Découvrez l'univers VitaFit Fréjus en vidéo",
@@ -54,10 +54,25 @@ const imgs: GalleryMedia[] = [
     poster: emsPoster,
   },
 
-  // 3. EMS ET ACCOMPAGNEMENT
+  // MIX VISUELS ET AFFICHES
+  {
+    src: smoothie,
+    alt: "Bar à smoothies VitaFit Fréjus Plage",
+    type: "image",
+  },
   {
     src: renforcementDos,
     alt: "Coaching personnalisé et renforcement du dos",
+    type: "image",
+  },
+  {
+    src: affiche,
+    alt: "Affiche VitaFit - séance EMS et drainage",
+    type: "image",
+  },
+  {
+    src: petitDejeuner,
+    alt: "Petit-déjeuner Vitalité VitaFit Fréjus",
     type: "image",
   },
   {
@@ -66,35 +81,15 @@ const imgs: GalleryMedia[] = [
     type: "image",
   },
   {
-    src: seanceEMS,
-    alt: "Séance EMS de 25 minutes chez VitaFit",
-    type: "image",
-  },
-
-  // 4. NUTRITION ET OFFRES
-  {
-    src: petitDejeuner,
-    alt: "Petit-déjeuner Vitalité VitaFit Fréjus",
-    type: "image",
-  },
-  {
     src: offres,
     alt: "Séances EMS et smoothies protéinés VitaFit",
     type: "image",
   },
-
-  // 5. ANCIENS VISUELS GÉNÉRIQUES
   {
-    src: smoothie,
-    alt: "Bar à smoothies VitaFit Fréjus Plage",
+    src: seanceEMS,
+    alt: "Séance EMS de 25 minutes chez VitaFit",
     type: "image",
   },
-  {
-    src: affiche,
-    alt: "Affiche VitaFit - EMS et drainage",
-    type: "image",
-  },
-
 ];
 
 export const Gallery = () => {
@@ -125,7 +120,7 @@ export const Gallery = () => {
           </p>
         </div>
 
-        {/* Galerie en colonnes - aucun recadrage */}
+        {/* Galerie sans recadrage des images */}
         <div className="columns-2 lg:columns-3 gap-3 md:gap-5">
           {imgs.map((im) => (
             <button
@@ -144,16 +139,15 @@ export const Gallery = () => {
                   className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.02]"
                 />
               ) : (
-                // Miniature personnalisée de la vidéo
                 <div className="relative aspect-[9/16] w-full overflow-hidden bg-muted">
                   <img
                     src={im.poster}
                     alt=""
                     loading="lazy"
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="absolute inset-0 w-full h-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
 
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
                     <span className="flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-full bg-white/90 text-primary shadow-xl transition-transform group-hover:scale-110">
@@ -168,9 +162,6 @@ export const Gallery = () => {
                     <span className="text-white text-sm md:text-lg font-bold">
                       Découvrez VitaFit en vidéo
                     </span>
-                    <p className="text-white/80 text-xs mt-1">
-                      Appuyez pour regarder
-                    </p>
                   </div>
                 </div>
               )}
@@ -179,7 +170,7 @@ export const Gallery = () => {
         </div>
       </div>
 
-      {/* Agrandissement des images et vidéos */}
+      {/* Ouverture des médias en grand */}
       <Dialog
         open={selectedImage !== null}
         onOpenChange={(open) => {
