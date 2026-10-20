@@ -51,7 +51,7 @@ const imgs: GalleryMedia[] = [
     src: videoStudio,
     alt: "Découvrez l'univers VitaFit Fréjus en vidéo",
     type: "video",
-    poster: partage,
+    poster: emsPoster,
   },
 
   // 3. EMS ET ACCOMPAGNEMENT
@@ -94,11 +94,7 @@ const imgs: GalleryMedia[] = [
     alt: "Affiche VitaFit - EMS et drainage",
     type: "image",
   },
-  {
-    src: emsPoster,
-    alt: "Séance EMS 25 minutes VitaFit",
-    type: "image",
-  },
+
 ];
 
 export const Gallery = () => {
