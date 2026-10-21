@@ -1,5 +1,3 @@
-
-import { lazy, Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -7,19 +5,16 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
-
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import About from "./pages/About.tsx";
+
 import Herbalife from "./pages/Herbalife.tsx";
 import Pricing from "./pages/Pricing.tsx";
 import Contact from "./pages/Contact.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogArticle from "./pages/BlogArticle.tsx";
-
-// Charger l'administration uniquement lorsque nécessaire.
-// Évite d'initialiser Supabase sur les pages publiques.
-const Admin = lazy(() => import("./pages/Admin.tsx"));
+import Admin from "./pages/Admin.tsx";
 
 const queryClient = new QueryClient();
 
@@ -29,38 +24,19 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/a-propos" element={<About />} />
-          <Route
-            path="/services-ems"
-            element={<Navigate to="/" replace />}
-          />
+          <Route path="/services-ems" element={<Navigate to="/" replace />} />
           <Route path="/nutrition" element={<Herbalife />} />
           <Route path="/tarifs" element={<Pricing />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogArticle />} />
-
-          <Route
-            path="/admin"
-            element={
-              <Suspense
-                fallback={
-                  <div className="min-h-screen flex items-center justify-center bg-background text-foreground">
-                    Chargement de l'espace administrateur...
-                  </div>
-                }
-              >
-                <Admin />
-              </Suspense>
-            }
-          />
-
+          <Route path="/admin" element={<Admin />} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-
         <Analytics />
         <SpeedInsights />
       </TooltipProvider>
